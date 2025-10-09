@@ -9,8 +9,6 @@ export default function ProjectCard({
   description,
   techStack,
 }: Project) {
-  console.log(techStack);
-
   return (
     <article className='flex flex-col gap-y-2 rounded-md border border-dashed border-[#4F4F4F] px-3 py-4 shadow-sm'>
       <header className='flex w-full items-center justify-between'>
