@@ -15,9 +15,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Brandon Hernández",
+  title: "Brandon Hernández | IT Engineer",
   description:
-    "Systems & IT engineer, passionate about learning and coding, driven by creativity and ambition to build meaningful web experiences and solutions.",
+    "Systems and Industrial Information Technologies Engineer, passionate about learning and coding, driven by creativity and ambition to build meaningful web experiences and solutions.",
+  keywords: [
+    "Brandon Hernández",
+    "isahecam",
+    "Portfolio",
+    "IT Engineer",
+    "Full Stack Developer",
+    "Developer",
+    "Web Development",
+  ],
+  authors: [{ name: "Brandon Hernández", url: "https://isahecam.dev" }],
+  creator: "Brandon Hernández",
+  openGraph: {
+    title: "Brandon Hernández | IT Engineer",
+    description:
+      "Systems and Industrial Information Technologies Engineer, passionate about learning and coding, driven by creativity and ambition to build meaningful web experiences and solutions.",
+    url: "https://isahecam.dev",
+    siteName: "Brandon Hernández | IT Engineer",
+    locale: "en-US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
