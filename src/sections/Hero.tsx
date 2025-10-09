@@ -17,7 +17,7 @@ function Hero() {
             Brandon Hernández
           </h1>
           <p className='font-mono text-sm text-black/70'>
-            Dev | Visionary | Engineer
+            Dev | Visionary | IT Engineer
           </p>
         </div>
       </div>
