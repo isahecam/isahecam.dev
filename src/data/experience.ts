@@ -5,11 +5,11 @@ export const MY_EXPERIENCE: Experience[] = [
   {
     id: 1,
     company: "RC Ingeniería y Diseño",
-    companyUrl: "https://rcingydis.wixsite.com/inicio",
-    role: "Systems Engineer Trainee",
+    websiteCompany: "https://rcingydis.wixsite.com/inicio",
+    role: "Software Engineering Intern",
     aboutRole:
-      "As a Systems Engineer Trainee, I collaborate closely with cross-functional teams to design and implement tailored web-based solutions for a variety of business needs. My role bridges both technical and analytical responsibilities, including gathering and refining system requirements directly from clients, and transforming them into scalable and efficient development solutions.",
-    startDate: formatDate(new Date("2025-06-06")),
-    endDate: formatDate(new Date("2025-12-06")),
+      "As a Software Engineering Intern at RC Ingeniería y Diseño, I contributed to the development of a comprehensive web solution for the commercial sector, leveraging modern technologies such as Next.js, React.js, TypeScript, Tailwind CSS and Supabase Storage. I was actively involved in all stages of the development lifecycle from requirements analysis and stakeholder collaboration to system design, implementation, and production deployment strengthening my skills in full-stack development, project management, and technical communication.",
+    startDate: formatDate(new Date("2025-06-05")),
+    endDate: formatDate(new Date("2025-09-06")),
   },
 ];
