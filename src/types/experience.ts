@@ -4,6 +4,6 @@ export interface Experience {
   endDate: string | "Present";
   startDate: string;
   company: string;
-  companyUrl: string;
+  websiteCompany: string;
   aboutRole: string;
 }
