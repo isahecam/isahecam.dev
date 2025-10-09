@@ -29,7 +29,7 @@ function Hero() {
           <strong>
             Systems and Industrial Information Technology Engineer{" "}
           </strong>
-          with over a year of experience as a
+          with over a year of experience as a{" "}
           <strong>full-stack developer</strong>. I&apos;m a passionate lifelong
           learner, driven by creativity and ambition to build meaningful web
           experiences and solutions.
