@@ -1,4 +1,5 @@
 import { MY_EXPERIENCE } from "@/data/experience";
+import { ArrowUpRight } from "lucide-react";
 
 function Experience() {
   return (
@@ -8,8 +9,8 @@ function Experience() {
       <div className='flex flex-col gap-y-4'>
         <ol className='relative space-y-6 border-s-2 border-[#4F4F4F]'>
           {MY_EXPERIENCE.map((experience, index) => (
-            <li className='experience-item ms-5 mt-1' key={index}>
-              <div className='absolute -start-[6.5px] mt-2 h-3 w-3 rounded-full border border-[#4F4F4F] bg-[#4F4F4F]' />
+            <li className='ms-5' key={index}>
+              <div className='absolute inset-0 -start-[7px] mt-2 size-3 rounded-full border border-white bg-gray-600' />
               <time className='mb-2 font-mono text-xs leading-none font-normal text-neutral-600'>
                 {experience.startDate} - {experience.endDate}
               </time>
@@ -18,19 +19,19 @@ function Experience() {
                   {experience.role}
                 </h3>
                 <a
-                  href={experience.companyUrl}
+                  href={experience.websiteCompany}
                   target='_blank'
                   rel='noopener'
-                  className='group flex w-max items-center text-sm text-pretty text-neutral-800 transition-colors duration-150 hover:text-black'>
+                  className='group flex w-max items-center text-sm font-medium text-pretty text-neutral-800 underline-offset-4 transition-colors duration-150 hover:text-black hover:underline'>
                   <span>{experience.company}</span>
-                  {/* <ArrowUpRight
+                  <ArrowUpRight
                     className='ml-1 duration-150 group-hover:translate-x-[1.5px]'
                     size={12}
-                    stroke-width={1.5}
-                  /> */}
+                    strokeWidth={1.5}
+                  />
                 </a>
               </div>
-              <p className='mt-3 font-mono text-xs text-pretty text-black/70'>
+              <p className='mt-3 font-mono text-xs text-pretty text-black/70 sm:text-sm'>
                 {experience.aboutRole}
               </p>
             </li>
