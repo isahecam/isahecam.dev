@@ -37,7 +37,7 @@ function Hero() {
       </div>
 
       <nav aria-label='Social media links'>
-        <ul className='flex items-center gap-x-4 font-mono'>
+        <ul className='flex flex-wrap items-center gap-x-6 gap-y-3 font-mono'>
           {SOCIAL_LINKS.map(link => (
             <li key={link.label} className='contents'>
               <SocialLink {...link} />
