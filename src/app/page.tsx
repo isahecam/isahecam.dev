@@ -5,7 +5,7 @@ import { Projects } from "@/sections/Projects";
 
 export default function Home() {
   return (
-    <main className='flex w-full flex-col px-6 py-10'>
+    <main className='flex w-full motion-preset-slide-right flex-col px-6 py-10 motion-duration-2000'>
       <Hero />
       <Experience />
       <Projects />
