@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} relative min-h-screen w-full antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} relative flex min-h-screen w-full flex-col antialiased`}>
         <div
           className='absolute inset-0 -z-10'
           style={{
@@ -57,7 +57,7 @@ export default function RootLayout({
         />
 
         <Navbar />
-        <div className='mx-auto max-w-3xl flex-1'>{children}</div>
+        <div className='mx-auto max-w-3xl flex-1 px-6 py-10'>{children}</div>
         <Footer />
       </body>
     </html>
