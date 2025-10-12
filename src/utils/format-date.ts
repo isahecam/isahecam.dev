@@ -1,5 +1,5 @@
-import { format } from "@formkit/tempo";
+import { format, Format } from "@formkit/tempo";
 
-export const formatDate = (date: Date) => {
-  return format(date, "MMMM YYYY", "en-US");
+export const formatDate = (date: Date, options?: Format, locale?: string) => {
+  return format(date, options, locale);
 };
