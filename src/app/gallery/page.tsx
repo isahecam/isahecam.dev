@@ -1,4 +1,49 @@
 import { Notice } from "@/components/Notice";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Brandon Hernández | Gallery",
+  description:
+    "These are some photos I've taken during my travels and adventures.",
+  keywords: [
+    "Brandon Hernández",
+    "isahecam",
+    "Portfolio",
+    "IT Engineer",
+    "Full Stack Developer",
+    "Developer",
+    "Photography",
+    "Travel",
+    "Gallery",
+  ],
+  authors: [{ name: "Brandon Hernández", url: "https://isahecam.dev" }],
+  creator: "Brandon Hernández",
+  openGraph: {
+    title: "Brandon Hernández | Gallery",
+    description:
+      "These are some photos I've taken during my travels and adventures.",
+    url: "https://isahecam.dev/gallery",
+    siteName: "Brandon Hernández",
+    locale: "en-US",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Brandon Hernández - Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brandon Hernández | Gallery",
+    description:
+      "These are some photos I've taken during my travels and adventures.",
+    images: ["/opengraph-image.png"],
+    creator: "@isahecam",
+  },
+};
 
 export default function Blog() {
   return (
