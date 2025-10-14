@@ -8,7 +8,7 @@ export default function Navbar() {
         {NAV_LINKS.map(({ id, to, label }) => (
           <li className='contents' key={id}>
             <Link
-              className='text-gray-500 underline-offset-4 hover:text-gray-600 hover:underline'
+              className='text-gray-700 underline-offset-4 transition-colors duration-150 hover:text-gray-500 hover:underline'
               key={id}
               href={to}>
               {label}
