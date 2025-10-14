@@ -8,7 +8,7 @@ export default async function PostList() {
   return (
     <ul className='flex flex-col'>
       {allPosts.map(post => (
-        <li key={post._meta.path}>
+        <li key={post._meta.path} className='contents'>
           <PostCard {...post} />
         </li>
       ))}
