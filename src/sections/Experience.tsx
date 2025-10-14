@@ -25,10 +25,10 @@ function Experience() {
                   href={experience.websiteCompany}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='group flex w-max items-center text-sm font-medium text-pretty text-gray-900 underline-offset-4 transition-colors duration-150 hover:text-gray-700 hover:underline'>
+                  className='group flex w-max items-center space-x-1 text-sm font-medium text-pretty text-gray-900 underline-offset-4 transition-colors duration-150 hover:text-gray-700 hover:underline'>
                   <span>{experience.company}</span>
                   <ArrowUpRight
-                    className='ml-1 duration-150 group-hover:translate-x-[1.5px]'
+                    className='duration-150 group-hover:translate-x-[1.5px]'
                     size={12}
                     strokeWidth={1.5}
                   />
