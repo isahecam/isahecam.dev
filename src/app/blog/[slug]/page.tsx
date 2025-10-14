@@ -1,6 +1,7 @@
 import { getPostBySlug } from "@/services/BlogService";
 import { formatDate } from "@/utils/format-date";
 import { Calendar, Leaf } from "lucide-react";
+import { findSourceMap } from "module";
 import { notFound } from "next/navigation";
 
 interface Props {
@@ -21,27 +22,25 @@ export default async function PostPage({ params }: Props) {
     <main className='flex w-full motion-preset-slide-right flex-col font-mono motion-duration-2000'>
       <article>
         <header className='flex flex-col space-y-2'>
-          <h2 className='text-3xl font-medium tracking-tighter md:text-4xl'>
+          <h2 className='font-mono text-3xl font-medium tracking-tighter text-black md:text-4xl'>
             {post.title}
           </h2>
-          <p className='text-sm text-balance text-neutral-800'>
-            {post.summary}
-          </p>
+          <p className='text-sm text-balance text-gray-700'>{post.summary}</p>
 
           <div className='flex gap-x-2 border-b border-neutral-300 py-4'>
-            <span className='inline-flex max-w-max items-center gap-x-2 rounded-md border border-neutral-300 bg-amber-50 px-2 py-1 text-xs font-medium text-nowrap text-black'>
+            <span className='inline-flex max-w-max items-center gap-x-2 rounded-md border border-gray-400 bg-yellow-50 px-2 py-1 text-xs font-medium text-nowrap text-black'>
               <Leaf size={14} />
               <span className='font-mono text-xs font-medium'>
                 {post.category}
               </span>
             </span>
 
-            <span className='inline-flex max-w-max items-center gap-x-2 rounded-md border border-neutral-300 bg-amber-50 px-2 py-1 text-xs font-medium text-nowrap text-black'>
+            <span className='inline-flex max-w-max items-center gap-x-2 rounded-md border border-gray-400 bg-yellow-50 px-2 py-1 text-xs font-medium text-nowrap text-black'>
               <Calendar size={14} />
               <time
                 className='font-mono text-xs font-medium'
                 title='Published'
-                dateTime={post.date.toISOString()}>
+                dateTime={formatDate(post.date, "YYYY-MM-DD")}>
                 {formatDate(post.date, { date: "medium" }, "en-US")}
               </time>
             </span>
