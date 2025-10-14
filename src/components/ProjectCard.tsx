@@ -30,7 +30,7 @@ export default function ProjectCard({
         {description}
       </p>
 
-      <div className='flex items-center gap-x-2 overflow-x-auto'>
+      <div className='no-scrollbar flex items-center gap-x-2 overflow-x-auto'>
         {techStack.map(({ name, icon }) => (
           <TechBadge key={name} name={name} icon={icon} />
         ))}
