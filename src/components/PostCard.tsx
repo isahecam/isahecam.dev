@@ -24,7 +24,7 @@ export default function PostCard({
         </a>
         <p className='font-mono text-sm text-pretty text-gray-700'>{summary}</p>
       </header>
-      <div className='flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:justify-between'>
+      <div className='flex flex-row items-center justify-between'>
         <div className='flex gap-x-2'>
           <span className='inline-flex max-w-max items-center gap-x-2 rounded-md border border-gray-400 bg-yellow-50 px-2 py-1 text-xs font-medium text-nowrap text-black'>
             <Leaf size={14} />
@@ -43,7 +43,7 @@ export default function PostCard({
 
         <Link
           href={`/blog/${_meta.path}`}
-          className='group flex items-center justify-center space-x-1 text-sm tracking-tight text-gray-900 duration-150 hover:text-gray-700'>
+          className='group hidden items-center justify-center space-x-1 text-sm tracking-tight text-gray-900 duration-150 hover:text-gray-700 sm:flex'>
           <span className='font-mono text-sm'>Read more</span>
           <ChevronRight
             size={14}
