@@ -16,7 +16,7 @@ function Hero() {
           <h1 className='font-mono text-2xl font-bold text-black md:text-4xl'>
             Brandon Hernández
           </h1>
-          <p className='font-mono text-sm text-black/70'>
+          <p className='font-mono text-sm text-gray-700'>
             Dev | Visionary | IT Engineer
           </p>
         </div>
@@ -24,7 +24,7 @@ function Hero() {
 
       <div className='space-y-3'>
         <h2 className='font-mono text-xl text-black'>Brandon Here! 👋</h2>
-        <p className='font-mono text-sm text-pretty text-[#4F4F4F]'>
+        <p className='font-mono text-sm text-pretty text-gray-700'>
           I&apos;m a{" "}
           <strong>
             Systems and Industrial Information Technology Engineer{" "}
