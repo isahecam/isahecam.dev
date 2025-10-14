@@ -21,9 +21,25 @@ export const metadata: Metadata = {
     description:
       "These are some articles I've written about web development, life, and more.",
     url: "https://isahecam.dev/blog",
-    siteName: "Brandon Hernández | Blog",
+    siteName: "Brandon Hernández",
     locale: "en-US",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Brandon Hernández - Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brandon Hernández | Blog",
+    description:
+      "These are some articles I've written about web development, life, and more.",
+    images: ["/opengraph-image.png"],
+    creator: "@isahecam",
   },
 };
 
