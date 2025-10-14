@@ -2,9 +2,67 @@ import { getPostBySlug } from "@/services/BlogService";
 import { formatDate } from "@/utils/format-date";
 import { Calendar, Leaf } from "lucide-react";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+    };
+  }
+
+  const title = `${post.title} | Brandon Hernández`;
+  const description = post.summary;
+  const url = `https://isahecam.dev/blog/${slug}`;
+
+  return {
+    title,
+    description,
+    keywords: [
+      "Brandon Hernández",
+      "isahecam",
+      "Portfolio",
+      "IT Engineer",
+      "Full Stack Developer",
+      "Developer",
+      "Web Development",
+      post.category,
+    ],
+    authors: [{ name: "Brandon Hernández", url: "https://isahecam.dev" }],
+    creator: "Brandon Hernández",
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Brandon Hernández",
+      locale: "en-US",
+      type: "article",
+      publishedTime: post.date.toISOString(),
+      authors: ["Brandon Hernández"],
+      images: [
+        {
+          url: "/opengraph-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Brandon Hernández - Portfolio",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/opengraph-image.png"],
+      creator: "@isahecam",
+    },
+  };
 }
 
 export default async function PostPage({ params }: Props) {
