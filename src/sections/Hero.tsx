@@ -7,10 +7,12 @@ function Hero() {
     <header className='flex flex-col gap-y-8'>
       <div className='inline-flex items-center gap-x-4'>
         <Image
+          className='aspect-square rounded-full object-cover'
           src='/profile.png'
           alt='Brandon Hernández - Systems & IT engineer'
           width={100}
           height={100}
+          priority={true}
         />
         <div className='flex flex-col gap-y-1'>
           <h1 className='font-mono text-2xl font-bold text-black md:text-4xl'>
