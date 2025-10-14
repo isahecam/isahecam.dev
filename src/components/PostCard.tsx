@@ -35,7 +35,7 @@ export default function PostCard({
             <time
               className='font-mono text-xs font-medium'
               title='Published'
-              dateTime={date.toISOString()}>
+              dateTime={formatDate(date, "YYYY-MM-DD")}>
               {formatDate(date, { date: "medium" }, "en-US")}
             </time>
           </span>
