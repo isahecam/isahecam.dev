@@ -1,5 +1,6 @@
 import { MY_EXPERIENCE } from "@/data/experience";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 function Experience() {
   return (
@@ -20,10 +21,10 @@ function Experience() {
                 <h3 className='text-lg font-semibold tracking-tight text-black'>
                   {experience.role}
                 </h3>
-                <a
+                <Link
                   href={experience.websiteCompany}
                   target='_blank'
-                  rel='noopener '
+                  rel='noopener noreferrer'
                   className='group flex w-max items-center text-sm font-medium text-pretty text-gray-900 underline-offset-4 transition-colors duration-150 hover:text-gray-700 hover:underline'>
                   <span>{experience.company}</span>
                   <ArrowUpRight
@@ -31,7 +32,7 @@ function Experience() {
                     size={12}
                     strokeWidth={1.5}
                   />
-                </a>
+                </Link>
               </div>
               <p className='mt-3 font-mono text-xs text-pretty text-gray-700 sm:text-sm'>
                 {experience.aboutRole}
