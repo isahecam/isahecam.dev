@@ -10,7 +10,7 @@ export default function ProjectCard({
   techStack,
 }: Project) {
   return (
-    <article className='flex flex-col gap-y-2 rounded-md border border-dashed border-[#4F4F4F] px-3 py-4 shadow-sm'>
+    <article className='flex flex-col gap-y-2 rounded-md border border-gray-700 p-4 shadow-sm'>
       <header className='flex w-full items-center justify-between'>
         <div className='inline-flex items-center gap-x-3'>
           <img
@@ -18,7 +18,7 @@ export default function ProjectCard({
             alt='Membo logo'
             className='size-6'
           />
-          <h3 className='font-mono font-bold text-pretty text-black/70'>
+          <h3 className='font-mono font-bold text-pretty text-gray-900'>
             {name}
           </h3>
         </div>
@@ -26,7 +26,7 @@ export default function ProjectCard({
         <StatusBadge status={status} />
       </header>
 
-      <p className='font-mono text-xs text-balance text-[#4F4F4F]'>
+      <p className='font-mono text-xs text-balance text-gray-700'>
         {description}
       </p>
 
