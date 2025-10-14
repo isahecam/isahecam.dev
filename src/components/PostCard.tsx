@@ -11,7 +11,7 @@ export default function PostCard({
   _meta,
 }: Pick<Post, "title" | "summary" | "date" | "category" | "_meta">) {
   return (
-    <article className='w-full rounded-md border border-gray-700 p-4'>
+    <article className='w-full rounded-md border border-gray-700 p-4 shadow-sm'>
       <header className='mb-3 flex flex-col space-y-1'>
         <a
           href={`/blog/${_meta.path}`}
