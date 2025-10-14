@@ -24,7 +24,7 @@ export default function PostCard({
         </a>
         <p className='font-mono text-sm text-pretty text-gray-700'>{summary}</p>
       </header>
-      <div className='flex items-center justify-between'>
+      <div className='flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:justify-between'>
         <div className='flex gap-x-2'>
           <span className='inline-flex max-w-max items-center gap-x-2 rounded-md border border-gray-400 bg-yellow-50 px-2 py-1 text-xs font-medium text-nowrap text-black'>
             <Leaf size={14} />
