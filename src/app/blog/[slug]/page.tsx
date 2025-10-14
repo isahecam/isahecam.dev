@@ -15,8 +15,6 @@ export default async function PostPage({ params }: Props) {
     notFound();
   }
 
-  console.log(post);
-
   return (
     <main className='flex w-full motion-preset-slide-right flex-col font-mono motion-duration-2000'>
       <article>
