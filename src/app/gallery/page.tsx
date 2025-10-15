@@ -50,10 +50,11 @@ export default function Blog() {
     <main className='flex w-full motion-preset-slide-right flex-col motion-duration-2000'>
       <header className='flex flex-col gap-y-1'>
         <h1 className='font-mono text-2xl font-bold text-balance text-black md:text-4xl'>
-          Some beautiful photos I've taken 📸
+          Some beautiful photos I&apos;ve taken 📸
         </h1>
         <p className='font-mono text-sm text-gray-700'>
-          These are some photos I've taken during my travels and adventures.
+          These are some photos I&apos;ve taken during my travels and
+          adventures.
         </p>
       </header>
 
