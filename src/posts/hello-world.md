@@ -1,16 +1,15 @@
 ---
-title: "The diary of developer"
+title: "Crafting the first post ✏️"
 summary: "Hi! everyone, I'm excited to share this space with us, I livened to craft this special project with the purpose of that in the future I can look towards the past and to look at fondly my growth."
-date: 2025-10-11
+date: 2025-10-13
 category: "Life"
 published: true
 ---
 
-## Hello world
+## Currently, I'm working in the content of this first post
 
-This is my first post!
-... rest of the content
+Soon, It will be done!
 
 ```js
-console.log("Hi!");
+console.log("Crafting the first post!!");
 ```
