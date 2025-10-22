@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Brandon Hernández",
       locale: "en-US",
       type: "article",
-      publishedTime: post.date.toISOString(),
+      publishedTime: post.date,
       authors: ["Brandon Hernández"],
       images: [
         {
