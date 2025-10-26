@@ -42,3 +42,6 @@ next-env.d.ts
 
 # directories for content-collections
 /.content-collections
+
+# vscode
+.vscode/
