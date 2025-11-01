@@ -1,8 +1,7 @@
-import { SocialLink } from "@/types/social-link";
 import { GitHub } from "@/components/icons/GitHub";
-import { Instagram } from "@/components/icons/Instagram";
-import { X } from "@/components/icons/X";
 import { LinkedIn } from "@/components/icons/LinkedIn";
+import { X } from "@/components/icons/X";
+import { SocialLink } from "@/types/social-link";
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
@@ -14,11 +13,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
     to: "https://www.linkedin.com/in/isahir-hernandez",
     label: "LinkedIn",
     icon: LinkedIn,
-  },
-  {
-    to: "https://instagram.com/isahecam",
-    label: "Instagram",
-    icon: Instagram,
   },
   {
     to: "https://twitter.com/isahecam",
