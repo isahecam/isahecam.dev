@@ -18,7 +18,7 @@ export function Hero() {
         <WorkStatus />
       </header>
 
-      <article className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6">
         <header className="space-y-2">
           <Heading level={1} className="mb-2">
             Brandon Hernández
@@ -34,7 +34,7 @@ export function Hero() {
             ambition to build meaningful web experiences and solutions.
           </Paragraph>
         </header>
-        <footer className="flex gap-2">
+        <nav aria-label="Social media and CV links" className="flex gap-2">
           <Link
             className={buttonVariants({ variant: "outline", size: "sm" })}
             href="https://github.com/isahecam"
@@ -55,8 +55,8 @@ export function Hero() {
             <FileTextIcon />
             CV
           </Link>
-        </footer>
-      </article>
+        </nav>
+      </div>
     </section>
   );
 }
