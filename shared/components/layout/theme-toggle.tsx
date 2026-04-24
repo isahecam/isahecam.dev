@@ -1,48 +1,26 @@
 "use client";
 
-import { Monitor, Moon, Sun } from "lucide-react";
+import { MoonIcon, SunMediumIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 import { Button } from "@/shared/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/shared/components/ui/dropdown-menu";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const switchTheme = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
 
-  const currentTheme = mounted ? (theme ?? "light") : "light";
+  const handleThemeToggleClick = () => {
+    if (!document.startViewTransition) switchTheme();
+    else document.startViewTransition(switchTheme);
+  };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon-sm" suppressHydrationWarning>
-          {currentTheme === "system" && <Monitor className="size-3 transition-all" suppressHydrationWarning />}
-          {currentTheme === "dark" && <Moon className="size-3 transition-all" suppressHydrationWarning />}
-          {currentTheme === "light" && <Sun className="size-3 transition-all" suppressHydrationWarning />}
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          <Sun className="size-3" /> Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <Moon className="size-3" /> Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          <Monitor className="size-3" /> System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button variant="outline" size="icon" aria-label="Theme Toggle" onClick={handleThemeToggleClick}>
+      <MoonIcon className="hidden [html.dark_&]:block" />
+      <SunMediumIcon className="hidden [html.light_&]:block" />
+    </Button>
   );
 }
