@@ -13,7 +13,7 @@ export function Projects() {
         <div className="h-0.5 flex-1 border-b border-dashed border-accent"></div>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {PROJECTS.map((project) => (
           <ProjectCard key={project.id} {...project} />
         ))}
