@@ -7,7 +7,8 @@ export function Projects() {
     <section>
       <header className="flex w-full items-center justify-between gap-2">
         <Heading className="text-xs text-nowrap text-accent" level={2}>
-          My Projects <span className="tracking-widest text-accent-foreground dark:text-accent">[3]</span>
+          My Projects{" "}
+          <span className="tracking-widest text-accent-foreground dark:text-accent">[{PROJECTS.length}]</span>
         </Heading>
         <div className="h-0.5 flex-1 border-b border-dashed border-accent"></div>
       </header>
