@@ -1,0 +1,44 @@
+import { MetaText } from "@/shared/components/layout/meta-text";
+import { Badge } from "@/shared/components/ui/badge";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/shared/components/ui/card";
+import { Status, StatusIndicator, StatusLabel } from "@/shared/components/ui/status";
+import { NativeBadge } from "@/shared/components/uitripled/native-badge-carbon";
+import { Technologies } from "@/shared/constants/technologies.constants";
+import { Project } from "@/shared/types/project.types";
+
+export function ProjectCard({ id, title, description, technologies, year, status }: Project) {
+  return (
+    <Card className="border-none shadow-none">
+      <CardHeader>
+        <div className="flex items-center gap-2">
+          <NativeBadge variant="glass" size="sm">
+            {id}
+          </NativeBadge>
+
+          <Status variant="warning">
+            <StatusIndicator />
+            <StatusLabel>{status}</StatusLabel>
+          </Status>
+
+          <MetaText className="ml-auto">{year}</MetaText>
+        </div>
+        <CardTitle className="text-balance">{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-wrap gap-2">
+        {technologies.map((tech) => {
+          const technology = Technologies.get(tech);
+          if (!technology) return null;
+          const Isotype = technology.isotype;
+
+          return (
+            <Badge variant="outline" key={tech}>
+              <Isotype className="mr-1 h-6 w-auto" />
+              {technology.name}
+            </Badge>
+          );
+        })}
+      </CardContent>
+    </Card>
+  );
+}
