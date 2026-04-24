@@ -20,7 +20,7 @@ export function Hero() {
 
       <div className="flex flex-col gap-6">
         <header className="space-y-2">
-          <Heading level={1} className="mb-2">
+          <Heading level={1} className="mb-2 font-bold text-balance">
             Brandon Hernández
           </Heading>
           <NativeTypewriter
