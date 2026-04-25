@@ -1,10 +1,14 @@
 ## Git Commits
 
-Follow Conventional Commits specification using commitlint.
+Follow Conventional Commits specification using commitlint with the `conventional-changelog-atom` preset.
 
 ### Format
 
 `type(scope?): subject`
+
+### Length
+
+- The commit header (`type(scope?): subject`) must not exceed 100 characters.
 
 ### Types
 
@@ -20,8 +24,14 @@ Follow Conventional Commits specification using commitlint.
 - style: formatting, missing semi colons, etc
 - test: adding or updating tests
 
+### Rules
+
+- Type must be lowercase
+- Subject must not end with a period
+- Scope must be lowercase if provided
+
 ### Examples
 
-- `chore: run tests on travis ci`
-- `fix(server): send cors headers`
-- `feat(blog): add comment section`
+- `feat(auth): add OAuth2 login with Google provider and session persistence`
+- `fix(api): handle null response from external service and return fallback value`
+- `chore(deps): update tailwindcss to v4 and adjust configuration accordingly`
