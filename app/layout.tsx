@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { Background } from "@/shared/components/layout/background";
 import { Header } from "@/shared/components/layout/header";
 import { TooltipProvider } from "@/shared/components/ui/tooltip";
 
@@ -28,15 +27,12 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning className={cn("antialiased", "font-mono", geistMono.className)}>
       <body className="flex min-h-full flex-col">
-        <div className="relative min-h-screen w-full">
-          <Background />
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <TooltipProvider>
-              <Header />
-              {children}
-            </TooltipProvider>
-          </ThemeProvider>
-        </div>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <TooltipProvider>
+            <Header />
+            {children}
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
