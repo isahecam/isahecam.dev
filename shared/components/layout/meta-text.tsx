@@ -6,7 +6,7 @@ interface Props extends React.HTMLAttributes<HTMLSpanElement> {
 
 export function MetaText({ children, className, ...props }: Props) {
   return (
-    <span className={cn("tracking-widest text-accent-foreground dark:text-accent", className)} {...props}>
+    <span className={cn("tracking-widest text-primary dark:text-primary-foreground", className)} {...props}>
       {children}
     </span>
   );
