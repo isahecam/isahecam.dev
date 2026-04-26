@@ -23,12 +23,8 @@ export function Hero() {
           <Heading level={1} className="mb-2 font-bold text-balance">
             Brandon Hernández
           </Heading>
-          <NativeTypewriter
-            className="block h-5.5 text-accent-foreground dark:text-accent"
-            content={["IT Engineer", "Full Stack Developer"]}
-            loop
-          />
-          <Paragraph className="max-w-prose text-muted-foreground dark:text-muted-foreground">
+          <NativeTypewriter className="block h-5.5" content={["IT Engineer", "Full Stack Developer"]} loop />
+          <Paragraph className="max-w-prose text-muted-foreground">
             I'm a <strong>Systems and Industrial Information Technology Engineer</strong> with over a year of experience
             as a <strong>full-stack developer</strong>. I'm a passionate lifelong learner, driven by creativity and
             ambition to build meaningful web experiences and solutions.
