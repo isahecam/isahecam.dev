@@ -7,6 +7,7 @@ import { GitHub } from "@/shared/components/icons/github";
 import { LinkedIn } from "@/shared/components/icons/linkedin";
 import { Heading } from "@/shared/components/typography/heading";
 import { Paragraph } from "@/shared/components/typography/paragraph";
+import { Avatar, AvatarFallback, AvatarImage } from "@/shared/components/ui/avatar";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { NativeTypewriter } from "@/shared/components/uitripled/native-typewriter-shadcnui";
 
@@ -19,11 +20,19 @@ export function Hero() {
       </header>
 
       <div className="flex flex-col gap-6">
-        <header className="space-y-2">
-          <Heading level={1} className="mb-2 font-bold text-balance">
-            Brandon Hernández
-          </Heading>
-          <NativeTypewriter className="block h-5.5" content={["IT Engineer", "Full Stack Developer"]} loop />
+        <header>
+          <div className="flex items-center gap-4">
+            <Avatar className="size-20 sm:size-24">
+              <AvatarImage src="/profile.png" alt="Brandon Hernández" loading="eager" width={96} height={96} />
+              <AvatarFallback>BH</AvatarFallback>
+            </Avatar>
+            <div className="space-y-2">
+              <Heading level={1} className="font-bold text-balance">
+                Brandon Hernández
+              </Heading>
+              <NativeTypewriter className="block h-5.5" content={["IT Engineer", "Full Stack Developer"]} loop />
+            </div>
+          </div>
           <Paragraph className="max-w-prose text-muted-foreground">
             I'm a <strong>Systems and Industrial Information Technology Engineer</strong> with over a year of experience
             as a <strong>full-stack developer</strong>. I'm a passionate lifelong learner, driven by creativity and
