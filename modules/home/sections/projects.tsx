@@ -4,7 +4,7 @@ import { PROJECTS } from "@/shared/constants/projects.constants";
 
 export function Projects() {
   return (
-    <section>
+    <section className="flex flex-col gap-6">
       <header className="flex w-full items-center justify-between gap-2">
         <Heading className="text-xs text-nowrap text-primary" level={2}>
           My Projects <span className="tracking-widest">[{PROJECTS.length}]</span>
