@@ -1,6 +1,7 @@
 import { FileTextIcon } from "lucide-react";
 import Link from "next/link";
 
+import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { PromptTerminalMeta } from "@/modules/home/components/prompt-terminal-meta";
 import { WorkStatus } from "@/modules/home/components/work-status";
 import { GitHub } from "@/shared/components/icons/github";
@@ -17,6 +18,7 @@ export function Hero() {
       <header className="space-y-4">
         <PromptTerminalMeta />
         <WorkStatus />
+        <NowPlayingStatus />
       </header>
 
       <div className="flex flex-col gap-6">
