@@ -11,6 +11,7 @@ import { Paragraph } from "@/shared/components/typography/paragraph";
 import { Avatar, AvatarFallback, AvatarImage } from "@/shared/components/ui/avatar";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { NativeTypewriter } from "@/shared/components/uitripled/native-typewriter-shadcnui";
+import { ME } from "@/shared/constants/portfolio.constants";
 
 export function Hero() {
   return (
@@ -25,21 +26,17 @@ export function Hero() {
         <header>
           <div className="flex items-center gap-4">
             <Avatar className="size-20 sm:size-24">
-              <AvatarImage src="/profile.png" alt="Brandon Hernández" loading="eager" width={96} height={96} />
+              <AvatarImage src={ME.avatar} alt={ME.displayName} loading="eager" width={96} height={96} />
               <AvatarFallback>BH</AvatarFallback>
             </Avatar>
             <div className="space-y-2">
               <Heading level={1} className="font-bold text-balance">
-                Brandon Hernández
+                {ME.displayName}
               </Heading>
               <NativeTypewriter className="block h-5.5" content={["IT Engineer", "Full Stack Developer"]} loop />
             </div>
           </div>
-          <Paragraph className="max-w-prose text-muted-foreground">
-            I'm a <strong>Systems and Industrial Information Technology Engineer</strong> with over a year of experience
-            as a <strong>full-stack developer</strong>. I'm a passionate lifelong learner, driven by creativity and
-            ambition to build meaningful web experiences and solutions.
-          </Paragraph>
+          <Paragraph className="max-w-prose text-muted-foreground">{ME.bio}</Paragraph>
         </header>
         <nav aria-label="Social media and CV links" className="flex gap-2">
           <Link
