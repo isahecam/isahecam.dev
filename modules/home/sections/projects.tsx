@@ -6,10 +6,9 @@ export function Projects() {
   return (
     <section className="flex flex-col gap-6">
       <header className="flex w-full items-center justify-between gap-2">
-        <Heading className="text-xs text-nowrap text-primary" level={2}>
-          My Projects <span className="tracking-widest">[{PROJECTS.length}]</span>
+        <Heading className="text-xs font-bold text-balance text-muted-foreground" level={2}>
+          // mis proyectos <span className="tracking-widest">[{PROJECTS.length}]</span>
         </Heading>
-        <div className="h-0.5 flex-1 border-b border-dashed border-primary"></div>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2">

@@ -17,10 +17,9 @@ export function Education() {
   return (
     <section className="flex flex-col gap-6">
       <header className="flex w-full items-center justify-between gap-2">
-        <Heading className="text-xs text-nowrap text-primary" level={2}>
-          Educación
+        <Heading className="text-xs font-bold text-balance text-muted-foreground" level={2}>
+          // educación
         </Heading>
-        <div className="h-0.5 flex-1 border-b border-dashed border-primary" />
       </header>
 
       <Timeline activeIndex={2}>
