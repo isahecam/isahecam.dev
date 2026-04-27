@@ -8,7 +8,7 @@ import { Project } from "@/shared/types/project.types";
 
 export function ProjectCard({ id, title, description, technologies, year, status }: Project) {
   return (
-    <Card className="border-none shadow-none">
+    <Card className="border-none shadow-none ring-0">
       <CardHeader>
         <div className="flex items-center gap-2">
           <NativeBadge variant="glass" size="sm">
