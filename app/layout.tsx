@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { Footer } from "@/shared/components/layout/footer";
 import { Header } from "@/shared/components/layout/header";
 import { TooltipProvider } from "@/shared/components/ui/tooltip";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           <TooltipProvider>
             <Header />
             {children}
+            <Footer />
           </TooltipProvider>
         </ThemeProvider>
       </body>
