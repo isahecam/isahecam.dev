@@ -1,3 +1,4 @@
+import { Contact } from "@/modules/home/sections/contact";
 import { Education } from "@/modules/home/sections/education";
 import { Experience } from "@/modules/home/sections/experience";
 import { Hero } from "@/modules/home/sections/hero";
@@ -12,6 +13,7 @@ export default function Home() {
       <Experience />
       <Education />
       <Now />
+      <Contact />
     </main>
   );
 }
