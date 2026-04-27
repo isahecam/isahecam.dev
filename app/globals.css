@@ -118,6 +118,22 @@
   --grid-color: rgba(255, 255, 255, 0.1);
 }
 
+@keyframes equalizer {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class*="animate-equalizer"] {
+    animation-play-state: paused;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
