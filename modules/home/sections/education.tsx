@@ -18,7 +18,7 @@ export function Education() {
     <section className="flex flex-col gap-6">
       <header className="flex w-full items-center justify-between gap-2">
         <Heading className="text-xs text-nowrap text-primary" level={2}>
-          Educación <span className="tracking-widest">[{EDUCATIONS.length}]</span>
+          Educación
         </Heading>
         <div className="h-0.5 flex-1 border-b border-dashed border-primary" />
       </header>
@@ -30,10 +30,8 @@ export function Education() {
             <TimelineConnector />
             <TimelineContent>
               <TimelineHeader>
-                <div className="flex items-center justify-between gap-2">
-                  <TimelineTitle>{edu.degree}</TimelineTitle>
-                  <TimelineTime>{formatDateRange(edu.period.startDate, edu.period.endDate)}</TimelineTime>
-                </div>
+                <TimelineTitle>{edu.degree}</TimelineTitle>
+                <TimelineTime>{formatDateRange(edu.period.startDate, edu.period.endDate)}</TimelineTime>
                 <TimelineDescription>{edu.institution.name}</TimelineDescription>
               </TimelineHeader>
             </TimelineContent>
