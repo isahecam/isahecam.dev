@@ -23,7 +23,7 @@ export const ME = {
   summary:
     "Ingenerio en Sistemas y Tecnologías de la Información Industrial con más de 1 año de experiencia en desarrollo web. Apasionado por la tecnología, explorador y estusiasta de las nuevas tendencias en el mundo de la programación.",
 
-  avatar: "/profile.png",
+  avatar: "https://assets.isahecam.dev/images/avatar.png",
   ogImage: "https://assets.isahecam.dev/images/isahecam-avatar-ghibli.webp",
   keywords: [
     "isahecam",
