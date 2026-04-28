@@ -39,10 +39,7 @@ export async function getNowPlaying(): Promise<NowPlayingData> {
 
     const response = await fetch(`${process.env.SPOTIFY_API_URL}/me/player/currently-playing`, {
       headers: { Authorization: `Bearer ${access_token}` },
-      next: {
-        revalidate: 30,
-        tags: ["now-playing"],
-      },
+      cache: "no-store",
     });
 
     if (response.status === 204 || response.status > 400) return { isPlaying: false };
