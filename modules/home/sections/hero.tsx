@@ -1,4 +1,5 @@
 import { FileTextIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
@@ -15,14 +16,28 @@ import { ME } from "@/shared/constants/portfolio.constants";
 
 export function Hero() {
   return (
-    <section className="flex flex-col gap-8">
-      <header className="space-y-4">
+    <section className="relative flex flex-col gap-8 overflow-hidden py-16">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+        <div className="relative h-full w-full mask-[linear-gradient(to_left,black_0%,black_30%,transparent_65%)] sm:mask-[linear-gradient(to_left,black_0%,black_40%,transparent_70%)]">
+          <Image
+            src="https://assets.isahecam.dev/images/hero-background.jpg"
+            alt="Hero background"
+            fill
+            priority
+            loading="eager"
+            className="object-cover object-top-right"
+            sizes="(max-width: 640px) 100vw, 50vw"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-background via-background/75 to-transparent" />
+        </div>
+      </div>
+      <header className="relative z-10 space-y-4">
         <PromptTerminalMeta />
         <WorkStatus />
         <NowPlayingStatus />
       </header>
 
-      <div className="flex flex-col gap-6">
+      <div className="relative z-10 flex flex-col gap-6">
         <header>
           <div className="flex items-center gap-4">
             <Avatar className="size-20 sm:size-24">
