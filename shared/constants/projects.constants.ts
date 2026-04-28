@@ -10,4 +10,13 @@ export const PROJECTS = [
     year: 2026,
     status: "crafting",
   },
+  {
+    id: 2,
+    title: "Membo | Lleva un control de tus suscripciones",
+    description:
+      "Membo es una plataforma de gestión de suscripciones de servicios digitales para llevar un control en una sola vista.",
+    technologies: ["nextjs", "typescript", "react", "tailwindcss", "shadcn/ui", "drizzle-orm", "neon"],
+    year: 2026,
+    status: "crafting",
+  },
 ] as const satisfies Project[];
