@@ -39,23 +39,23 @@ export function Hero() {
           <Paragraph className="max-w-prose text-muted-foreground">{ME.bio}</Paragraph>
         </header>
         <nav aria-label="Social media and CV links" className="flex gap-2">
-          <Link
-            className={buttonVariants({ variant: "outline", size: "sm" })}
-            href="https://github.com/isahecam"
-            target="_blank">
+          <Link className={buttonVariants({ variant: "outline" })} href="https://github.com/isahecam" target="_blank">
             <GitHub />
             GitHub
           </Link>
 
           <Link
-            className={buttonVariants({ variant: "outline", size: "sm" })}
+            className={buttonVariants({ variant: "outline" })}
             href="https://www.linkedin.com/in/isahir-hernandez/"
             target="_blank">
             <LinkedIn />
             LinkedIn
           </Link>
 
-          <Link className={buttonVariants({ variant: "outline", size: "sm" })} href="/" download>
+          <Link
+            className={buttonVariants({ variant: "outline" })}
+            href="https://assets.isahecam.dev/files/CV_BRANDON_HERNANDEZ.pdf"
+            target="_blank">
             <FileTextIcon />
             CV
           </Link>
