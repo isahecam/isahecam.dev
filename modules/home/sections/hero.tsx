@@ -20,7 +20,7 @@ export function Hero() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
         <div className="relative h-full w-full mask-[linear-gradient(to_left,black_0%,black_30%,transparent_65%)] sm:mask-[linear-gradient(to_left,black_0%,black_40%,transparent_70%)]">
           <Image
-            src="https://assets.isahecam.dev/images/hero-background.jpg"
+            src="https://assets.isahecam.dev/images/ascii-art-hero-background.png"
             alt="Hero background"
             fill
             priority
