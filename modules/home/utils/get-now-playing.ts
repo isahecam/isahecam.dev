@@ -29,11 +29,23 @@ const getAccessToken = async (): Promise<string> => {
     }),
   });
 
+  if (!response.ok) throw new Error(`Token fetch failed: ${response.status}`);
+
   const data = await response.json();
   return data.access_token;
 };
 
 export async function getNowPlaying(): Promise<NowPlayingData> {
+  if (
+    !process.env.SPOTIFY_CLIENT_ID ||
+    !process.env.SPOTIFY_CLIENT_SECRET ||
+    !process.env.SPOTIFY_REFRESH_TOKEN ||
+    !process.env.SPOTIFY_ACCOUNT_API_URL ||
+    !process.env.SPOTIFY_API_URL
+  ) {
+    return { isPlaying: false };
+  }
+
   try {
     const access_token = await getAccessToken();
 
@@ -42,7 +54,7 @@ export async function getNowPlaying(): Promise<NowPlayingData> {
       cache: "no-store",
     });
 
-    if (response.status === 204 || response.status > 400) return { isPlaying: false };
+    if (response.status === 204 || response.status >= 400) return { isPlaying: false };
 
     const song = await response.json();
 
