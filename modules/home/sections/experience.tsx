@@ -52,6 +52,7 @@ export async function Experience() {
                 <TimelineTime>
                   {formatDateRange(exp.period.startDate, exp.period.endDate, {
                     locale,
+                    month: "long",
                     presentLabel: t("present"),
                   })}
                 </TimelineTime>

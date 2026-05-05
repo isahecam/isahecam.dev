@@ -39,6 +39,7 @@ export async function Education() {
                 <TimelineTime>
                   {formatDateRange(edu.period.startDate, edu.period.endDate, {
                     locale,
+                    month: "long",
                     presentLabel: t("present"),
                   })}
                 </TimelineTime>
