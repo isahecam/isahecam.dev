@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Footer } from "@/shared/components/layout/footer";
 import { Header } from "@/shared/components/layout/header";
+import { SkipToMainContent } from "@/shared/components/layout/skip-to-main-content";
 import { SiteJsonLd } from "@/shared/components/seo/site-json-ld";
 import { TooltipProvider } from "@/shared/components/ui/tooltip";
 import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
@@ -111,6 +112,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang={locale} suppressHydrationWarning className={cn("antialiased", geistMono.className)}>
       <body className="flex min-h-screen flex-col">
+        <SkipToMainContent />
         <SiteJsonLd />
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
