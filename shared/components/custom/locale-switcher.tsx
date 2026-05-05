@@ -1,7 +1,7 @@
 "use client";
 
 import { LanguagesIcon } from "lucide-react";
-import { Locale, useLocale } from "next-intl";
+import { Locale, useLocale, useTranslations } from "next-intl";
 
 import { Button } from "@/shared/components/ui/button";
 import {
@@ -17,13 +17,14 @@ interface Props {
 }
 
 export function LocaleSwitcher({ onLocaleChange }: Props) {
+  const t = useTranslations("a11y");
   const locale = useLocale();
 
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" aria-label="Language switcher">
-          <LanguagesIcon />
+        <Button variant="outline" size="icon" aria-label={t("language-switcher")}>
+          <LanguagesIcon aria-hidden />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -9,7 +9,8 @@ export async function PromptTerminalMeta() {
 
   return (
     <span className="inline-flex items-center gap-2 text-xs">
-      <TerminalIcon className="size-3" /> ~/{PORTFOLIO.nickname} $<TextFlip>{t.raw("header.flip-sentences")}</TextFlip>
+      <TerminalIcon aria-hidden className="size-3" /> ~/{PORTFOLIO.nickname} $
+      <TextFlip>{t.raw("header.flip-sentences")}</TextFlip>
     </span>
   );
 }

@@ -1,4 +1,14 @@
 {
+  "a11y": {
+    "skip-to-content": "Skip to main content",
+    "site-nav": "Site preferences",
+    "social-nav": "Social links and résumé",
+    "theme-toggle": "Toggle light or dark theme",
+    "language-switcher": "Change site language",
+    "logo-home": "Home — isahecam.dev",
+    "social-preview-alt": "Preview of {platform}",
+    "social-hover-hint": "Hover a link on the left to see a preview"
+  },
   "metadata": {
     "title": "Brandon Hernández | Full Stack Developer & IT Engineer",
     "description": "Full Stack Developer and IT Engineer with more than a year of experience in the development of scalable web interfaces and systems. Based in Puebla, Mexico. Professional portfolio of Brandon Hernández (isahecam).",
@@ -17,6 +27,15 @@
       "location": "Puebla, Mexico"
     },
     "typewriter-sentences": ["Full Stack Developer", "IT Engineer"],
-    "about-me": "<strong>Full Stack Developer</strong> and <strong>Systems and Industrial Information Technology Engineer</strong> with over a year of experience building web solutions. Specialized in creating scalable web interfaces and systems for different commercial sectors."
+    "about-me": "<strong>Full Stack Developer</strong> and <strong>Systems and Industrial Information Technology Engineer</strong> with over a year of experience building web solutions. Specialized in creating scalable web interfaces and systems for different commercial sectors.",
+    "spotify": {
+      "listening": "Listening",
+      "not-playing": "Not playing",
+      "badge-playing": "Spotify · now playing",
+      "badge-offline": "Spotify · offline",
+      "silence": "— silence —",
+      "nothing-playing": "Nothing playing right now",
+      "now-playing-prefix": "Now playing:"
+    }
   }
 }

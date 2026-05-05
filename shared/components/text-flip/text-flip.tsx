@@ -1,5 +1,6 @@
 "use client";
 
+import { useReducedMotion } from "framer-motion";
 import type { Transition, Variants } from "motion/react";
 import { AnimatePresence, motion } from "motion/react";
 import { Children, useEffect, useState } from "react";
@@ -53,10 +54,13 @@ export function TextFlip({
   onIndexChange,
 }: TextFlipProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const prefersReducedMotion = useReducedMotion();
 
   const items = Children.toArray(children);
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
+
     const timer = setInterval(() => {
       setCurrentIndex((prev) => {
         const next = (prev + 1) % items.length;
@@ -66,7 +70,11 @@ export function TextFlip({
     }, interval * 1000);
 
     return () => clearInterval(timer);
-  }, [items.length, interval, onIndexChange]);
+  }, [items.length, interval, onIndexChange, prefersReducedMotion]);
+
+  if (prefersReducedMotion) {
+    return <span className={cn("inline-block", className)}>{items[0]}</span>;
+  }
 
   return (
     <AnimatePresence mode="wait" initial={false}>

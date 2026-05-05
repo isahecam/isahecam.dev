@@ -20,7 +20,10 @@ import { PUBLIC_SOCIAL_URLS } from "@/shared/constants/public-social-urls.consta
 
 export async function Hero() {
   const t = await getTranslations("home");
+  const tA11y = await getTranslations("a11y");
   const tMeta = await getTranslations("metadata");
+  const typewriterSentences = t.raw("typewriter-sentences") as string[];
+  const typewriterSrText = typewriterSentences.join(" · ");
 
   return (
     <section className="relative flex flex-col gap-8 overflow-hidden py-16">
@@ -59,7 +62,10 @@ export async function Hero() {
               <Heading level={1} className="font-bold text-balance">
                 {PORTFOLIO.displayName}
               </Heading>
-              <NativeTypewriter className="block h-5.5" content={t.raw("typewriter-sentences")} loop speed={100} />
+              <span className="sr-only">{typewriterSrText}</span>
+              <div aria-hidden="true">
+                <NativeTypewriter className="block h-5.5" content={typewriterSentences} loop speed={100} />
+              </div>
             </div>
           </div>
           <Paragraph className="max-w-prose text-balance text-muted-foreground">
@@ -68,22 +74,31 @@ export async function Hero() {
             })}
           </Paragraph>
         </header>
-        <nav aria-label="Social media and CV links" className="flex gap-2">
-          <Link className={buttonVariants({ variant: "outline" })} href={PUBLIC_SOCIAL_URLS.github} target="_blank">
-            <GitHub />
+        <nav aria-label={tA11y("social-nav")} className="flex gap-2">
+          <Link
+            className={buttonVariants({ variant: "outline" })}
+            href={PUBLIC_SOCIAL_URLS.github}
+            rel="noopener noreferrer"
+            target="_blank">
+            <GitHub aria-hidden />
             GitHub
           </Link>
 
-          <Link className={buttonVariants({ variant: "outline" })} href={PUBLIC_SOCIAL_URLS.linkedIn} target="_blank">
-            <LinkedIn />
+          <Link
+            className={buttonVariants({ variant: "outline" })}
+            href={PUBLIC_SOCIAL_URLS.linkedIn}
+            rel="noopener noreferrer"
+            target="_blank">
+            <LinkedIn aria-hidden />
             LinkedIn
           </Link>
 
           <Link
             className={buttonVariants({ variant: "outline" })}
             href="https://assets.isahecam.dev/files/CV_BRANDON_HERNANDEZ.pdf"
+            rel="noopener noreferrer"
             target="_blank">
-            <FileTextIcon />
+            <FileTextIcon aria-hidden />
             CV
           </Link>
         </nav>

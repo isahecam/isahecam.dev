@@ -33,7 +33,7 @@ export function ProjectCard({ id, title, description, technologies, year, status
 
           return (
             <Badge variant="outline" key={tech}>
-              <Isotype className="mr-1 h-6 w-auto" />
+              <Isotype aria-hidden className="mr-1 h-6 w-auto" />
               {technology.name}
             </Badge>
           );

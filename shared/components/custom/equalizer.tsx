@@ -2,7 +2,7 @@ const BARS = [0, 0.2, 0.4];
 
 export function EqualizerIcon() {
   return (
-    <div className="flex items-end gap-px" role="img" aria-label="Reproduciendo">
+    <div className="flex items-end gap-px" aria-hidden="true">
       {BARS.map((delay) => (
         <span
           key={delay}

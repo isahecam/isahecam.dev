@@ -37,9 +37,10 @@ export function Experience() {
                   {exp.company.website && (
                     <Link
                       href={exp.company.website}
+                      rel="noopener noreferrer"
                       target="_blank"
                       className="inline-flex gap-1 underline-offset-4 hover:text-accent hover:underline">
-                      {exp.company.name} <ExternalLinkIcon className="size-3" />
+                      {exp.company.name} <ExternalLinkIcon aria-hidden className="size-3" />
                     </Link>
                   )}
                 </TimelineTitle>

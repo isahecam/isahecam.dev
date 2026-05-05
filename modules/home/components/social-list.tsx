@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRightIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -8,6 +9,7 @@ import { SOCIAL_LINKS } from "@/modules/home/constants/social.constants";
 import { Background } from "@/shared/components/layout/background";
 
 export function SocialList() {
+  const t = useTranslations("a11y");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const preview = SOCIAL_LINKS.find((l) => l.id === hoveredId);
@@ -30,7 +32,7 @@ export function SocialList() {
             </div>
             <div className="flex items-center gap-1 text-xs text-muted-foreground">
               <span>{link.handle}</span>
-              <ArrowUpRightIcon className="size-3" />
+              <ArrowUpRightIcon aria-hidden className="size-3" />
             </div>
           </Link>
         ))}
@@ -43,11 +45,11 @@ export function SocialList() {
           <img
             key={preview.id}
             src={preview.previewImage}
-            alt={`Preview de ${preview.platform}`}
+            alt={t("social-preview-alt", { platform: preview.platform })}
             className="h-full w-full object-cover object-top transition-opacity duration-300"
           />
         ) : (
-          <span className="font-mono text-xs text-muted-foreground">// hover sobre una red</span>
+          <span className="font-mono text-xs text-muted-foreground">{t("social-hover-hint")}</span>
         )}
       </div>
     </div>

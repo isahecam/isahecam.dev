@@ -1,4 +1,14 @@
 {
+  "a11y": {
+    "skip-to-content": "Saltar al contenido principal",
+    "site-nav": "Preferencias del sitio",
+    "social-nav": "Redes sociales y currículum",
+    "theme-toggle": "Alternar tema claro u oscuro",
+    "language-switcher": "Cambiar idioma del sitio",
+    "logo-home": "Inicio — isahecam.dev",
+    "social-preview-alt": "Vista previa de {platform}",
+    "social-hover-hint": "Pasa el cursor por un enlace de la izquierda para ver una vista previa"
+  },
   "metadata": {
     "title": "Brandon Hernández | Desarrollador Full Stack e Ingeniero en Sistemas y Tecnologías de la Información Industrial",
     "description": "Desarrollador Full Stack e ingeniero en Sistemas y Tecnologías de la Información Industrial con más de un año de experiencia en el desarrollo de interfaces y sistemas web escalables. Basado en Puebla, México. Portfolio profesional de Brandon Hernández (isahecam).",
@@ -20,6 +30,15 @@
       "Desarrollador Full Stack",
       "Ingeniero en Sistemas y Tecnologías de la Información Industrial"
     ],
-    "about-me": "<strong>Desarrollador Full Stack</strong> e <strong>Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con más de un año de experiencia desarrollando soluciones web. Especializado en la creación de interfaces y sistemas web escalables para distintos sectores comerciales."
+    "about-me": "<strong>Desarrollador Full Stack</strong> e <strong>Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con más de un año de experiencia desarrollando soluciones web. Especializado en la creación de interfaces y sistemas web escalables para distintos sectores comerciales.",
+    "spotify": {
+      "listening": "Escuchando",
+      "not-playing": "Sin reproducción",
+      "badge-playing": "Spotify · reproduciendo ahora",
+      "badge-offline": "Spotify · sin conexión",
+      "silence": "— silencio —",
+      "nothing-playing": "No hay nada sonando ahora",
+      "now-playing-prefix": "Reproduciendo:"
+    }
   }
 }
