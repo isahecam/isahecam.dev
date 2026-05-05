@@ -41,14 +41,17 @@
       "heading": "// ahora",
       "items": [
         {
+          "id": 1,
           "title": "Construyendo",
           "description": "Meeti, una plataforma de creación de meetups y comunidades para compartir tus gustos y intereses con otras personas."
         },
         {
+          "id": 2,
           "title": "Leyendo",
           "description": "The Pragmatic Programmer - Andrew Hunt y David Thomas."
         },
         {
+          "id": 3,
           "title": "Aprendiendo",
           "description": "Next.js a profundidad y Expo."
         }
@@ -59,10 +62,16 @@
       "present": "presente",
       "items": [
         {
-          "degree": "Ingeniería en Sistemas y Tecnologías de la Información Industrial"
+          "id": 1,
+          "degree": "Ingeniería en Sistemas y Tecnologías de la Información Industrial",
+          "institution": { "name": "Benemérita Universidad Autónoma de Puebla" },
+          "period": { "startDate": "2021-08-22", "endDate": "2025-06-22" }
         },
         {
-          "degree": "Bachillerato Tecnológico"
+          "id": 2,
+          "degree": "Bachillerato Tecnológico",
+          "institution": { "name": "Benemérita Universidad Autónoma de Puebla" },
+          "period": { "startDate": "2018-08-22", "endDate": "2021-06-22" }
         }
       ]
     },
@@ -71,7 +80,14 @@
       "present": "presente",
       "items": [
         {
+          "id": 1,
           "role": "Frontend Developer",
+          "company": {
+            "name": "XDEVELOP",
+            "website": "https://xdevelop.io",
+            "logo": "/logos/xdevelop.svg"
+          },
+          "period": { "startDate": "2025-03-03", "endDate": "2026-04-17" },
           "description": "Desarrollé interfaces web escalables para proyectos del sector logístico, con participación en la fase inicial de proyectos SaaS, cubriendo el ciclo completo de desarrollo en el área frontend."
         }
       ]
@@ -85,12 +101,20 @@
       },
       "items": [
         {
+          "id": 1,
           "title": "Meeti | Crea y comparte tus gustos con otras personas",
-          "description": "Meeti es una plataforma de creación de meetups y comunidades para compartir tus gustos e intereses con otras personas."
+          "description": "Meeti es una plataforma de creación de meetups y comunidades para compartir tus gustos e intereses con otras personas.",
+          "technologies": ["nextjs", "typescript", "react", "tailwindcss", "shadcn/ui", "drizzle-orm", "neon"],
+          "year": 2026,
+          "status": "crafting"
         },
         {
+          "id": 2,
           "title": "Membo | Lleva un control de tus suscripciones",
-          "description": "Membo es una plataforma de gestión de suscripciones de servicios digitales para llevar un control en una sola vista."
+          "description": "Membo es una plataforma de gestión de suscripciones de servicios digitales para llevar un control en una sola vista.",
+          "technologies": ["nextjs", "typescript", "react", "tailwindcss", "shadcn/ui", "drizzle-orm", "neon"],
+          "year": 2026,
+          "status": "crafting"
         }
       ]
     },
