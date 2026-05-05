@@ -88,7 +88,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const locale = await getLocale();
 
   return (
-    <html lang={locale} suppressHydrationWarning className={cn("antialiased", geistMono.variable)}>
+    <html lang={locale} suppressHydrationWarning className={cn("antialiased", geistMono.className)}>
       <body className="flex min-h-screen flex-col">
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
