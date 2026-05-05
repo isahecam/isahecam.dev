@@ -1,13 +1,13 @@
 import { getTranslations } from "next-intl/server";
 
 import { SpotifyPlayerCard } from "@/modules/home/components/spotify-player-card";
-import { NOW_ITEMS } from "@/modules/home/constants/now.constants";
+import { NowItem } from "@/modules/home/types/now.types";
 import { Heading } from "@/shared/components/typography/heading";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/shared/components/ui/card";
 
 export async function Now() {
   const t = await getTranslations("home.now");
-  const items = t.raw("items") as Array<{ title: string; description: string }>;
+  const items = t.raw("items") as NowItem[];
 
   return (
     <section className="flex flex-col gap-6">
@@ -18,13 +18,11 @@ export async function Now() {
       </header>
 
       <div className="grid grid-cols-1 gap-1 sm:grid-cols-3">
-        {NOW_ITEMS.map((item, index) => (
+        {items.map((item) => (
           <Card key={item.id} className="border-none shadow-none ring-0 hover:bg-muted">
             <CardHeader>
-              <CardTitle className="tracking-widest text-balance uppercase">
-                {items[index]?.title ?? item.title}
-              </CardTitle>
-              <CardDescription>{items[index]?.description ?? item.description}</CardDescription>
+              <CardTitle className="tracking-widest text-balance uppercase">{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
             </CardHeader>
           </Card>
         ))}

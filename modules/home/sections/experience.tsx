@@ -1,8 +1,7 @@
 import { ExternalLinkIcon } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
-import Link from "next/link";
 
-import { EXPERIENCES } from "@/modules/home/constants/experience.constants";
+import type { Experience } from "@/modules/home/types/experience.types";
 import { Heading } from "@/shared/components/typography/heading";
 import {
   Timeline,
@@ -20,7 +19,7 @@ import { formatDateRange } from "@/shared/utils";
 export async function Experience() {
   const locale = await getLocale();
   const t = await getTranslations("home.experience");
-  const items = t.raw("items") as Array<{ role: string; description: string }>;
+  const items = t.raw("items") as Experience[];
 
   return (
     <section className="flex flex-col gap-6">
@@ -31,22 +30,22 @@ export async function Experience() {
       </header>
 
       <Timeline activeIndex={0}>
-        {EXPERIENCES.map((exp, index) => (
+        {items.map((exp) => (
           <TimelineItem key={exp.id}>
             <TimelineDot />
             <TimelineConnector />
             <TimelineContent>
               <TimelineHeader>
                 <TimelineTitle>
-                  {items[index]?.role ?? exp.role} |{" "}
+                  {exp.role} |{" "}
                   {exp.company.website && (
-                    <Link
+                    <a
                       href={exp.company.website}
                       rel="noopener noreferrer"
                       target="_blank"
                       className="inline-flex gap-1 underline-offset-4 hover:text-accent hover:underline">
                       {exp.company.name} <ExternalLinkIcon aria-hidden className="size-3" />
-                    </Link>
+                    </a>
                   )}
                 </TimelineTitle>
                 <TimelineTime>
@@ -56,7 +55,7 @@ export async function Experience() {
                     presentLabel: t("present"),
                   })}
                 </TimelineTime>
-                <TimelineDescription>{items[index]?.description ?? exp.description}</TimelineDescription>
+                <TimelineDescription>{exp.description}</TimelineDescription>
               </TimelineHeader>
             </TimelineContent>
           </TimelineItem>
