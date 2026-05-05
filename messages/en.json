@@ -28,6 +28,69 @@
     },
     "typewriter-sentences": ["Full Stack Developer", "IT Engineer"],
     "about-me": "<strong>Full Stack Developer</strong> and <strong>Systems and Industrial Information Technology Engineer</strong> with over a year of experience building web solutions. Specialized in creating scalable web interfaces and systems for different commercial sectors.",
+    "footer": {
+      "tagline": "made with care · love by code · my 🧠"
+    },
+    "contact": {
+      "heading": "// find me on · hover for preview"
+    },
+    "now": {
+      "heading": "// now",
+      "items": [
+        {
+          "title": "Building",
+          "description": "Meeti, a meetup and community creation platform to share your interests and hobbies with other people."
+        },
+        {
+          "title": "Reading",
+          "description": "The Pragmatic Programmer - Andrew Hunt and David Thomas."
+        },
+        {
+          "title": "Learning",
+          "description": "Next.js in depth and Expo."
+        }
+      ]
+    },
+    "education": {
+      "heading": "// education",
+      "present": "present",
+      "items": [
+        {
+          "degree": "Systems and Industrial Information Technology Engineering"
+        },
+        {
+          "degree": "Technological High School"
+        }
+      ]
+    },
+    "experience": {
+      "heading": "// experience",
+      "present": "present",
+      "items": [
+        {
+          "role": "Frontend Developer",
+          "description": "Built scalable web interfaces for logistics projects, with involvement in the early stage of SaaS projects, covering the full development cycle within the frontend area."
+        }
+      ]
+    },
+    "projects": {
+      "heading": "// my projects",
+      "status": {
+        "crafting": "crafting",
+        "completed": "completed",
+        "in-review": "in review"
+      },
+      "items": [
+        {
+          "title": "Meeti | Create and share your interests with other people",
+          "description": "Meeti is a meetup and community creation platform to share your interests and hobbies with other people."
+        },
+        {
+          "title": "Membo | Keep track of your subscriptions",
+          "description": "Membo is a digital subscription management platform to track all your services in a single view."
+        }
+      ]
+    },
     "spotify": {
       "listening": "Listening",
       "not-playing": "Not playing",

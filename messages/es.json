@@ -31,6 +31,69 @@
       "Ingeniero en Sistemas y Tecnologías de la Información Industrial"
     ],
     "about-me": "<strong>Desarrollador Full Stack</strong> e <strong>Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con más de un año de experiencia desarrollando soluciones web. Especializado en la creación de interfaces y sistemas web escalables para distintos sectores comerciales.",
+    "footer": {
+      "tagline": "hecho con cariño · amor por el código · mi 🧠"
+    },
+    "contact": {
+      "heading": "// encuéntrame en · hover para preview"
+    },
+    "now": {
+      "heading": "// ahora",
+      "items": [
+        {
+          "title": "Construyendo",
+          "description": "Meeti, una plataforma de creación de meetups y comunidades para compartir tus gustos y intereses con otras personas."
+        },
+        {
+          "title": "Leyendo",
+          "description": "The Pragmatic Programmer - Andrew Hunt y David Thomas."
+        },
+        {
+          "title": "Aprendiendo",
+          "description": "Next.js a profundidad y Expo."
+        }
+      ]
+    },
+    "education": {
+      "heading": "// educación",
+      "present": "presente",
+      "items": [
+        {
+          "degree": "Ingeniería en Sistemas y Tecnologías de la Información Industrial"
+        },
+        {
+          "degree": "Bachillerato Tecnológico"
+        }
+      ]
+    },
+    "experience": {
+      "heading": "// experiencia",
+      "present": "presente",
+      "items": [
+        {
+          "role": "Frontend Developer",
+          "description": "Desarrollé interfaces web escalables para proyectos del sector logístico, con participación en la fase inicial de proyectos SaaS, cubriendo el ciclo completo de desarrollo en el área frontend."
+        }
+      ]
+    },
+    "projects": {
+      "heading": "// mis proyectos",
+      "status": {
+        "crafting": "en construcción",
+        "completed": "completado",
+        "in-review": "en revisión"
+      },
+      "items": [
+        {
+          "title": "Meeti | Crea y comparte tus gustos con otras personas",
+          "description": "Meeti es una plataforma de creación de meetups y comunidades para compartir tus gustos e intereses con otras personas."
+        },
+        {
+          "title": "Membo | Lleva un control de tus suscripciones",
+          "description": "Membo es una plataforma de gestión de suscripciones de servicios digitales para llevar un control en una sola vista."
+        }
+      ]
+    },
     "spotify": {
       "listening": "Escuchando",
       "not-playing": "Sin reproducción",
