@@ -1,6 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
 
-import { EDUCATIONS } from "@/modules/home/constants/education.constants";
+import type { Education } from "@/modules/home/types/education.types";
 import { Heading } from "@/shared/components/typography/heading";
 import {
   Timeline,
@@ -18,7 +18,7 @@ import { formatDateRange } from "@/shared/utils";
 export async function Education() {
   const locale = await getLocale();
   const t = await getTranslations("home.education");
-  const items = t.raw("items") as Array<{ degree: string }>;
+  const items = t.raw("items") as Education[];
 
   return (
     <section className="flex flex-col gap-6">
@@ -29,13 +29,13 @@ export async function Education() {
       </header>
 
       <Timeline activeIndex={2}>
-        {EDUCATIONS.map((edu, index) => (
+        {items.map((edu) => (
           <TimelineItem key={edu.id}>
             <TimelineDot />
             <TimelineConnector />
             <TimelineContent>
               <TimelineHeader>
-                <TimelineTitle>{items[index]?.degree ?? edu.degree}</TimelineTitle>
+                <TimelineTitle>{edu.degree}</TimelineTitle>
                 <TimelineTime>
                   {formatDateRange(edu.period.startDate, edu.period.endDate, {
                     locale,
