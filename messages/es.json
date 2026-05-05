@@ -1,5 +1,25 @@
 {
-  "Home": {
-    "about-me": "Frontend Developer y Ingenerio en Sistemas y Tecnologías de la Información Industrial con más de 1 año de experiencia en desarrollo web. Apasionado por la tecnología, explorador y estusiasta de las nuevas tendencias en el mundo de la programación."
+  "metadata": {
+    "title": "Brandon Hernández | Desarrollador Full Stack e Ingeniero en Sistemas y Tecnologías de la Información Industrial",
+    "description": "Desarrollador Full Stack e ingeniero en Sistemas y Tecnologías de la Información Industrial con más de un año de experiencia en el desarrollo de interfaces y sistemas web escalables. Basado en Puebla, México. Portfolio profesional de Brandon Hernández (isahecam).",
+    "og-image-alt": "Patrón decorativo de arte ASCII estilo terminal como fondo del perfil"
+  },
+  "home": {
+    "header": {
+      "flip-sentences": [
+        "Me encanta programar ❤️",
+        "Obsesionado con los detalles 🎨",
+        "Siempre hay algo nuevo por aprender 💡"
+      ],
+      "availability": {
+        "label": "Disponible para trabajar"
+      },
+      "location": "Puebla, México"
+    },
+    "typewriter-sentences": [
+      "Desarrollador Full Stack",
+      "Ingeniero en Sistemas y Tecnologías de la Información Industrial"
+    ],
+    "about-me": "<strong>Desarrollador Full Stack</strong> e <strong>Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con más de un año de experiencia desarrollando soluciones web. Especializado en la creación de interfaces y sistemas web escalables para distintos sectores comerciales."
   }
 }

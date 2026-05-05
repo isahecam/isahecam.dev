@@ -1,5 +1,22 @@
 {
-  "Home": {
-    "about-me": "Systems and Industrial Information Technology Engineer with over a year of experience as a full-stack developer. Passionate lifelong learner, driven by creativity and ambition to build meaningful web experiences and solutions."
+  "metadata": {
+    "title": "Brandon Hernández | Full Stack Developer & IT Engineer",
+    "description": "Full Stack Developer and IT Engineer with more than a year of experience in the development of scalable web interfaces and systems. Based in Puebla, Mexico. Professional portfolio of Brandon Hernández (isahecam).",
+    "og-image-alt": "Decorative ASCII art terminal-style pattern as profile background"
+  },
+  "home": {
+    "header": {
+      "flip-sentences": [
+        "I love to code ❤️",
+        "Obsessed with the details 🎨",
+        "There's always something new to learn 💡"
+      ],
+      "availability": {
+        "label": "Open to work"
+      },
+      "location": "Puebla, Mexico"
+    },
+    "typewriter-sentences": ["Full Stack Developer", "IT Engineer"],
+    "about-me": "<strong>Full Stack Developer</strong> and <strong>Systems and Industrial Information Technology Engineer</strong> with over a year of experience building web solutions. Specialized in creating scalable web interfaces and systems for different commercial sectors."
   }
 }
