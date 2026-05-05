@@ -1,4 +1,5 @@
 import { FileTextIcon } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,7 +15,9 @@ import { buttonVariants } from "@/shared/components/ui/button";
 import { NativeTypewriter } from "@/shared/components/uitripled/native-typewriter-shadcnui";
 import { ME } from "@/shared/constants/portfolio.constants";
 
-export function Hero() {
+export async function Hero() {
+  const t = await getTranslations("Home");
+
   return (
     <section className="relative flex flex-col gap-8 overflow-hidden py-16">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
@@ -51,7 +54,7 @@ export function Hero() {
               <NativeTypewriter className="block h-5.5" content={["IT Engineer", "Full Stack Developer"]} loop />
             </div>
           </div>
-          <Paragraph className="max-w-prose text-muted-foreground">{ME.bio}</Paragraph>
+          <Paragraph className="max-w-prose text-muted-foreground">{t("about-me")}</Paragraph>
         </header>
         <nav aria-label="Social media and CV links" className="flex gap-2">
           <Link className={buttonVariants({ variant: "outline" })} href="https://github.com/isahecam" target="_blank">
