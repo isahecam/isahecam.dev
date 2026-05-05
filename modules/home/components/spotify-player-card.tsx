@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
@@ -13,13 +14,14 @@ interface Props {
 
 export async function SpotifyPlayerCard({ className }: Props) {
   const data = await getNowPlaying();
+  const t = await getTranslations("home.spotify");
 
   if (!data.isPlaying) return <SpotifyEmptyCard className={className} />;
 
   return (
     <Card className={cn("border-none shadow-none ring-0 hover:bg-muted", className)}>
       <CardHeader className="flex flex-row items-center justify-between border-b border-dashed">
-        <CardTitle className="tracking-widest uppercase">Escuchando</CardTitle>
+        <CardTitle className="tracking-widest uppercase">{t("listening")}</CardTitle>
 
         <CardAction>
           <EqualizerIcon />
@@ -41,8 +43,8 @@ export async function SpotifyPlayerCard({ className }: Props) {
 
         <div className="flex min-w-0 flex-1 flex-col gap-0.5">
           <div className="flex items-center gap-1 text-xs text-muted-foreground">
-            <Spotify className="size-3" />
-            <span>spotify · now playing</span>
+            <Spotify aria-hidden className="size-3" />
+            <span>{t("badge-playing")}</span>
           </div>
           <p className="truncate font-medium">{data.title}</p>
           <p className="truncate text-xs text-muted-foreground">{data.artist}</p>

@@ -1,7 +1,7 @@
 import { ExternalLinkIcon } from "lucide-react";
-import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
 
-import { EXPERIENCES } from "@/modules/home/constants/experience.constants";
+import type { Experience } from "@/modules/home/types/experience.types";
 import { Heading } from "@/shared/components/typography/heading";
 import {
   Timeline,
@@ -16,17 +16,21 @@ import {
 } from "@/shared/components/ui/timeline";
 import { formatDateRange } from "@/shared/utils";
 
-export function Experience() {
+export async function Experience() {
+  const locale = await getLocale();
+  const t = await getTranslations("home.experience");
+  const items = t.raw("items") as Experience[];
+
   return (
     <section className="flex flex-col gap-6">
       <header className="flex w-full items-center justify-between gap-2">
         <Heading className="text-xs font-bold text-balance text-muted-foreground" level={2}>
-          // experiencia
+          {t("heading")}
         </Heading>
       </header>
 
       <Timeline activeIndex={0}>
-        {EXPERIENCES.map((exp) => (
+        {items.map((exp) => (
           <TimelineItem key={exp.id}>
             <TimelineDot />
             <TimelineConnector />
@@ -35,15 +39,22 @@ export function Experience() {
                 <TimelineTitle>
                   {exp.role} |{" "}
                   {exp.company.website && (
-                    <Link
+                    <a
                       href={exp.company.website}
+                      rel="noopener noreferrer"
                       target="_blank"
                       className="inline-flex gap-1 underline-offset-4 hover:text-accent hover:underline">
-                      {exp.company.name} <ExternalLinkIcon className="size-3" />
-                    </Link>
+                      {exp.company.name} <ExternalLinkIcon aria-hidden className="size-3" />
+                    </a>
                   )}
                 </TimelineTitle>
-                <TimelineTime>{formatDateRange(exp.period.startDate, exp.period.endDate)}</TimelineTime>
+                <TimelineTime>
+                  {formatDateRange(exp.period.startDate, exp.period.endDate, {
+                    locale,
+                    month: "long",
+                    presentLabel: t("present"),
+                  })}
+                </TimelineTime>
                 <TimelineDescription>{exp.description}</TimelineDescription>
               </TimelineHeader>
             </TimelineContent>

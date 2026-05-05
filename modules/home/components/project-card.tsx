@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server";
+
 import { MetaText } from "@/shared/components/layout/meta-text";
 import { Badge } from "@/shared/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/shared/components/ui/card";
@@ -6,7 +8,9 @@ import { NativeBadge } from "@/shared/components/uitripled/native-badge-carbon";
 import { Technologies } from "@/shared/constants/technologies.constants";
 import { Project } from "@/shared/types/project.types";
 
-export function ProjectCard({ id, title, description, technologies, year, status }: Project) {
+export async function ProjectCard({ id, title, description, technologies, year, status }: Project) {
+  const t = await getTranslations("home.projects");
+
   return (
     <Card className="border-none shadow-none ring-0">
       <CardHeader>
@@ -17,7 +21,7 @@ export function ProjectCard({ id, title, description, technologies, year, status
 
           <Status variant="warning">
             <StatusIndicator />
-            <StatusLabel>{status}</StatusLabel>
+            <StatusLabel>{t(`status.${status}`)}</StatusLabel>
           </Status>
 
           <MetaText className="ml-auto">{year}</MetaText>
@@ -33,7 +37,7 @@ export function ProjectCard({ id, title, description, technologies, year, status
 
           return (
             <Badge variant="outline" key={tech}>
-              <Isotype className="mr-1 h-6 w-auto" />
+              <Isotype aria-hidden className="mr-1 h-6 w-auto" />
               {technology.name}
             </Badge>
           );

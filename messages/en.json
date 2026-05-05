@@ -1,0 +1,128 @@
+{
+  "a11y": {
+    "skip-to-content": "Skip to main content",
+    "site-nav": "Site preferences",
+    "social-nav": "Social links and résumé",
+    "theme-toggle": "Toggle light or dark theme",
+    "language-switcher": "Change site language",
+    "logo-home": "Home — isahecam.dev",
+    "social-preview-alt": "Preview of {platform}",
+    "social-hover-hint": "Hover a link on the left to see a preview"
+  },
+  "metadata": {
+    "title": "Brandon Hernández | Full Stack Developer & IT Engineer",
+    "description": "Full Stack Developer and IT Engineer with more than a year of experience in the development of scalable web interfaces and systems. Based in Puebla, Mexico. Professional portfolio of Brandon Hernández (isahecam).",
+    "og-image-alt": "Decorative ASCII art terminal-style pattern as profile background"
+  },
+  "home": {
+    "header": {
+      "flip-sentences": [
+        "I love to code ❤️",
+        "Obsessed with the details 🎨",
+        "There's always something new to learn 💡"
+      ],
+      "availability": {
+        "label": "Open to work"
+      },
+      "location": "Puebla, Mexico"
+    },
+    "typewriter-sentences": ["Full Stack Developer", "IT Engineer"],
+    "about-me": "<strong>Full Stack Developer</strong> and <strong>Systems and Industrial Information Technology Engineer</strong> with over a year of experience building web solutions. Specialized in creating scalable web interfaces and systems for different commercial sectors.",
+    "footer": {
+      "tagline": "made with care · love by code · my 🧠"
+    },
+    "contact": {
+      "heading": "// find me on · hover for preview"
+    },
+    "now": {
+      "heading": "// now",
+      "items": [
+        {
+          "id": 1,
+          "title": "Building",
+          "description": "Meeti, a meetup and community creation platform to share your interests and hobbies with other people."
+        },
+        {
+          "id": 2,
+          "title": "Reading",
+          "description": "The Pragmatic Programmer - Andrew Hunt and David Thomas."
+        },
+        {
+          "id": 3,
+          "title": "Learning",
+          "description": "Next.js in depth and Expo."
+        }
+      ]
+    },
+    "education": {
+      "heading": "// education",
+      "present": "present",
+      "items": [
+        {
+          "id": 1,
+          "degree": "Systems and Industrial Information Technology Engineering",
+          "institution": { "name": "Benemérita Universidad Autónoma de Puebla" },
+          "period": { "startDate": "2021-08-22", "endDate": "2025-06-22" }
+        },
+        {
+          "id": 2,
+          "degree": "Technological High School",
+          "institution": { "name": "Benemérita Universidad Autónoma de Puebla" },
+          "period": { "startDate": "2018-08-22", "endDate": "2021-06-22" }
+        }
+      ]
+    },
+    "experience": {
+      "heading": "// experience",
+      "present": "present",
+      "items": [
+        {
+          "id": 1,
+          "role": "Frontend Developer",
+          "company": {
+            "name": "XDEVELOP",
+            "website": "https://xdevelop.io",
+            "logo": "/logos/xdevelop.svg"
+          },
+          "period": { "startDate": "2025-03-03", "endDate": "2026-04-17" },
+          "description": "Built scalable web interfaces for logistics projects, with involvement in the early stage of SaaS projects, covering the full development cycle within the frontend area."
+        }
+      ]
+    },
+    "projects": {
+      "heading": "// my projects",
+      "status": {
+        "crafting": "crafting",
+        "completed": "completed",
+        "in-review": "in review"
+      },
+      "items": [
+        {
+          "id": 1,
+          "title": "Meeti | Create and share your interests with other people",
+          "description": "Meeti is a meetup and community creation platform to share your interests and hobbies with other people.",
+          "technologies": ["nextjs", "typescript", "react", "tailwindcss", "shadcn/ui", "drizzle-orm", "neon"],
+          "year": 2026,
+          "status": "crafting"
+        },
+        {
+          "id": 2,
+          "title": "Membo | Keep track of your subscriptions",
+          "description": "Membo is a digital subscription management platform to track all your services in a single view.",
+          "technologies": ["nextjs", "typescript", "react", "tailwindcss", "shadcn/ui", "drizzle-orm", "neon"],
+          "year": 2026,
+          "status": "crafting"
+        }
+      ]
+    },
+    "spotify": {
+      "listening": "Listening",
+      "not-playing": "Not playing",
+      "badge-playing": "Spotify · now playing",
+      "badge-offline": "Spotify · offline",
+      "silence": "— silence —",
+      "nothing-playing": "Nothing playing right now",
+      "now-playing-prefix": "Now playing:"
+    }
+  }
+}

@@ -1,11 +1,10 @@
-import { ME } from "@/shared/constants/portfolio.constants";
+import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
 
 export const SITE_INFO = {
-  name: ME.displayName,
+  name: PORTFOLIO.displayName,
   url: process.env.APP_URL || "https://isahecam.dev",
-  ogImage: ME.ogImage,
-  description: ME.summary,
-  keywords: ME.keywords,
+  ogImage: PORTFOLIO.ogImage,
+  keywords: PORTFOLIO.keywords,
 };
 
 export const META_THEME_COLORS = {

@@ -1,25 +1,26 @@
 import { SocialLink } from "@/modules/home/types/social.types";
+import { PUBLIC_SOCIAL_URLS } from "@/shared/constants/public-social-urls.constants";
 
 export const SOCIAL_LINKS = [
   {
     id: 1,
     platform: "github",
     handle: "@isahecam",
-    url: "https://github.com/isahecam",
+    url: PUBLIC_SOCIAL_URLS.github,
     previewImage: "/previews/github.png",
   },
   {
     id: 2,
     platform: "x / twitter",
     handle: "@isahecam",
-    url: "https://x.com/isahecam",
+    url: PUBLIC_SOCIAL_URLS.twitter,
     previewImage: "/previews/x.png",
   },
   {
     id: 3,
     platform: "linkedin",
     handle: "in/isahir-hernandez",
-    url: "https://www.linkedin.com/in/isahir-hernandez/",
+    url: PUBLIC_SOCIAL_URLS.linkedIn,
     previewImage: "/previews/linkedin.png",
   },
   {
