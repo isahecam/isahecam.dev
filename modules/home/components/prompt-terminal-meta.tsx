@@ -8,9 +8,12 @@ export async function PromptTerminalMeta() {
   const t = await getTranslations("home");
 
   return (
-    <span className="inline-flex items-center gap-2 text-xs">
-      <TerminalIcon aria-hidden className="size-3" /> ~/{PORTFOLIO.nickname} $
+    <div className="inline-flex flex-col flex-wrap items-start gap-2 text-xs sm:flex-row sm:items-center">
+      <span className="inline-flex items-center gap-2">
+        <TerminalIcon aria-hidden className="size-3" />
+        ~/{PORTFOLIO.nickname} $
+      </span>
       <TextFlip>{t.raw("header.flip-sentences")}</TextFlip>
-    </span>
+    </div>
   );
 }
