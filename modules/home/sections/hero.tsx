@@ -11,7 +11,6 @@ import { GitHub } from "@/shared/components/icons/github";
 import { LinkedIn } from "@/shared/components/icons/linkedin";
 import { Heading } from "@/shared/components/typography/heading";
 import { Paragraph } from "@/shared/components/typography/paragraph";
-import { Avatar, AvatarFallback, AvatarImage } from "@/shared/components/ui/avatar";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Separator } from "@/shared/components/ui/separator";
 import { NativeTypewriter } from "@/shared/components/uitripled/native-typewriter-shadcnui";
@@ -34,7 +33,7 @@ export async function Hero() {
             alt={tMeta("og-image-alt")}
             fill
             priority
-            loading="eager"
+            fetchPriority="high"
             className="object-cover object-top-right"
             sizes="(max-width: 640px) 100vw, 50vw"
           />
@@ -54,10 +53,15 @@ export async function Hero() {
       <div className="relative z-10 flex flex-col gap-6">
         <header>
           <div className="flex items-center gap-4">
-            <Avatar className="size-20 sm:size-24">
-              <AvatarImage src={PORTFOLIO.avatar} alt={PORTFOLIO.displayName} loading="eager" width={96} height={96} />
-              <AvatarFallback>BH</AvatarFallback>
-            </Avatar>
+            <Image
+              src={PORTFOLIO.avatar}
+              alt={PORTFOLIO.displayName}
+              className="rounded-full"
+              loading="eager"
+              priority
+              width={96}
+              height={96}
+            />
             <div className="space-y-2">
               <Heading level={1} className="font-bold text-balance">
                 {PORTFOLIO.displayName}
