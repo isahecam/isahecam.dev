@@ -109,7 +109,7 @@
           "id": 2,
           "title": "Membo | Keep track of your subscriptions",
           "description": "Membo is a digital subscription management platform to track all your services in a single view.",
-          "technologies": ["nextjs", "typescript", "react", "tailwindcss", "shadcn/ui", "drizzle-orm", "neon"],
+          "technologies": ["react", "typescript", "nextjs", "shadcn/ui", "better-auth", "supabase"],
           "year": 2026,
           "status": "crafting"
         }
