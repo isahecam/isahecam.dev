@@ -6,6 +6,8 @@ import {
   React,
   TailwindCSS,
   TypeScript,
+  BetterAuth,
+  Supabase,
 } from "@/shared/components/icons/technologies";
 import { shadcnui } from "@/shared/components/icons/technologies/shadcn-ui";
 import { createRegistry } from "@/shared/utils";
@@ -50,6 +52,16 @@ export const technologies = [
     key: "neon",
     name: "Neon",
     isotype: Neon,
+  },
+  {
+    key: "better-auth",
+    name: "Better Auth",
+    isotype: BetterAuth,
+  },
+  {
+    key: "supabase",
+    name: "Supabase",
+    isotype: Supabase,
   },
 ] as const;
 
