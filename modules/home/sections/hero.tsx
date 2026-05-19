@@ -72,7 +72,7 @@ export async function Hero() {
               </div>
             </div>
           </div>
-          <Paragraph className="max-w-prose text-balance text-muted-foreground">
+          <Paragraph className="max-w-lg text-balance text-accent">
             {t.rich("about-me", {
               strong: (chunks) => <strong className="font-bold text-accent">{chunks}</strong>,
             })}
