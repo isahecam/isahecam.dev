@@ -9,7 +9,7 @@ export async function Header() {
   const t = await getTranslations("a11y");
 
   return (
-    <header className="fixed z-20 w-full border-b border-primary backdrop-blur-xl dark:border-primary-foreground">
+    <header className="fixed z-20 w-full backdrop-blur-xl dark:border-primary-foreground">
       <div className="mx-auto flex w-full max-w-4xl items-center justify-between p-5 lg:px-0">
         <Logo />
         <nav aria-label={t("site-nav")} className="flex items-center gap-2">
