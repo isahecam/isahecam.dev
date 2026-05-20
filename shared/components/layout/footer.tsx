@@ -2,15 +2,30 @@
 
 import { useTranslations } from "next-intl";
 
+import { FluidGradientText } from "@/shared/components/fluid-gradient-text";
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const t = useTranslations("home.footer");
 
   return (
-    <footer className="border-t border-dashed border-primary px-5 py-10 dark:border-primary-foreground">
-      <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-2 sm:flex-row">
-        <span className="text-xs text-muted-foreground">Brandon Hernández · {currentYear}</span>
-        <span className="text-xs text-muted-foreground">{t("tagline")}</span>
+    <footer>
+      <div className="mx-auto w-full max-w-4xl text-center">
+        <p className="py-2 text-xs text-muted-foreground md:text-sm">
+          {t.rich("tagline", {
+            a: (chunks) => (
+              <a
+                href="https://www.instagram.com/isahecam"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline-offset-4 hover:text-foreground hover:underline">
+                {chunks}
+              </a>
+            ),
+          })}{" "}
+          · {currentYear}
+        </p>
+        <FluidGradientText text="isahecam" svgViewBoxWidth={1350} />
       </div>
     </footer>
   );
