@@ -10,7 +10,7 @@ export function Footer() {
 
   return (
     <footer>
-      <div className="mx-auto w-full max-w-4xl text-center">
+      <div className="mx-auto w-full max-w-4xl py-6 text-center">
         <p className="py-2 text-xs text-muted-foreground md:text-sm">
           {t.rich("tagline", {
             a: (chunks) => (
@@ -25,7 +25,7 @@ export function Footer() {
           })}{" "}
           · {currentYear}
         </p>
-        <FluidGradientText text="isahecam" svgViewBoxWidth={1350} />
+        <FluidGradientText text="isahecam" svgViewBoxWidth={1400} />
       </div>
     </footer>
   );
