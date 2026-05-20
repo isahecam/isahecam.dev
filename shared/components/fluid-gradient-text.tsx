@@ -43,7 +43,7 @@ export function FluidGradientText({ text, svgViewBoxWidth = 1200, svgViewBoxHeig
 
   return (
     <div
-      className="relative size-full overflow-hidden after:absolute after:bottom-0 after:h-px after:w-full after:bg-current/15"
+      className="relative size-full overflow-hidden after:absolute after:bottom-0 after:w-full after:bg-current/15"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}>
       <svg
