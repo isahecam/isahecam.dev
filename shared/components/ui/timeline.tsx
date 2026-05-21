@@ -632,7 +632,7 @@ function TimelineTitle(props: DivProps) {
     <TitlePrimitive
       data-slot="timeline-title"
       {...titleProps}
-      className={cn("leading-none font-semibold", className)}
+      className={cn("leading-snug font-semibold", className)}
     />
   );
 }
