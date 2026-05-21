@@ -6,7 +6,6 @@ import Link from "next/link";
 import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { Availability } from "@/modules/home/components/primitives/availability";
 import { Location } from "@/modules/home/components/primitives/location";
-import { PromptTerminalMeta } from "@/modules/home/components/prompt-terminal-meta";
 import { GitHub } from "@/shared/components/icons/github";
 import { LinkedIn } from "@/shared/components/icons/linkedin";
 import { Heading } from "@/shared/components/typography/heading";
@@ -41,7 +40,6 @@ export async function Hero() {
         </div>
       </div>
       <header className="relative z-10 space-y-4">
-        <PromptTerminalMeta />
         <div className="flex items-center gap-4 text-xs">
           <Availability />
           <Separator orientation="vertical" className="my-auto h-3" />
