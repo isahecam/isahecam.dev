@@ -16,11 +16,6 @@
   },
   "home": {
     "header": {
-      "flip-sentences": [
-        "I love to code ❤️",
-        "Obsessed with the details 🎨",
-        "There's always something new to learn 💡"
-      ],
       "availability": {
         "label": "Open to work"
       },

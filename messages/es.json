@@ -16,11 +16,6 @@
   },
   "home": {
     "header": {
-      "flip-sentences": [
-        "Me encanta programar ❤️",
-        "Obsesionado con los detalles 🎨",
-        "Siempre hay algo nuevo por aprender 💡"
-      ],
       "availability": {
         "label": "Disponible para trabajar"
       },
