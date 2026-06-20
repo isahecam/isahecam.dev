@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 
-import { FluidGradientText } from "@/shared/components/fluid-gradient-text";
+import { FluidGradientText } from "@/shared/components/blocks/fluid-gradient-text";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

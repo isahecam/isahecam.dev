@@ -1,7 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 
 import type { Education } from "@/modules/home/types/education.types";
-import { Heading } from "@/shared/components/typography/heading";
+import { Heading } from "@/shared/components/ui/heading";
 import {
   Timeline,
   TimelineConnector,

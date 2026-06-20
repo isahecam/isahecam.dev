@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { ProjectCard } from "@/modules/home/components/project-card";
-import { Heading } from "@/shared/components/typography/heading";
+import { Heading } from "@/shared/components/ui/heading";
 import { Project } from "@/shared/types/project.types";
 
 export async function Projects() {
