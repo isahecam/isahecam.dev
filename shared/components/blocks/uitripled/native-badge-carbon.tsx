@@ -5,7 +5,7 @@ import { HTMLMotionProps, motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import React from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 const badgeVariants = cva(
   "inline-flex items-center rounded-none px-3 py-1 text-xs font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",

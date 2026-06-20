@@ -6,12 +6,12 @@ import "./globals.css";
 import { Geist_Mono } from "next/font/google";
 
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
-import { cn } from "@/lib/utils";
 import { Footer } from "@/shared/components/layout/footer";
 import { Header } from "@/shared/components/layout/header";
 import { ThemeProvider } from "@/shared/components/providers/theme-provider";
 import { TooltipProvider } from "@/shared/components/ui/tooltip";
 import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
+import { cn } from "@/shared/lib/utils";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
