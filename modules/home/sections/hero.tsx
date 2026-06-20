@@ -6,13 +6,13 @@ import Link from "next/link";
 import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { Availability } from "@/modules/home/components/primitives/availability";
 import { Location } from "@/modules/home/components/primitives/location";
+import { NativeTypewriter } from "@/shared/components/blocks/uitripled/native-typewriter-shadcnui";
 import { GitHub } from "@/shared/components/icons/github";
 import { LinkedIn } from "@/shared/components/icons/linkedin";
-import { Heading } from "@/shared/components/typography/heading";
-import { Paragraph } from "@/shared/components/typography/paragraph";
 import { buttonVariants } from "@/shared/components/ui/button";
+import { Heading } from "@/shared/components/ui/heading";
+import { Paragraph } from "@/shared/components/ui/paragraph";
 import { Separator } from "@/shared/components/ui/separator";
-import { NativeTypewriter } from "@/shared/components/uitripled/native-typewriter-shadcnui";
 import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
 import { PUBLIC_SOCIAL_URLS } from "@/shared/constants/public-social-urls.constants";
 

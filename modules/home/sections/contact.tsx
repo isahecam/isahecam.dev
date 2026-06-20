@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { SocialList } from "@/modules/home/components/social-list";
-import { Heading } from "@/shared/components/typography/heading";
+import { Heading } from "@/shared/components/ui/heading";
 
 export async function Contact() {
   const t = await getTranslations("home.contact");

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
 interface Props extends React.HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;

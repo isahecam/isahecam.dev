@@ -2,8 +2,8 @@ import { getTranslations } from "next-intl/server";
 
 import { SpotifyPlayerCard } from "@/modules/home/components/spotify-player-card";
 import { NowItem } from "@/modules/home/types/now.types";
-import { Heading } from "@/shared/components/typography/heading";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/shared/components/ui/card";
+import { Heading } from "@/shared/components/ui/heading";
 
 export async function Now() {
   const t = await getTranslations("home.now");

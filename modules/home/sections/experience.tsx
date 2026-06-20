@@ -2,7 +2,7 @@ import { ExternalLinkIcon } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import type { Experience } from "@/modules/home/types/experience.types";
-import { Heading } from "@/shared/components/typography/heading";
+import { Heading } from "@/shared/components/ui/heading";
 import {
   Timeline,
   TimelineConnector,

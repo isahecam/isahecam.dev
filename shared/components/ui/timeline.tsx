@@ -4,10 +4,10 @@ import { cva } from "class-variance-authority";
 import { Direction as DirectionPrimitive, Slot as SlotPrimitive } from "radix-ui";
 import * as React from "react";
 
-import { useComposedRefs } from "@/lib/compose-refs";
-import { cn } from "@/lib/utils";
 import { useIsomorphicLayoutEffect } from "@/shared/hooks/use-isomorphic-layout-effect";
 import { useLazyRef } from "@/shared/hooks/use-lazy-ref";
+import { useComposedRefs } from "@/shared/lib/compose-refs";
+import { cn } from "@/shared/lib/utils";
 
 type Direction = "ltr" | "rtl";
 type Orientation = "vertical" | "horizontal";

@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { changeLocaleAction } from "@/shared/actions/change-locale-action";
-import { LocaleSwitcher } from "@/shared/components/custom/locale-switcher";
+import { LocaleSwitcher } from "@/shared/components/layout/locale-switcher";
 import { Logo } from "@/shared/components/layout/logo";
 import { ThemeToggle } from "@/shared/components/layout/theme-toggle";
 

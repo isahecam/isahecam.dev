@@ -1,9 +1,9 @@
 import { MusicIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
-import { cn } from "@/lib/utils";
 import { Spotify } from "@/shared/components/icons/spotify";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
+import { cn } from "@/shared/lib/utils";
 
 interface Props {
   className?: string;

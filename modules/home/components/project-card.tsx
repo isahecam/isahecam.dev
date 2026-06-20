@@ -1,10 +1,10 @@
 import { getTranslations } from "next-intl/server";
 
+import { NativeBadge } from "@/shared/components/blocks/uitripled/native-badge-carbon";
 import { MetaText } from "@/shared/components/layout/meta-text";
 import { Badge } from "@/shared/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/shared/components/ui/card";
 import { Status, StatusIndicator, StatusLabel } from "@/shared/components/ui/status";
-import { NativeBadge } from "@/shared/components/uitripled/native-badge-carbon";
 import { Technologies } from "@/shared/constants/technologies.constants";
 import { Project } from "@/shared/types/project.types";
 

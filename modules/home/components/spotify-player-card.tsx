@@ -1,12 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-import { cn } from "@/lib/utils";
 import { SpotifyEmptyCard } from "@/modules/home/components/spotify-empty-card";
 import { getNowPlaying } from "@/modules/home/utils/get-now-playing";
-import { EqualizerIcon } from "@/shared/components/custom/equalizer";
+import { EqualizerIcon } from "@/shared/components/blocks/equalizer";
 import { Spotify } from "@/shared/components/icons/spotify";
 import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
+import { cn } from "@/shared/lib/utils";
 
 interface Props {
   className?: string;
