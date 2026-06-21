@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 
-import { changeLocaleAction } from "@/shared/actions/change-locale-action";
 import { LocaleSwitcher } from "@/shared/components/layout/locale-switcher";
 import { Logo } from "@/shared/components/layout/logo";
 import { ThemeToggle } from "@/shared/components/layout/theme-toggle";
@@ -13,7 +12,7 @@ export async function Header() {
       <div className="mx-auto flex w-full max-w-4xl items-center justify-between p-5 lg:px-0">
         <Logo />
         <nav aria-label={t("site-nav")} className="flex items-center gap-2">
-          <LocaleSwitcher onLocaleChange={changeLocaleAction} />
+          <LocaleSwitcher />
           <ThemeToggle />
         </nav>
       </div>
