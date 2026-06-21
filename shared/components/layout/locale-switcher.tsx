@@ -1,42 +1,30 @@
-"use client";
-
 import { LanguagesIcon } from "lucide-react";
-import { Locale, useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
+import { routing } from "@/i18n/routing";
+import { LocaleSwitcherItem } from "@/shared/components/layout/locale-switcher-item";
 import { Button } from "@/shared/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/shared/components/ui/dropdown-menu";
-import { LOCALES } from "@/shared/constants/locales.constants";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/shared/components/ui/dropdown-menu";
 
-interface Props {
-  onLocaleChange: (locale: Locale) => void;
-}
-
-export function LocaleSwitcher({ onLocaleChange }: Props) {
-  const t = useTranslations("a11y");
-  const locale = useLocale();
+export function LocaleSwitcher() {
+  const t = useTranslations("locale-switcher");
+  const currentLocale = useLocale();
 
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" aria-label={t("language-switcher")}>
+        <Button variant="outline" size="icon">
           <LanguagesIcon aria-hidden />
+          <span className="sr-only">{t("label")}</span>
         </Button>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent align="end">
-        {LOCALES.map(({ code, label }) => (
-          <DropdownMenuCheckboxItem
-            key={code}
-            checked={locale === code}
-            onCheckedChange={() => {
-              if (locale !== code) onLocaleChange(code);
-            }}>
-            {label}
-          </DropdownMenuCheckboxItem>
+        {routing.locales.map((cur) => (
+          <LocaleSwitcherItem key={cur} targetLocale={cur} currentLocale={currentLocale}>
+            {t("locale", { locale: cur })}
+          </LocaleSwitcherItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
