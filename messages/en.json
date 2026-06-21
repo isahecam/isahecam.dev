@@ -119,5 +119,9 @@
       "nothing-playing": "Nothing playing right now",
       "now-playing-prefix": "Now playing:"
     }
+  },
+  "locale-switcher": {
+    "label": "Change language",
+    "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
   }
 }
