@@ -122,5 +122,9 @@
       "nothing-playing": "No hay nada sonando ahora",
       "now-playing-prefix": "Reproduciendo:"
     }
+  },
+  "locale-switcher": {
+    "label": "Cambiar idioma",
+    "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
   }
 }
