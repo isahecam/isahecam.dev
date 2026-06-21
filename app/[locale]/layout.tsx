@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getTranslations } from "next-intl/server";
 
 import "./globals.css";
+import { hasLocale } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Geist_Mono } from "next/font/google";
+import { notFound } from "next/navigation";
 
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
+import { routing } from "@/i18n/routing";
 import { Footer } from "@/shared/components/layout/footer";
 import { Header } from "@/shared/components/layout/header";
 import { ThemeProvider } from "@/shared/components/providers/theme-provider";
@@ -104,8 +107,12 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const locale = await getLocale();
+export default async function RootLayout({ children, params }: LayoutProps<"/[locale]">) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
 
   return (
     <html lang={locale} suppressHydrationWarning className={cn("antialiased", geistMono.className)}>

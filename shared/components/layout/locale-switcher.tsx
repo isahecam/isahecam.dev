@@ -1,44 +1,24 @@
-"use client";
+import { useLocale, useTranslations } from "next-intl";
 
-import { LanguagesIcon } from "lucide-react";
-import { Locale, useLocale, useTranslations } from "next-intl";
+import { routing } from "@/i18n/routing";
+import { SelectItem } from "@/shared/components/ui/select";
 
-import { Button } from "@/shared/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/shared/components/ui/dropdown-menu";
-import { LOCALES } from "@/shared/constants/locales.constants";
+import { LocaleSwitcherSelect } from "./locale-switcher-select";
 
-interface Props {
-  onLocaleChange: (locale: Locale) => void;
-}
-
-export function LocaleSwitcher({ onLocaleChange }: Props) {
-  const t = useTranslations("a11y");
+export function LocaleSwitcher() {
+  const t = useTranslations("locale-switcher");
   const locale = useLocale();
 
   return (
-    <DropdownMenu modal={false}>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" aria-label={t("language-switcher")}>
-          <LanguagesIcon aria-hidden />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        {LOCALES.map(({ code, label }) => (
-          <DropdownMenuCheckboxItem
-            key={code}
-            checked={locale === code}
-            onCheckedChange={() => {
-              if (locale !== code) onLocaleChange(code);
-            }}>
-            {label}
-          </DropdownMenuCheckboxItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <LocaleSwitcherSelect
+      defaultValue={locale}
+      label={t("label")} // 💡 Pasamos la etiqueta de accesibilidad limpia
+    >
+      {routing.locales.map((cur) => (
+        <SelectItem key={cur} value={cur}>
+          {t("locale", { locale: cur })}
+        </SelectItem>
+      ))}
+    </LocaleSwitcherSelect>
   );
 }

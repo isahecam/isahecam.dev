@@ -7,10 +7,7 @@ import { Projects } from "@/modules/home/sections/projects";
 
 export default function Home() {
   return (
-    <main
-      id="main-content"
-      tabIndex={-1}
-      className="mx-auto flex max-w-4xl flex-1 scroll-mt-24 flex-col gap-10 px-5 py-25 lg:px-0">
+    <main className="mx-auto flex max-w-4xl flex-1 scroll-mt-24 flex-col gap-10 px-5 py-25 lg:px-0">
       <Hero />
       <Projects />
       <Experience />
