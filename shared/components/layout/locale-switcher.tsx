@@ -1,24 +1,45 @@
-import { useLocale, useTranslations } from "next-intl";
+"use client";
 
+import { Locale, useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
+import { useTransition } from "react";
+
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { SelectItem } from "@/shared/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/shared/components/ui/select";
 
-import { LocaleSwitcherSelect } from "./locale-switcher-select";
+interface Props extends React.ComponentProps<typeof Select> {}
 
-export function LocaleSwitcher() {
+export function LocaleSwitcher({ ...props }: Props) {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const pathname = usePathname();
+  const params = useParams();
+
   const t = useTranslations("locale-switcher");
-  const locale = useLocale();
+
+  function onSelectChange(nextLocale: string) {
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error -- Validación interna de rutas de next-intl
+        { pathname, params },
+        { locale: nextLocale as Locale },
+      );
+    });
+  }
 
   return (
-    <LocaleSwitcherSelect
-      defaultValue={locale}
-      label={t("label")} // 💡 Pasamos la etiqueta de accesibilidad limpia
-    >
-      {routing.locales.map((cur) => (
-        <SelectItem key={cur} value={cur}>
-          {t("locale", { locale: cur })}
-        </SelectItem>
-      ))}
-    </LocaleSwitcherSelect>
+    <Select name="locale-switcher" onValueChange={onSelectChange} disabled={isPending} {...props}>
+      <SelectTrigger aria-label={t("label")}>
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="end" position="popper">
+        {routing.locales.map((cur) => (
+          <SelectItem key={cur} value={cur}>
+            {t("locale", { locale: cur })}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 }
