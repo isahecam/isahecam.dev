@@ -10,7 +10,7 @@
   },
   "bracketSameLine": true,
   "sortTailwindcss": {
-    "stylesheet": "./app/globals.css",
+    "stylesheet": "./app/[locale]/globals.css",
     "functions": ["clsx", "cn"],
     "preserveWhitespace": false
   }
