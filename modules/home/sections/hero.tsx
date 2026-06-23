@@ -2,7 +2,9 @@ import { FileTextIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
+import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { Availability } from "@/modules/home/components/primitives/availability";
 import { Location } from "@/modules/home/components/primitives/location";
 import { NativeTypewriter } from "@/shared/components/blocks/uitripled/native-typewriter-shadcnui";
@@ -44,7 +46,9 @@ export async function Hero() {
           <Separator orientation="vertical" className="my-auto h-3" />
           <Location />
         </div>
-        {/* <NowPlayingStatus /> */}
+        <Suspense>
+          <NowPlayingStatus />
+        </Suspense>
       </header>
 
       <div className="relative z-10 flex flex-col gap-6">
