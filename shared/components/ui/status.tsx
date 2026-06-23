@@ -1,11 +1,10 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot as SlotPrimitive } from "radix-ui";
 import type * as React from "react";
-
 import { cn } from "@/shared/lib/utils";
 
 const statusVariants = cva(
-  "inline-flex w-fit shrink-0 items-center gap-1.5 overflow-hidden whitespace-nowrap outline outline-1 outline-border px-2.5 py-1 font-medium text-xs transition-colors",
+  "inline-flex w-fit shrink-0 items-center gap-1.5 overflow-hidden whitespace-nowrap rounded-full border px-2.5 py-1 font-medium text-xs transition-colors",
   {
     variants: {
       variant: {
@@ -26,7 +25,9 @@ const statusVariants = cva(
   },
 );
 
-interface StatusProps extends VariantProps<typeof statusVariants>, React.ComponentProps<"div"> {
+interface StatusProps
+  extends VariantProps<typeof statusVariants>,
+    React.ComponentProps<"div"> {
   asChild?: boolean;
 }
 
@@ -65,7 +66,13 @@ function StatusIndicator(props: React.ComponentProps<"div">) {
 function StatusLabel(props: React.ComponentProps<"div">) {
   const { className, ...labelProps } = props;
 
-  return <div data-slot="status-label" {...labelProps} className={cn("leading-none", className)} />;
+  return (
+    <div
+      data-slot="status-label"
+      {...labelProps}
+      className={cn("leading-none", className)}
+    />
+  );
 }
 
 export { Status, StatusIndicator, StatusLabel, statusVariants };
