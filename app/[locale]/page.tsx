@@ -3,7 +3,7 @@ import { Education } from "@/modules/home/sections/education";
 import { Experience } from "@/modules/home/sections/experience";
 import { Hero } from "@/modules/home/sections/hero";
 import { Now } from "@/modules/home/sections/now";
-import { Projects } from "@/modules/home/sections/projects";
+import { Projects } from "@/modules/projects/projects";
 
 export default function Home() {
   return (

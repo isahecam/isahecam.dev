@@ -3,7 +3,6 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
-import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { Availability } from "@/modules/home/components/primitives/availability";
 import { Location } from "@/modules/home/components/primitives/location";
 import { NativeTypewriter } from "@/shared/components/blocks/uitripled/native-typewriter-shadcnui";
@@ -24,7 +23,7 @@ export async function Hero() {
   const typewriterSrText = typewriterSentences.join(" · ");
 
   return (
-    <section className="relative flex flex-col gap-8 overflow-hidden py-16">
+    <section className="relative flex w-full flex-col gap-8 overflow-hidden py-16">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
         <div className="relative h-full w-full mask-[linear-gradient(to_left,black_0%,black_30%,transparent_65%)] sm:mask-[linear-gradient(to_left,black_0%,black_40%,transparent_70%)]">
           <Image
@@ -45,7 +44,7 @@ export async function Hero() {
           <Separator orientation="vertical" className="my-auto h-3" />
           <Location />
         </div>
-        <NowPlayingStatus />
+        {/* <NowPlayingStatus /> */}
       </header>
 
       <div className="relative z-10 flex flex-col gap-6">

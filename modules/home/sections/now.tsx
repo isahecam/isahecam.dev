@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 
-import { SpotifyPlayerCard } from "@/modules/home/components/spotify-player-card";
 import { NowItem } from "@/modules/home/types/now.types";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { Heading } from "@/shared/components/ui/heading";
@@ -27,7 +26,9 @@ export async function Now() {
           </Card>
         ))}
 
-        <SpotifyPlayerCard className="sm:col-span-2" />
+        {/* <Suspense fallback={<SpotifyEmptyCard className="sm:col-span-2" />}>
+          <SpotifyPlayerCard className="sm:col-span-2" />
+        </Suspense> */}
       </div>
     </section>
   );

@@ -85,30 +85,7 @@
       ]
     },
     "projects": {
-      "heading": "// my projects",
-      "status": {
-        "crafting": "crafting",
-        "completed": "completed",
-        "in-review": "in review"
-      },
-      "items": [
-        {
-          "id": 1,
-          "title": "Meeti | Create and share your interests with other people",
-          "description": "Meeti is a meetup and community creation platform to share your interests and hobbies with other people.",
-          "technologies": ["nextjs", "typescript", "react", "tailwindcss", "shadcn/ui", "drizzle-orm", "neon"],
-          "year": 2026,
-          "status": "crafting"
-        },
-        {
-          "id": 2,
-          "title": "Membok | Keep track of your subscriptions",
-          "description": "Membo is a digital subscription management platform to track all your services in a single view.",
-          "technologies": ["react", "typescript", "nextjs", "shadcn/ui", "better-auth", "supabase"],
-          "year": 2026,
-          "status": "crafting"
-        }
-      ]
+      "heading": "// my projects"
     },
     "spotify": {
       "listening": "Listening",

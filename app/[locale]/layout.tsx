@@ -1,15 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { NextIntlClientProvider } from "next-intl";
+import { Locale, NextIntlClientProvider } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import "./globals.css";
-import { hasLocale } from "next-intl";
-import { getLocale, getTranslations } from "next-intl/server";
 import { Geist_Mono } from "next/font/google";
-import { notFound } from "next/navigation";
+import { locale as rootLocale } from "next/root-params";
 
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
 import { routing } from "@/i18n/routing";
-import { Footer } from "@/shared/components/layout/footer";
 import { Header } from "@/shared/components/layout/header";
 import { ThemeProvider } from "@/shared/components/providers/theme-provider";
 import { TooltipProvider } from "@/shared/components/ui/tooltip";
@@ -21,8 +19,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export async function generateMetadata(): Promise<Metadata> {
-  const locale = await getLocale();
+  const locale = (await rootLocale()) as Locale;
   const t = await getTranslations("metadata");
   const titleDefault = t("title");
   const description = t("description");
@@ -107,12 +109,8 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({ children, params }: LayoutProps<"/[locale]">) {
-  const { locale } = await params;
-
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+export default async function RootLayout({ children }: LayoutProps<"/[locale]">) {
+  const locale = await getLocale();
 
   return (
     <html lang={locale} suppressHydrationWarning className={cn("antialiased", geistMono.className)}>
@@ -122,7 +120,6 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[lo
             <TooltipProvider>
               <Header />
               {children}
-              <Footer />
             </TooltipProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
