@@ -9,7 +9,7 @@ export function Heading({ children, level = 1, className, ...props }: Props) {
   const Tag: React.ElementType = `h${level}`;
 
   const sizeMap = {
-    1: "scroll-m-20 text-4xl tracking-tight text-balance uppercase",
+    1: "scroll-m-20 text-5xl tracking-tight text-balance",
     2: "scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0",
     3: "scroll-m-20 text-2xl font-semibold tracking-tight",
     4: "scroll-m-20 text-xl font-semibold tracking-tight",
@@ -18,7 +18,7 @@ export function Heading({ children, level = 1, className, ...props }: Props) {
   } satisfies Record<number, string>;
 
   return (
-    <Tag className={clsx("uppercase", sizeMap[level], className)} {...props}>
+    <Tag className={clsx(sizeMap[level], className)} {...props}>
       {children}
     </Tag>
   );
