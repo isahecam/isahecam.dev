@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
-import { Availability } from "@/modules/home/components/primitives/availability";
+import { AvailabilityStatus } from "@/modules/home/components/primitives/availability-status";
 import { LocationBadge } from "@/modules/home/components/primitives/location-badge";
 import { WhoAmITextFlip } from "@/modules/home/components/primitives/whoami-text-flip";
 import { GitHub } from "@/shared/components/icons/github";
@@ -38,7 +38,7 @@ export async function Hero() {
 
       <div className="flex flex-col gap-8">
         <div className="flex items-center gap-4">
-          <Availability />
+          <AvailabilityStatus />
           <Separator orientation="vertical" className="my-auto h-3" />
           <LocationBadge />
         </div>
