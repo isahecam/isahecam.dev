@@ -6,7 +6,7 @@ import { client } from "@/shared/lib/sanity";
 
 export async function getAllProjects(): Promise<Project[]> {
   "use cache";
-  cacheLife("days");
+  cacheLife("hours");
   cacheTag("projects");
 
   return await client.fetch(ALL_PROJECTS_QUERY);

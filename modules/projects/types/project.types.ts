@@ -3,6 +3,13 @@ export interface Project {
   name: string;
   slug: string;
   description: string;
-  cover: string | null;
+  cover: string;
+  technologies: Technology[];
   publishedAt: string | null;
+}
+
+export interface Technology {
+  _id: string;
+  name: string;
+  icon: string;
 }

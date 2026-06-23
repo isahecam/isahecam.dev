@@ -21,7 +21,9 @@ Personal portfolio site for Brandon Hernández. Built with **Next.js 16 App Rout
 
 ### Module convention
 
-**Each route in the app corresponds to a module in `modules/`.** All components, constants, sections, and types that belong to a route must live inside that route's module directory — not in `shared/`. For example, everything related to the home page (`/`) lives in `modules/home/`. Only code used across multiple routes belongs in `shared/`.
+**Each section in the portfolio corresponds to a module in `modules/`.** All components, constants, sections, and types that belong to a route must live inside that route's module directory — not in `shared/`. For example, everything related to the home page (`/`) lives in `modules/home/`. Only code used across multiple routes belongs in `shared/`.
+
+When a section needs a components, types and functions, etc. Make a new module with folder structure components/ data/ types/ etc. If a module need connection with sanity make a queries/ folder.
 
 ```
 modules/
