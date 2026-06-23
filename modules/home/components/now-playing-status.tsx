@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
-import { getNowPlaying } from "@/modules/home/utils/get-now-playing";
+import { getNowPlaying } from "@/modules/home/data/get-now-playing";
 import { Spotify } from "@/shared/components/icons/spotify";
 
 export async function NowPlayingStatus() {
