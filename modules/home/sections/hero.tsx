@@ -1,36 +1,31 @@
-import { FileTextIcon } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { FileTextIcon, MailPlusIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 
 import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { Availability } from "@/modules/home/components/primitives/availability";
-import { Location } from "@/modules/home/components/primitives/location";
-import { NativeTypewriter } from "@/shared/components/blocks/uitripled/native-typewriter-shadcnui";
+import { LocationBadge } from "@/modules/home/components/primitives/location-badge";
+import { WhoAmITextFlip } from "@/modules/home/components/primitives/whoami-text-flip";
 import { GitHub } from "@/shared/components/icons/github";
 import { LinkedIn } from "@/shared/components/icons/linkedin";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Heading } from "@/shared/components/ui/heading";
 import { Paragraph } from "@/shared/components/ui/paragraph";
 import { Separator } from "@/shared/components/ui/separator";
-import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
 import { PUBLIC_SOCIAL_URLS } from "@/shared/constants/public-social-urls.constants";
 
 export async function Hero() {
-  const t = await getTranslations("home");
-  const tA11y = await getTranslations("a11y");
-  const tMeta = await getTranslations("metadata");
-  const typewriterSentences = t.raw("typewriter-sentences") as string[];
-  const typewriterSrText = typewriterSentences.join(" · ");
-
   return (
-    <section className="relative flex w-full flex-col gap-8 overflow-hidden py-16">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+    <section className="flex w-full flex-col gap-16 py-16">
+      {/* <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0"
+      >
         <div className="relative h-full w-full mask-[linear-gradient(to_left,black_0%,black_30%,transparent_65%)] sm:mask-[linear-gradient(to_left,black_0%,black_40%,transparent_70%)]">
           <Image
             src="https://assets.isahecam.dev/images/ascii-art-hero-background.png"
-            alt={tMeta("og-image-alt")}
+            alt="Hero background"
             fill
             priority
             fetchPriority="high"
@@ -39,75 +34,94 @@ export async function Hero() {
           />
           <div className="absolute inset-0 bg-linear-to-r from-background via-background/75 to-transparent" />
         </div>
-      </div>
-      <header className="relative z-10 space-y-4">
-        <div className="flex items-center gap-4 text-xs">
+      </div> */}
+
+      <div className="flex flex-col gap-8">
+        <div className="flex items-center gap-4">
           <Availability />
           <Separator orientation="vertical" className="my-auto h-3" />
-          <Location />
+          <LocationBadge />
         </div>
         <Suspense>
           <NowPlayingStatus />
         </Suspense>
-      </header>
+      </div>
 
-      <div className="relative z-10 flex flex-col gap-6">
-        <header>
+      <article className="relative z-10 flex flex-col gap-8">
+        <header className="flex flex-col">
           <div className="flex items-center gap-4">
             <Image
-              src={PORTFOLIO.avatar}
-              alt={PORTFOLIO.displayName}
-              className="rounded-full"
-              loading="eager"
+              src="https://assets.isahecam.dev/images/avatar.png"
+              alt="Avatar of Brandon Hernández"
+              className="size-30 rounded-full"
               priority
-              width={96}
-              height={96}
+              width={240}
+              height={240}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
             />
+
             <div className="space-y-2">
-              <Heading level={1} className="font-bold text-balance">
-                {PORTFOLIO.displayName}
+              <Heading level={1} className="font-extrabold text-balance">
+                Brandon <span className="text-primary">Hernández</span>
               </Heading>
-              <span className="sr-only">{typewriterSrText}</span>
-              <div aria-hidden="true">
-                <NativeTypewriter className="block h-5.5" content={typewriterSentences} loop speed={100} />
-              </div>
+
+              <WhoAmITextFlip />
             </div>
           </div>
-          <Paragraph className="max-w-lg leading-relaxed text-balance text-accent">
-            {t.rich("about-me", {
-              strong: (chunks) => <strong className="font-bold text-accent">{chunks}</strong>,
-            })}
+
+          <Paragraph className="max-w-xl leading-relaxed text-balance">
+            <strong className="font-bold">Desarrollador Full-Stack</strong> e{" "}
+            <strong className="font-bold">Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con
+            +1 año de experiencia en desarrollo web, diseño y escalabilidad de aplicaciones entornos Frontend-Backend.
           </Paragraph>
         </header>
-        <nav aria-label={tA11y("social-nav")} className="flex gap-2">
-          <Link
-            className={buttonVariants({ variant: "outline" })}
-            href={PUBLIC_SOCIAL_URLS.github}
-            rel="noopener noreferrer"
-            target="_blank">
-            <GitHub aria-hidden />
-            GitHub
+
+        <nav className="flex items-center gap-4">
+          <Link className={buttonVariants({ variant: "default", size: "lg" })} href="#contact">
+            <MailPlusIcon />
+            Contáctame
           </Link>
 
           <Link
-            className={buttonVariants({ variant: "outline" })}
-            href={PUBLIC_SOCIAL_URLS.linkedIn}
-            rel="noopener noreferrer"
-            target="_blank">
-            <LinkedIn aria-hidden />
-            LinkedIn
-          </Link>
-
-          <Link
-            className={buttonVariants({ variant: "outline" })}
+            className={buttonVariants({ variant: "outline", size: "lg" })}
             href="https://assets.isahecam.dev/files/CV_BRANDON_HERNANDEZ.pdf"
             rel="noopener noreferrer"
             target="_blank">
             <FileTextIcon aria-hidden />
-            CV
+            Descargar CV
           </Link>
+
+          <Separator orientation="vertical" className="my-auto h-3" />
+
+          <div className="flex items-center gap-2">
+            <Link
+              className={buttonVariants({
+                variant: "ghost",
+                size: "icon-lg",
+              })}
+              href={PUBLIC_SOCIAL_URLS.github}
+              rel="noopener noreferrer"
+              target="_blank">
+              <GitHub aria-hidden />
+              <span className="sr-only">GitHub</span>
+            </Link>
+
+            <Link
+              className={buttonVariants({
+                variant: "ghost",
+                size: "icon-lg",
+              })}
+              href={PUBLIC_SOCIAL_URLS.linkedIn}
+              rel="noopener noreferrer"
+              target="_blank">
+              <LinkedIn aria-hidden />
+              <span className="sr-only">LinkedIn</span>
+            </Link>
+          </div>
         </nav>
-      </div>
+      </article>
     </section>
   );
 }
