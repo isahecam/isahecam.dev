@@ -267,7 +267,7 @@ const timelineItemVariants = cva("relative flex", {
     {
       orientation: "vertical",
       variant: "default",
-      class: "gap-3 pb-0 last:pb-0",
+      class: "gap-3 pb-8 last:pb-0",
     },
     {
       orientation: "horizontal",
@@ -632,7 +632,7 @@ function TimelineTitle(props: DivProps) {
     <TitlePrimitive
       data-slot="timeline-title"
       {...titleProps}
-      className={cn("leading-snug font-semibold", className)}
+      className={cn("leading-none font-semibold", className)}
     />
   );
 }
