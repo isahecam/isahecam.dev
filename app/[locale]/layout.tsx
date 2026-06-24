@@ -3,7 +3,7 @@ import { Locale, NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import "./globals.css";
-import { Geist_Mono } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { locale as rootLocale } from "next/root-params";
 
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
@@ -12,13 +12,12 @@ import { Header } from "@/shared/components/layout/header";
 import { ThemeProvider } from "@/shared/components/providers/theme-provider";
 import { TooltipProvider } from "@/shared/components/ui/tooltip";
 import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
-import { cn } from "@/shared/lib/utils";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-sans",
 });
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -76,7 +75,10 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     icons: {
       icon: [
-        { url: "https://assets.isahecam.dev/images/favicon.ico", sizes: "32x32" },
+        {
+          url: "https://assets.isahecam.dev/images/favicon.ico",
+          sizes: "32x32",
+        },
         {
           url: "https://assets.isahecam.dev/images/favicon.svg",
           sizes: "any",
@@ -113,8 +115,8 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
   const locale = await getLocale();
 
   return (
-    <html lang={locale} suppressHydrationWarning className={cn("antialiased", geistMono.className)}>
-      <body className="flex min-h-screen flex-col">
+    <html lang={locale} suppressHydrationWarning>
+      <body className={`${dmSans.variable} flex min-h-screen flex-col font-sans`}>
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <TooltipProvider>
