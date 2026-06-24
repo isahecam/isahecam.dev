@@ -3,7 +3,7 @@ import { Locale, NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import "./globals.css";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, Geist_Mono } from "next/font/google";
 import { locale as rootLocale } from "next/root-params";
 
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
@@ -18,6 +18,13 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-sans",
 });
+
+export const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
+});
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -116,9 +123,9 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${dmSans.variable} flex min-h-screen flex-col font-sans`}>
+      <body className={`${dmSans.variable} ${geistMono.variable} relative flex min-h-screen flex-col font-sans`}>
         <NextIntlClientProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
             <TooltipProvider>
               <Header />
               {children}
