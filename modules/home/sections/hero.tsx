@@ -17,24 +17,15 @@ import { PUBLIC_SOCIAL_URLS } from "@/shared/constants/public-social-urls.consta
 
 export async function Hero() {
   return (
-    <section className="flex w-full flex-col gap-16 py-16">
-      {/* <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0"
-      >
-        <div className="relative h-full w-full mask-[linear-gradient(to_left,black_0%,black_30%,transparent_65%)] sm:mask-[linear-gradient(to_left,black_0%,black_40%,transparent_70%)]">
-          <Image
-            src="https://assets.isahecam.dev/images/ascii-art-hero-background.png"
-            alt="Hero background"
-            fill
-            priority
-            fetchPriority="high"
-            className="object-cover object-top-right"
-            sizes="(max-width: 640px) 100vw, 50vw"
-          />
-          <div className="absolute inset-0 bg-linear-to-r from-background via-background/75 to-transparent" />
-        </div>
-      </div> */}
+    <section className="relative flex w-full flex-col gap-16 p-4 py-16">
+      <Image
+        src="https://assets.isahecam.dev/images/landscape-background.avif"
+        alt="Hero background"
+        fill
+        priority
+        fetchPriority="high"
+        className="absolute inset-0 -z-10 hidden h-full w-full mask-y-from-80% mask-y-to-100% object-cover object-top-right md:mask-x-from-70% md:mask-x-to-90% dark:block dark:opacity-40"
+      />
 
       <div className="flex flex-col gap-8">
         <div className="flex items-center gap-4">
@@ -49,7 +40,7 @@ export async function Hero() {
 
       <article className="relative z-10 flex flex-col gap-8">
         <header className="flex flex-col">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Image
               src="https://assets.isahecam.dev/images/avatar.png"
               alt="Avatar of Brandon Hernández"
@@ -62,9 +53,9 @@ export async function Hero() {
               decoding="async"
             />
 
-            <div className="space-y-2">
-              <Heading level={1} className="font-extrabold text-balance">
-                Brandon <span className="text-primary">Hernández</span>
+            <div className="flex w-full flex-col justify-center gap-1">
+              <Heading level={1} className="text-3xl font-black text-balance sm:text-4xl">
+                Brandon Hernández
               </Heading>
 
               <WhoAmITextFlip />
@@ -72,33 +63,35 @@ export async function Hero() {
           </div>
 
           <Paragraph className="max-w-xl leading-relaxed text-balance">
-            <strong className="font-bold">Desarrollador Full-Stack</strong> e{" "}
-            <strong className="font-bold">Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con
-            +1 año de experiencia en desarrollo web, diseño y escalabilidad de aplicaciones entornos Frontend-Backend.
+            <strong>Desarrollador Full-Stack</strong> e{" "}
+            <strong>Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con +1 año de experiencia
+            en desarrollo web, diseño y escalabilidad de aplicaciones entornos Frontend-Backend.
           </Paragraph>
         </header>
 
-        <nav className="flex items-center gap-4">
-          <Link className={buttonVariants({ variant: "default", size: "lg" })} href="#contact">
-            <MailPlusIcon />
-            Contáctame
-          </Link>
+        <nav className="flex flex-col gap-6 sm:flex-row">
+          <div className="flex items-center gap-2">
+            <Link className={buttonVariants({ variant: "default", size: "lg" })} href="#contact">
+              <MailPlusIcon />
+              Contáctame
+            </Link>
 
-          <Link
-            className={buttonVariants({ variant: "outline", size: "lg" })}
-            href="https://assets.isahecam.dev/files/CV_BRANDON_HERNANDEZ.pdf"
-            rel="noopener noreferrer"
-            target="_blank">
-            <FileTextIcon aria-hidden />
-            Descargar CV
-          </Link>
+            <Link
+              className={buttonVariants({ variant: "outline", size: "lg" })}
+              href="https://assets.isahecam.dev/files/CV_BRANDON_HERNANDEZ.pdf"
+              rel="noopener noreferrer"
+              target="_blank">
+              <FileTextIcon aria-hidden />
+              Descargar CV
+            </Link>
+          </div>
 
-          <Separator orientation="vertical" className="my-auto h-3" />
+          <Separator orientation="vertical" className="my-auto hidden h-3 sm:block" />
 
           <div className="flex items-center gap-2">
             <Link
               className={buttonVariants({
-                variant: "ghost",
+                variant: "secondary",
                 size: "icon-lg",
               })}
               href={PUBLIC_SOCIAL_URLS.github}
@@ -110,7 +103,7 @@ export async function Hero() {
 
             <Link
               className={buttonVariants({
-                variant: "ghost",
+                variant: "secondary",
                 size: "icon-lg",
               })}
               href={PUBLIC_SOCIAL_URLS.linkedIn}
