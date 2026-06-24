@@ -8,17 +8,17 @@ interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
 export function Heading({ children, level = 1, className, ...props }: Props) {
   const Tag: React.ElementType = `h${level}`;
 
-  const sizeMap = {
-    1: "scroll-m-20 text-5xl tracking-tight text-balance",
-    2: "scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0",
-    3: "scroll-m-20 text-2xl font-semibold tracking-tight",
-    4: "scroll-m-20 text-xl font-semibold tracking-tight",
-    5: "scroll-m-20 text-lg font-semibold tracking-tight",
-    6: "scroll-m-20 text-base font-semibold tracking-tight",
-  } satisfies Record<number, string>;
+  // const sizeMap = {
+  //   1: "scroll-m-20 text-5xl tracking-tight text-balance",
+  //   2: "scroll-m-20 text-4xl font-semibold tracking-tight first:mt-0",
+  //   3: "scroll-m-20 text-3xl font-semibold tracking-tight",
+  //   4: "scroll-m-20 text-3xl font-semibold tracking-tight",
+  //   5: "scroll-m-20 text-xl font-semibold tracking-tight",
+  //   6: "scroll-m-20 text-lg font-semibold tracking-tight",
+  // } satisfies Record<number, string>;
 
   return (
-    <Tag className={clsx(sizeMap[level], className)} {...props}>
+    <Tag className={clsx("tracking-tight text-balance", className)} {...props}>
       {children}
     </Tag>
   );

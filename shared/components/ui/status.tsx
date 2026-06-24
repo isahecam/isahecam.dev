@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot as SlotPrimitive } from "radix-ui";
 import type * as React from "react";
+
 import { cn } from "@/shared/lib/utils";
 
 const statusVariants = cva(
@@ -25,9 +26,7 @@ const statusVariants = cva(
   },
 );
 
-interface StatusProps
-  extends VariantProps<typeof statusVariants>,
-    React.ComponentProps<"div"> {
+interface StatusProps extends VariantProps<typeof statusVariants>, React.ComponentProps<"div"> {
   asChild?: boolean;
 }
 
@@ -66,13 +65,7 @@ function StatusIndicator(props: React.ComponentProps<"div">) {
 function StatusLabel(props: React.ComponentProps<"div">) {
   const { className, ...labelProps } = props;
 
-  return (
-    <div
-      data-slot="status-label"
-      {...labelProps}
-      className={cn("leading-none", className)}
-    />
-  );
+  return <div data-slot="status-label" {...labelProps} className={cn("leading-none", className)} />;
 }
 
 export { Status, StatusIndicator, StatusLabel, statusVariants };
