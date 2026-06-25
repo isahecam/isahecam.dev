@@ -5,7 +5,7 @@ export async function ProjectsGrid() {
   const items = await getAllProjects();
 
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="flex flex-col gap-6">
       {items.map((project) => (
         <ProjectCard key={project._id} project={project} />
       ))}
