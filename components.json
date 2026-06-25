@@ -24,6 +24,7 @@
   "registries": {
     "@uitripled": "https://ui.tripled.work/r/{name}.json",
     "@diceui": "https://diceui.com/r/{name}.json",
-    "@ncdai": "https://chanhdai.com/r/{name}.json"
+    "@ncdai": "https://chanhdai.com/r/{name}.json",
+    "@grootstudio": "https://grootstudio.vercel.app/r/{name}.json"
   }
 }
