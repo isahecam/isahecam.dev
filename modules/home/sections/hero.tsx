@@ -17,14 +17,15 @@ import { PUBLIC_SOCIAL_URLS } from "@/shared/constants/public-social-urls.consta
 
 export async function Hero() {
   return (
-    <section className="relative flex w-full flex-col gap-16 p-4 py-16">
+    <section className="relative flex w-full flex-col gap-16 overflow-hidden rounded-4xl p-8 py-16">
       <Image
         src="https://assets.isahecam.dev/images/landscape-background.avif"
         alt="Hero background"
-        fill
+        width={1920}
+        height={1080}
         priority
         fetchPriority="high"
-        className="absolute inset-0 -z-10 hidden h-full w-full mask-y-from-80% mask-y-to-100% object-cover object-top-right md:mask-x-from-70% md:mask-x-to-90% dark:block dark:opacity-40"
+        className="absolute inset-0 -z-10 hidden h-full w-full object-cover object-top-right dark:block dark:opacity-40"
       />
 
       <div className="flex flex-col gap-8">
