@@ -100,5 +100,9 @@
   "locale-switcher": {
     "label": "Change language",
     "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
+  },
+
+  "Footer": {
+    "allRightsReserved": "All rights reserved."
   }
 }
