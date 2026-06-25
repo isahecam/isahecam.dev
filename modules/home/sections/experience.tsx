@@ -1,4 +1,3 @@
-import { ExternalLinkIcon } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import type { Experience } from "@/modules/home/types/experience.types";
@@ -23,8 +22,8 @@ export async function Experience() {
 
   return (
     <section className="flex flex-col gap-6">
-      <header className="flex w-full items-center justify-between gap-2">
-        <Heading className="text-xs font-bold text-balance text-muted-foreground" level={2}>
+      <header>
+        <Heading className="text-xs tracking-widest text-muted-foreground uppercase" level={2}>
           {t("heading")}
         </Heading>
       </header>
@@ -37,16 +36,7 @@ export async function Experience() {
             <TimelineContent>
               <TimelineHeader>
                 <TimelineTitle>
-                  {exp.role} |{" "}
-                  {exp.company.website && (
-                    <a
-                      href={exp.company.website}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      className="inline-flex gap-1 underline-offset-4 hover:text-accent hover:underline">
-                      {exp.company.name} <ExternalLinkIcon aria-hidden className="size-3" />
-                    </a>
-                  )}
+                  {exp.role} | {exp.company.website && <>{exp.company.name}</>}
                 </TimelineTitle>
                 <TimelineTime>
                   {formatDateRange(exp.period.startDate, exp.period.endDate, {
