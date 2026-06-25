@@ -6,8 +6,9 @@ import { Heading } from "@/shared/components/ui/heading";
 export function Projects() {
   return (
     <section className="flex w-full flex-col gap-6">
-      <header className="flex w-full items-center justify-between gap-2">
-        <Heading className="text-xs tracking-widest text-muted-foreground uppercase" level={2}>
+      <header className="flex flex-col gap-2">
+        <div className="h-0.5 w-8 bg-foreground" aria-hidden />
+        <Heading className="text-xs font-semibold tracking-[0.2em] text-foreground uppercase" level={2}>
           Proyectos
         </Heading>
       </header>
