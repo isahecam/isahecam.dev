@@ -19,9 +19,9 @@ export function ProjectCard({ project }: Props) {
       <div className="w-full sm:min-w-[50%]">
         <CardHeader className="pt-4">
           <CardTitle>{name}</CardTitle>
-          <CardDescription className="mb-4">{description}</CardDescription>
+          <CardDescription>{description}</CardDescription>
         </CardHeader>
-        <CardFooter className="gap-3 py-4">
+        <CardFooter className="mt-4 flex flex-wrap items-center justify-start gap-3">
           {technologies.map((tech) => (
             <Badge key={tech._id} variant={"outline"} className="h-auto">
               <Image
