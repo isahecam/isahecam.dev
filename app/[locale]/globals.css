@@ -158,7 +158,7 @@
 @layer utilities {
   @container scroll-state(stuck: top) {
     .navbar {
-      @apply border border-border;
+      @apply max-w-xl border border-border;
     }
   }
 }
