@@ -8,6 +8,7 @@ import { locale as rootLocale } from "next/root-params";
 
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
 import { routing } from "@/i18n/routing";
+import { Footer } from "@/shared/components/layout/footer";
 import { Header } from "@/shared/components/layout/header";
 import { ThemeProvider } from "@/shared/components/providers/theme-provider";
 import { TooltipProvider } from "@/shared/components/ui/tooltip";
@@ -129,6 +130,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
             <TooltipProvider>
               <Header />
               {children}
+              <Footer />
             </TooltipProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
