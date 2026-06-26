@@ -1,4 +1,5 @@
 import { FileTextIcon, MailPlusIcon } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -6,7 +7,7 @@ import { Suspense } from "react";
 import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { AvailabilityStatus } from "@/modules/home/components/primitives/availability-status";
 import { LocationBadge } from "@/modules/home/components/primitives/location-badge";
-import { WhoAmITextFlip } from "@/modules/home/components/primitives/whoami-text-flip";
+import { RoleTextFlip } from "@/modules/home/components/primitives/role-text-flip";
 import { GitHub } from "@/shared/components/icons/github";
 import { LinkedIn } from "@/shared/components/icons/linkedin";
 import { buttonVariants } from "@/shared/components/ui/button";
@@ -16,11 +17,13 @@ import { Separator } from "@/shared/components/ui/separator";
 import { PUBLIC_SOCIAL_URLS } from "@/shared/constants/public-social-urls.constants";
 
 export async function Hero() {
+  const tHome = await getTranslations("home");
+
   return (
-    <section className="relative flex w-full flex-col gap-16 overflow-hidden rounded-4xl p-8 py-16">
+    <section className="relative flex w-full flex-col gap-16 overflow-hidden rounded-4xl px-6 py-16 sm:px-8">
       <Image
         src="https://assets.isahecam.dev/images/landscape-background.avif"
-        alt="Hero background"
+        alt={tHome("hero.accessibility.alt-background")}
         width={1920}
         height={1080}
         priority
@@ -44,7 +47,7 @@ export async function Hero() {
           <div className="flex flex-col gap-4 sm:flex-row">
             <Image
               src="https://assets.isahecam.dev/images/avatar.png"
-              alt="Avatar of Brandon Hernández"
+              alt={tHome("hero.accessibility.alt-avatar")}
               className="size-30 rounded-full"
               priority
               width={240}
@@ -54,19 +57,19 @@ export async function Hero() {
               decoding="async"
             />
 
-            <div className="flex w-full flex-col justify-center gap-1">
-              <Heading level={1} className="text-3xl font-black text-balance sm:text-4xl">
+            <div className="flex w-full flex-col justify-end gap-1">
+              <Heading level={1} className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">
                 Brandon Hernández
               </Heading>
 
-              <WhoAmITextFlip />
+              <RoleTextFlip />
             </div>
           </div>
 
           <Paragraph className="max-w-xl leading-relaxed text-balance">
-            <strong>Desarrollador Full-Stack</strong> e{" "}
-            <strong>Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con +1 año de experiencia
-            en desarrollo web, diseño y escalabilidad de aplicaciones entornos Frontend-Backend.
+            {tHome.rich("hero.about-me", {
+              strong: (chunks) => <strong className="text-orange-300">{chunks}</strong>,
+            })}
           </Paragraph>
         </header>
 
@@ -74,7 +77,7 @@ export async function Hero() {
           <div className="flex items-center gap-2">
             <Link className={buttonVariants({ variant: "default", size: "lg" })} href="#contact">
               <MailPlusIcon />
-              Contáctame
+              {tHome("hero.cta-contact")}
             </Link>
 
             <Link
@@ -83,7 +86,7 @@ export async function Hero() {
               rel="noopener noreferrer"
               target="_blank">
               <FileTextIcon aria-hidden />
-              Descargar CV
+              {tHome("hero.cta-download-cv")}
             </Link>
           </div>
 
