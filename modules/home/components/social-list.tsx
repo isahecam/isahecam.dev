@@ -9,7 +9,7 @@ import { SOCIAL_LINKS } from "@/modules/home/constants/social.constants";
 import { Background } from "@/shared/components/layout/background";
 
 export function SocialList() {
-  const t = useTranslations("a11y");
+  const t = useTranslations("home.contact");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const preview = SOCIAL_LINKS.find((l) => l.id === hoveredId);
@@ -45,11 +45,11 @@ export function SocialList() {
           <img
             key={preview.id}
             src={preview.previewImage}
-            alt={t("social-preview-alt", { platform: preview.platform })}
+            alt={t("accessibility.social-preview-alt", { platform: preview.platform })}
             className="h-full w-full object-cover object-top transition-opacity duration-300"
           />
         ) : (
-          <span className="font-mono text-xs text-muted-foreground">{t("social-hover-hint")}</span>
+          <span className="font-mono text-xs text-muted-foreground">{t("accessibility.social-hover-hint")}</span>
         )}
       </div>
     </div>
