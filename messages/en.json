@@ -1,33 +1,32 @@
 {
-  "a11y": {
-    "skip-to-content": "Skip to main content",
-    "site-nav": "Site preferences",
-    "social-nav": "Social links and résumé",
-    "theme-toggle": "Toggle light or dark theme",
-    "language-switcher": "Change site language",
-    "logo-home": "Home — isahecam.dev",
-    "social-preview-alt": "Preview of {platform}",
-    "social-hover-hint": "Hover a link on the left to see a preview"
-  },
   "metadata": {
     "title": "Brandon Hernández | Full Stack Developer & IT Engineer",
     "description": "Full Stack Developer and IT Engineer with more than a year of experience in the development of scalable web interfaces and systems. Based in Puebla, Mexico. Professional portfolio of Brandon Hernández (isahecam).",
     "og-image-alt": "Decorative ASCII art terminal-style pattern as profile background"
   },
   "home": {
+    "hero": {
+      "accessibility": {
+        "alt-background": "Hero background",
+        "alt-avatar": "Avatar of Brandon Hernández"
+      },
+      "roles": ["Full Stack Developer", "IT Systems Engineer"],
+      "about-me": "<strong>Full-Stack Developer</strong> and <strong>Industrial Information Technology Systems Engineer</strong> with 1+ year of experience in web development, design, and application scalability in Frontend-Backend environments.",
+      "cta-contact": "Contact me",
+      "cta-download-cv": "Download CV"
+    },
     "header": {
       "availability": {
         "label": "Open to work"
       },
       "location": "Puebla, Mexico"
     },
-    "typewriter-sentences": ["Full Stack Developer", "IT Engineer"],
-    "about-me": "<strong>Full Stack Developer</strong> and <strong>Systems and Industrial Information Technology Engineer</strong> with over a year of experience building web solutions. Specialized in creating scalable web interfaces and systems for different commercial sectors.",
-    "footer": {
-      "tagline": "Built with care by <a>isahecam</a>"
-    },
     "contact": {
-      "heading": "// find me on · hover for preview"
+      "heading": "// find me on · hover for preview",
+      "accessibility": {
+        "social-preview-alt": "Preview of {platform}",
+        "social-hover-hint": "Hover a link on the left to see a preview"
+      }
     },
     "now": {
       "heading": "// now",
@@ -85,7 +84,7 @@
       ]
     },
     "projects": {
-      "heading": "// my projects"
+      "heading": "Projects"
     },
     "spotify": {
       "listening": "Listening",
@@ -101,7 +100,6 @@
     "label": "Change language",
     "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
   },
-
   "Footer": {
     "allRightsReserved": "All rights reserved."
   }
