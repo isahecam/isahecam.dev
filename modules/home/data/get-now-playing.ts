@@ -25,7 +25,7 @@ const getAccessToken = async (): Promise<string> => {
 
 export async function getNowPlaying(): Promise<NowPlayingData> {
   "use cache";
-  cacheLife("minutes");
+  cacheLife("seconds");
   cacheTag("now-playing");
 
   if (
