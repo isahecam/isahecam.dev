@@ -10,7 +10,11 @@
         "alt-background": "Fondo del hero",
         "alt-avatar": "Avatar de Brandon Hernández"
       },
-      "roles": ["Desarrollador Frontend", "Ingeniero en Sistemas y Tecnologías de la Información Industrial"],
+      "roles": [
+        "Desarrollador Frontend",
+        "Ingeniero en Sistemas y Tecnologías de la Información Industrial",
+        "Construyendo aplicaciones web escalables"
+      ],
       "about-me": "<strong>Desarrollador Frontend</strong> e <strong>Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con más de un año de experiencia desarrollando y desplegando aplicaciones web modernas en entornos de producción.",
       "cta-contact": "Contáctame",
       "cta-download-cv": "Descargar CV"
