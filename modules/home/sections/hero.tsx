@@ -8,13 +8,11 @@ import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { AvailabilityStatus } from "@/modules/home/components/primitives/availability-status";
 import { LocationBadge } from "@/modules/home/components/primitives/location-badge";
 import { RoleTextFlip } from "@/modules/home/components/primitives/role-text-flip";
-import { GitHub } from "@/shared/components/icons/github";
-import { LinkedIn } from "@/shared/components/icons/linkedin";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Heading } from "@/shared/components/ui/heading";
 import { Paragraph } from "@/shared/components/ui/paragraph";
 import { Separator } from "@/shared/components/ui/separator";
-import { PUBLIC_SOCIAL_URLS } from "@/shared/constants/public-social-urls.constants";
+import { SOCIAL_LINKS } from "@/shared/constants/social.constants";
 
 export async function Hero() {
   const tHome = await getTranslations("home");
@@ -93,29 +91,20 @@ export async function Hero() {
           <Separator orientation="vertical" className="my-auto hidden h-3 sm:block" />
 
           <div className="flex items-center gap-2">
-            <Link
-              className={buttonVariants({
-                variant: "secondary",
-                size: "icon-lg",
-              })}
-              href={PUBLIC_SOCIAL_URLS.github}
-              rel="noopener noreferrer"
-              target="_blank">
-              <GitHub aria-hidden />
-              <span className="sr-only">GitHub</span>
-            </Link>
-
-            <Link
-              className={buttonVariants({
-                variant: "secondary",
-                size: "icon-lg",
-              })}
-              href={PUBLIC_SOCIAL_URLS.linkedIn}
-              rel="noopener noreferrer"
-              target="_blank">
-              <LinkedIn aria-hidden />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
+            {SOCIAL_LINKS.map((link) => (
+              <Link
+                key={link.platform}
+                className={buttonVariants({
+                  variant: "secondary",
+                  size: "icon-lg",
+                })}
+                href={link.url}
+                rel="noopener noreferrer"
+                target="_blank">
+                <link.icon aria-hidden />
+                <span className="sr-only">{link.platform}</span>
+              </Link>
+            ))}
           </div>
         </nav>
       </article>
