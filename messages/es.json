@@ -74,7 +74,7 @@
       ]
     },
     "experience": {
-      "heading": "// experiencia",
+      "heading": "Experiencia",
       "present": "presente",
       "items": [
         {
@@ -91,7 +91,7 @@
       ]
     },
     "projects": {
-      "heading": "// mis proyectos"
+      "heading": "Proyectos"
     },
     "spotify": {
       "listening": "Escuchando",
