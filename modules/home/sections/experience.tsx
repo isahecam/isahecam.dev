@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 
-import type { Experience } from "@/modules/home/types/experience.types";
+import { getExperiences } from "@/modules/home/data/get-experiences";
+import { DecoratorBar } from "@/shared/components/blocks/decorator-bar";
 import { Heading } from "@/shared/components/ui/heading";
 import {
   Timeline,
@@ -18,25 +19,28 @@ import { formatDateRange } from "@/shared/utils";
 export async function Experience() {
   const locale = await getLocale();
   const t = await getTranslations("home.experience");
-  const items = t.raw("items") as Experience[];
+  const items = await getExperiences(locale);
 
   return (
     <section className="flex flex-col gap-6">
-      <header>
-        <Heading className="text-xs tracking-widest text-muted-foreground uppercase" level={2}>
+      <header className="flex flex-col gap-2">
+        <DecoratorBar />
+        <Heading className="text-xs font-semibold tracking-[0.2em] text-foreground uppercase" level={2}>
           {t("heading")}
         </Heading>
       </header>
 
       <Timeline activeIndex={0}>
         {items.map((exp) => (
-          <TimelineItem key={exp.id}>
+          <TimelineItem key={exp._id}>
             <TimelineDot />
             <TimelineConnector />
             <TimelineContent>
               <TimelineHeader>
-                <TimelineTitle>
-                  {exp.role} | {exp.company.website && <>{exp.company.name}</>}
+                <TimelineTitle className="flex flex-wrap items-center gap-2">
+                  {exp.role}
+                  <span className="text-muted-foreground">|</span>
+                  {exp.company.name}
                 </TimelineTitle>
                 <TimelineTime>
                   {formatDateRange(exp.period.startDate, exp.period.endDate, {
