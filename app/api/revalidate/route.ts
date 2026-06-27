@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 const SANITY_REVALIDATE_TAGS: Record<string, string> = {
   project: "projects",
   technology: "technologies",
+  experience: "experiences",
 };
 
 export async function POST(req: NextRequest) {
