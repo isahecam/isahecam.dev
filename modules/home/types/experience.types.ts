@@ -5,12 +5,12 @@ export interface Period {
 
 export interface Company {
   name: string;
-  website: string;
-  logo: string;
+  website: string | null;
+  logo: string | null;
 }
 
 export interface Experience {
-  id: number;
+  _id: string;
   role: string;
   company: Company;
   period: Period;
