@@ -5,17 +5,17 @@ import type { SocialLink } from "@/shared/types/constants.types";
 
 export const SOCIAL_LINKS = [
   {
-    platform: "GitHub",
-    url: "https://github.com/isahecam",
-    icon: GitHub,
-  },
-  {
     platform: "LinkedIn",
     url: "https://linkedin.com/in/isahir-hernandez",
     icon: LinkedIn,
   },
   {
-    platform: "X (Formerly Twitter)",
+    platform: "GitHub",
+    url: "https://github.com/isahecam",
+    icon: GitHub,
+  },
+  {
+    platform: "X",
     url: "https://x.com/isahecam",
     icon: XformerlyTwitter,
   },
