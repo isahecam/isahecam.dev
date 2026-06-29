@@ -18,7 +18,7 @@ export function Heading({ children, level = 1, className, ...props }: Props) {
   // } satisfies Record<number, string>;
 
   return (
-    <Tag className={clsx("tracking-tight text-balance", className)} {...props}>
+    <Tag data-slot="heading" className={clsx("tracking-tight text-balance", className)} {...props}>
       {children}
     </Tag>
   );
