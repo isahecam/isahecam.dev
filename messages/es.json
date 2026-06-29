@@ -1,36 +1,39 @@
 {
-  "a11y": {
-    "skip-to-content": "Saltar al contenido principal",
-    "site-nav": "Preferencias del sitio",
-    "social-nav": "Redes sociales y currículum",
-    "theme-toggle": "Alternar tema claro u oscuro",
-    "language-switcher": "Cambiar idioma del sitio",
-    "logo-home": "Inicio — isahecam.dev",
-    "social-preview-alt": "Vista previa de {platform}",
-    "social-hover-hint": "Pasa el cursor por un enlace de la izquierda para ver una vista previa"
-  },
   "metadata": {
     "title": "Brandon Hernández | Desarrollador Full Stack e Ingeniero en Sistemas y Tecnologías de la Información Industrial",
     "description": "Desarrollador Full Stack e ingeniero en Sistemas y Tecnologías de la Información Industrial con más de un año de experiencia en el desarrollo de interfaces y sistemas web escalables. Basado en Puebla, México. Portfolio profesional de Brandon Hernández (isahecam).",
     "og-image-alt": "Patrón decorativo de arte ASCII estilo terminal como fondo del perfil"
   },
   "home": {
+    "hero": {
+      "accessibility": {
+        "alt-background": "Fondo del hero",
+        "alt-avatar": "Avatar de Brandon Hernández"
+      },
+      "roles": [
+        "Desarrollador Frontend",
+        "Ingeniero en Sistemas y Tecnologías de la Información Industrial",
+        "Construyendo aplicaciones web escalables"
+      ],
+      "about-me": "<strong>Desarrollador Frontend</strong> e <strong>Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con más de un año de experiencia desarrollando y desplegando aplicaciones web modernas en entornos de producción.",
+      "cta-contact": "Contáctame",
+      "cta-download-cv": "Descargar CV"
+    },
     "header": {
       "availability": {
         "label": "Disponible para trabajar"
       },
       "location": "Puebla, México"
     },
-    "typewriter-sentences": [
-      "Desarrollador Full Stack",
-      "Ingeniero en Sistemas y Tecnologías de la Información Industrial"
-    ],
-    "about-me": "<strong>Desarrollador Full Stack</strong> e <strong>Ingeniero en Sistemas y Tecnologías de la Información Industrial</strong> con más de un año de experiencia desarrollando soluciones web. Especializado en la creación de interfaces y sistemas web escalables para distintos sectores comerciales.",
     "footer": {
       "tagline": "Construido con amor por <a>isahecam</a>"
     },
     "contact": {
-      "heading": "// encuéntrame en · hover para preview"
+      "heading": "// encuéntrame en · hover para preview",
+      "accessibility": {
+        "social-preview-alt": "Vista previa de {platform}",
+        "social-hover-hint": "Pasa el cursor por un enlace de la izquierda para ver una vista previa"
+      }
     },
     "now": {
       "heading": "// ahora",
@@ -71,7 +74,7 @@
       ]
     },
     "experience": {
-      "heading": "// experiencia",
+      "heading": "Experiencia",
       "present": "presente",
       "items": [
         {
@@ -88,30 +91,7 @@
       ]
     },
     "projects": {
-      "heading": "// mis proyectos",
-      "status": {
-        "crafting": "en construcción",
-        "completed": "completado",
-        "in-review": "en revisión"
-      },
-      "items": [
-        {
-          "id": 1,
-          "title": "Meeti | Crea y comparte tus gustos con otras personas",
-          "description": "Meeti es una plataforma de creación de meetups y comunidades para compartir tus gustos e intereses con otras personas.",
-          "technologies": ["nextjs", "typescript", "react", "tailwindcss", "shadcn/ui", "drizzle-orm", "neon"],
-          "year": 2026,
-          "status": "crafting"
-        },
-        {
-          "id": 2,
-          "title": "Membok | Lleva un control de tus suscripciones",
-          "description": "Membo es una plataforma de gestión de suscripciones de servicios digitales para llevar un control en una sola vista.",
-          "technologies": ["react", "typescript", "nextjs", "shadcn/ui", "better-auth", "supabase"],
-          "year": 2026,
-          "status": "crafting"
-        }
-      ]
+      "heading": "Proyectos"
     },
     "spotify": {
       "listening": "Escuchando",
@@ -126,5 +106,8 @@
   "locale-switcher": {
     "label": "Cambiar idioma",
     "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
+  },
+  "Footer": {
+    "allRightsReserved": "Todos los derechos reservados."
   }
 }

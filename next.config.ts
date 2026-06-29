@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   typedRoutes: true,
+  cacheComponents: true,
+  experimental: {
+    rootParams: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -14,6 +18,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "assets.isahecam.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
       },
     ],
   },

@@ -1,19 +1,13 @@
-import { Contact } from "@/modules/home/sections/contact";
-import { Education } from "@/modules/home/sections/education";
 import { Experience } from "@/modules/home/sections/experience";
 import { Hero } from "@/modules/home/sections/hero";
-import { Now } from "@/modules/home/sections/now";
-import { Projects } from "@/modules/home/sections/projects";
+import { Projects } from "@/modules/projects/projects";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex max-w-4xl flex-1 scroll-mt-24 flex-col gap-10 px-5 py-25 lg:px-0">
+    <main className="mx-auto flex w-full max-w-4xl flex-1 scroll-mt-24 flex-col gap-20 px-4 lg:px-0">
       <Hero />
-      <Projects />
       <Experience />
-      <Education />
-      <Now />
-      <Contact />
+      <Projects />
     </main>
   );
 }

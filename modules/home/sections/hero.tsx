@@ -1,110 +1,112 @@
-import { FileTextIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
-import { Availability } from "@/modules/home/components/primitives/availability";
-import { Location } from "@/modules/home/components/primitives/location";
-import { NativeTypewriter } from "@/shared/components/blocks/uitripled/native-typewriter-shadcnui";
-import { GitHub } from "@/shared/components/icons/github";
-import { LinkedIn } from "@/shared/components/icons/linkedin";
+import { AvailabilityStatus } from "@/modules/home/components/primitives/availability-status";
+import { LocationBadge } from "@/modules/home/components/primitives/location-badge";
+import { RoleTextFlip } from "@/modules/home/components/primitives/role-text-flip";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Heading } from "@/shared/components/ui/heading";
 import { Paragraph } from "@/shared/components/ui/paragraph";
 import { Separator } from "@/shared/components/ui/separator";
-import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
-import { PUBLIC_SOCIAL_URLS } from "@/shared/constants/public-social-urls.constants";
+import { SOCIAL_LINKS } from "@/shared/constants/social.constants";
 
 export async function Hero() {
-  const t = await getTranslations("home");
-  const tA11y = await getTranslations("a11y");
-  const tMeta = await getTranslations("metadata");
-  const typewriterSentences = t.raw("typewriter-sentences") as string[];
-  const typewriterSrText = typewriterSentences.join(" · ");
+  const tHome = await getTranslations("home");
 
   return (
-    <section className="relative flex flex-col gap-8 overflow-hidden py-16">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
-        <div className="relative h-full w-full mask-[linear-gradient(to_left,black_0%,black_30%,transparent_65%)] sm:mask-[linear-gradient(to_left,black_0%,black_40%,transparent_70%)]">
-          <Image
-            src="https://assets.isahecam.dev/images/ascii-art-hero-background.png"
-            alt={tMeta("og-image-alt")}
-            fill
-            priority
-            fetchPriority="high"
-            className="object-cover object-top-right"
-            sizes="(max-width: 640px) 100vw, 50vw"
-          />
-          <div className="absolute inset-0 bg-linear-to-r from-background via-background/75 to-transparent" />
-        </div>
-      </div>
-      <header className="relative z-10 space-y-4">
-        <div className="flex items-center gap-4 text-xs">
-          <Availability />
-          <Separator orientation="vertical" className="my-auto h-3" />
-          <Location />
-        </div>
-        <NowPlayingStatus />
-      </header>
+    <section className="relative flex w-full flex-col gap-16 overflow-hidden rounded-4xl px-6 py-16 sm:px-8">
+      <Image
+        src="https://assets.isahecam.dev/images/landscape-background.avif"
+        alt={tHome("hero.accessibility.alt-background")}
+        width={1920}
+        height={1080}
+        priority
+        fetchPriority="high"
+        className="absolute inset-0 -z-10 hidden h-full w-full object-cover object-top-right dark:block dark:opacity-40"
+      />
 
-      <div className="relative z-10 flex flex-col gap-6">
-        <header>
-          <div className="flex items-center gap-4">
+      <div className="flex flex-col gap-8">
+        <div className="flex items-center gap-4">
+          <AvailabilityStatus />
+          <Separator orientation="vertical" className="my-auto h-3" />
+          <LocationBadge />
+        </div>
+        <Suspense>
+          <NowPlayingStatus />
+        </Suspense>
+      </div>
+
+      <article className="relative z-10 flex flex-col gap-8">
+        <header className="flex flex-col">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Image
-              src={PORTFOLIO.avatar}
-              alt={PORTFOLIO.displayName}
-              className="rounded-full"
-              loading="eager"
+              src="https://assets.isahecam.dev/images/avatar.png"
+              alt={tHome("hero.accessibility.alt-avatar")}
+              className="size-30 rounded-full"
               priority
-              width={96}
-              height={96}
+              width={240}
+              height={240}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
             />
-            <div className="space-y-2">
-              <Heading level={1} className="font-bold text-balance">
-                {PORTFOLIO.displayName}
+
+            <div className="flex w-full flex-col justify-end gap-1">
+              <Heading level={1} className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+                Brandon Hernández
               </Heading>
-              <span className="sr-only">{typewriterSrText}</span>
-              <div aria-hidden="true">
-                <NativeTypewriter className="block h-5.5" content={typewriterSentences} loop speed={100} />
-              </div>
+
+              <RoleTextFlip />
             </div>
           </div>
-          <Paragraph className="max-w-lg leading-relaxed text-balance text-accent">
-            {t.rich("about-me", {
-              strong: (chunks) => <strong className="font-bold text-accent">{chunks}</strong>,
+
+          <Paragraph className="max-w-xl leading-relaxed text-balance">
+            {tHome.rich("hero.about-me", {
+              strong: (chunks) => <strong>{chunks}</strong>,
             })}
           </Paragraph>
         </header>
-        <nav aria-label={tA11y("social-nav")} className="flex gap-2">
-          <Link
-            className={buttonVariants({ variant: "outline" })}
-            href={PUBLIC_SOCIAL_URLS.github}
-            rel="noopener noreferrer"
-            target="_blank">
-            <GitHub aria-hidden />
-            GitHub
-          </Link>
 
-          <Link
-            className={buttonVariants({ variant: "outline" })}
-            href={PUBLIC_SOCIAL_URLS.linkedIn}
-            rel="noopener noreferrer"
-            target="_blank">
-            <LinkedIn aria-hidden />
-            LinkedIn
-          </Link>
+        <nav className="flex flex-col gap-6 sm:flex-row">
+          {/* <div className="flex items-center gap-2">
+            <Link className={buttonVariants({ variant: "default", size: "lg" })} href="mailto:isahecam@gmail.com">
+              <MailPlusIcon />
+              {tHome("hero.cta-contact")}
+            </Link>
 
-          <Link
-            className={buttonVariants({ variant: "outline" })}
-            href="https://assets.isahecam.dev/files/CV_BRANDON_HERNANDEZ.pdf"
-            rel="noopener noreferrer"
-            target="_blank">
-            <FileTextIcon aria-hidden />
-            CV
-          </Link>
+            <Link
+              className={buttonVariants({ variant: "outline", size: "lg" })}
+              href="https://assets.isahecam.dev/files/CV_BRANDON_HERNANDEZ.pdf"
+              rel="noopener noreferrer"
+              target="_blank">
+              <FileTextIcon aria-hidden />
+              {tHome("hero.cta-download-cv")}
+            </Link>
+          </div> */}
+
+          {/* <Separator orientation="vertical" className="my-auto hidden h-3 sm:block" /> */}
+
+          <div className="flex items-center gap-2">
+            {SOCIAL_LINKS.map((link) => (
+              <Link
+                key={link.platform}
+                className={buttonVariants({
+                  variant: "ghost",
+                  size: "icon-lg",
+                })}
+                href={link.url}
+                rel="noopener noreferrer"
+                target="_blank">
+                <link.icon aria-hidden />
+                <span className="sr-only">{link.platform}</span>
+              </Link>
+            ))}
+          </div>
         </nav>
-      </div>
+      </article>
     </section>
   );
 }

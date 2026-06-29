@@ -8,8 +8,8 @@ export function Header() {
   const currentLocale = useLocale();
 
   return (
-    <header className="sticky top-0 z-20 w-full backdrop-blur-xl dark:border-primary-foreground">
-      <div className="mx-auto flex w-full max-w-4xl items-center justify-between p-5 lg:px-0">
+    <header className="@container-[scroll-state] sticky top-0 z-20 w-full p-8">
+      <div className="floating-header mx-auto flex h-14 w-full max-w-4xl items-center justify-between rounded-[34px] border border-transparent bg-background px-4 py-2 transition-[max-width,border-radius,background-color] duration-200">
         <Logo />
         <nav className="flex items-center gap-2">
           <ThemeToggle />

@@ -1,15 +1,6 @@
-export interface NowPlayingTrack {
-  isPlaying: true;
-  title: string;
-  artist: string;
-  album: string;
-  albumImage: string | null;
-  songUrl: string;
-  progress: number;
-  duration: number;
-}
+import { cacheLife, cacheTag } from "next/cache";
 
-export type NowPlayingData = NowPlayingTrack | { isPlaying: false };
+import { NowPlayingData } from "@/modules/home/types/now.types";
 
 const getAccessToken = async (): Promise<string> => {
   const basic = Buffer.from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString("base64");
@@ -19,9 +10,6 @@ const getAccessToken = async (): Promise<string> => {
     headers: {
       Authorization: `Basic ${basic}`,
       "Content-Type": "application/x-www-form-urlencoded",
-    },
-    next: {
-      revalidate: 3000,
     },
     body: new URLSearchParams({
       grant_type: "refresh_token",
@@ -36,6 +24,10 @@ const getAccessToken = async (): Promise<string> => {
 };
 
 export async function getNowPlaying(): Promise<NowPlayingData> {
+  "use cache";
+  cacheLife("seconds");
+  cacheTag("now-playing");
+
   if (
     !process.env.SPOTIFY_CLIENT_ID ||
     !process.env.SPOTIFY_CLIENT_SECRET ||
@@ -51,7 +43,6 @@ export async function getNowPlaying(): Promise<NowPlayingData> {
 
     const response = await fetch(`${process.env.SPOTIFY_API_URL}/me/player/currently-playing`, {
       headers: { Authorization: `Bearer ${access_token}` },
-      cache: "no-store",
     });
 
     if (response.status === 204 || response.status >= 400) return { isPlaying: false };

@@ -22,13 +22,13 @@ export async function Education() {
 
   return (
     <section className="flex flex-col gap-6">
-      <header className="flex w-full items-center justify-between gap-2">
-        <Heading className="text-xs font-bold text-balance text-muted-foreground" level={2}>
+      <header>
+        <Heading className="text-xs tracking-widest text-muted-foreground uppercase" level={2}>
           {t("heading")}
         </Heading>
       </header>
 
-      <Timeline activeIndex={2}>
+      <Timeline activeIndex={1}>
         {items.map((edu) => (
           <TimelineItem key={edu.id}>
             <TimelineDot />
