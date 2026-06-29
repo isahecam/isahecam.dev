@@ -30,7 +30,7 @@ export async function Experience() {
         </Heading>
       </header>
 
-      <Timeline activeIndex={0}>
+      <Timeline activeIndex={1}>
         {items.map((exp) => (
           <TimelineItem key={exp._id}>
             <TimelineDot />
