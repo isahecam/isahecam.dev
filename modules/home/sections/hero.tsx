@@ -73,7 +73,7 @@ export async function Hero() {
 
         <nav className="flex flex-col gap-6 sm:flex-row">
           <div className="flex items-center gap-2">
-            <Link className={buttonVariants({ variant: "default", size: "lg" })} href="#contact">
+            <Link className={buttonVariants({ variant: "default", size: "lg" })} href="mailto:isahecam@gmail.com">
               <MailPlusIcon />
               {tHome("hero.cta-contact")}
             </Link>
