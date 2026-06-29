@@ -181,7 +181,7 @@
     }
 
     /* --- Project cards --- */
-    [data-slot="project-card"] {
+    [data-slot="card"] {
       animation: reveal-fade-up linear both;
       animation-timeline: view();
       animation-range: entry 5% cover 35%;
