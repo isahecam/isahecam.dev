@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Suspense } from "react";
 
-import { ProjectsGrid } from "@/modules/projects/projects-grid";
+import { ProjectsGrid } from "@/modules/projects/views/projects-grid";
 import { DecoratorBar } from "@/shared/components/blocks/decorator-bar";
 import { Heading } from "@/shared/components/ui/heading";
 
