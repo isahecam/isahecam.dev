@@ -7,7 +7,7 @@ export function RoleTextFlip() {
   const roles = t.raw("roles") as string[];
 
   return (
-    <TextFlip className="h-10 max-w-80 text-sm font-medium text-balance text-mauve-700 dark:text-mauve-200">
+    <TextFlip className="h-10 max-w-80 text-sm font-medium text-foreground">
       {roles.map((role) => (
         <span key={role} className="block">
           {role}
