@@ -18,7 +18,7 @@ export function ProjectCard({ project }: Props) {
         height={1440}
         src={project.cover}
         alt={project.name}
-        className="size-full h-56 w-full grow object-cover"
+        className="size-full h-56 w-full grow object-cover sm:rounded-[min(var(--radius-4xl),24px)]"
       />
       <div className="flex w-full flex-col gap-4 pb-5 sm:min-w-[50%] sm:pb-0">
         <CardHeader>
