@@ -1,4 +1,3 @@
-import { FileTextIcon, MailPlusIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
@@ -66,13 +65,13 @@ export async function Hero() {
 
           <Paragraph className="max-w-xl leading-relaxed text-balance">
             {tHome.rich("hero.about-me", {
-              strong: (chunks) => <strong className="text-orange-300">{chunks}</strong>,
+              strong: (chunks) => <strong>{chunks}</strong>,
             })}
           </Paragraph>
         </header>
 
         <nav className="flex flex-col gap-6 sm:flex-row">
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <Link className={buttonVariants({ variant: "default", size: "lg" })} href="mailto:isahecam@gmail.com">
               <MailPlusIcon />
               {tHome("hero.cta-contact")}
@@ -86,16 +85,16 @@ export async function Hero() {
               <FileTextIcon aria-hidden />
               {tHome("hero.cta-download-cv")}
             </Link>
-          </div>
+          </div> */}
 
-          <Separator orientation="vertical" className="my-auto hidden h-3 sm:block" />
+          {/* <Separator orientation="vertical" className="my-auto hidden h-3 sm:block" /> */}
 
           <div className="flex items-center gap-2">
             {SOCIAL_LINKS.map((link) => (
               <Link
                 key={link.platform}
                 className={buttonVariants({
-                  variant: "secondary",
+                  variant: "ghost",
                   size: "icon-lg",
                 })}
                 href={link.url}
