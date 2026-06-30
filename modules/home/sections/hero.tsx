@@ -8,6 +8,7 @@ import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { AvailabilityStatus } from "@/modules/home/components/primitives/availability-status";
 import { LocationBadge } from "@/modules/home/components/primitives/location-badge";
 import { RoleTextFlip } from "@/modules/home/components/primitives/role-text-flip";
+import { BackgroundPattern } from "@/shared/components/layout/background-pattern";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Heading } from "@/shared/components/ui/heading";
 import { Paragraph } from "@/shared/components/ui/paragraph";
@@ -19,6 +20,7 @@ export async function Hero() {
 
   return (
     <section className="relative flex w-full flex-col gap-16 overflow-hidden rounded-4xl py-16">
+      <BackgroundPattern />
       <div className="flex flex-col gap-6">
         <div className="flex items-center gap-4">
           <AvailabilityStatus />
@@ -61,7 +63,7 @@ export async function Hero() {
           </Paragraph>
         </header>
 
-        <nav className="flex flex-col gap-6 sm:flex-row">
+        <nav className="flex gap-6">
           <Link className={buttonVariants({ variant: "default", size: "lg" })} href="mailto:isahecam@gmail.com">
             <MailPlusIcon />
             {tHome("hero.cta-contact")}
