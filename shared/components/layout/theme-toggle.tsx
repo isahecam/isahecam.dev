@@ -13,8 +13,11 @@ export function ThemeToggle() {
   };
 
   const handleThemeToggleClick = () => {
-    if (!document.startViewTransition) switchTheme();
-    else document.startViewTransition(switchTheme);
+    if (document.startViewTransition) {
+      document.startViewTransition(switchTheme);
+    } else {
+      switchTheme();
+    }
   };
 
   return (
