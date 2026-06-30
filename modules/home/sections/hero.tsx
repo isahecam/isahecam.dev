@@ -1,4 +1,4 @@
-import { FileTextIcon, MailPlusIcon } from "lucide-react";
+import { MailPlusIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,21 +62,10 @@ export async function Hero() {
         </header>
 
         <nav className="flex flex-col gap-6 sm:flex-row">
-          <div className="flex items-center gap-2">
-            <Link className={buttonVariants({ variant: "default", size: "lg" })} href="mailto:isahecam@gmail.com">
-              <MailPlusIcon />
-              {tHome("hero.cta-contact")}
-            </Link>
-
-            <Link
-              className={buttonVariants({ variant: "outline", size: "lg" })}
-              href="https://assets.isahecam.dev/files/CV_BRANDON_HERNANDEZ.pdf"
-              rel="noopener noreferrer"
-              target="_blank">
-              <FileTextIcon aria-hidden />
-              {tHome("hero.cta-download-cv")}
-            </Link>
-          </div>
+          <Link className={buttonVariants({ variant: "default", size: "lg" })} href="mailto:isahecam@gmail.com">
+            <MailPlusIcon />
+            {tHome("hero.cta-contact")}
+          </Link>
 
           <Separator orientation="vertical" className="my-auto hidden h-3 sm:block" />
 
