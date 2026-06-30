@@ -11,7 +11,7 @@ export async function NowPlayingStatus() {
   const t = await getTranslations("home.spotify");
 
   return (
-    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+    <div className="flex items-center gap-2 text-xs text-foreground">
       <Spotify aria-hidden className="size-3 shrink-0" />
       <span className="max-w-[42ch] truncate">
         {t("now-playing-prefix")} {data.title} — {data.artist}
