@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-export function LinkedIn(props: SVGProps<SVGSVGElement>) {
+export function LinkedIn(props: Readonly<SVGProps<SVGSVGElement>>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" {...props}>
       <path
