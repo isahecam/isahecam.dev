@@ -18,20 +18,7 @@ export async function Hero() {
   const tHome = await getTranslations("home");
 
   return (
-    <section className="relative flex w-full flex-col gap-16 overflow-hidden rounded-4xl px-6 py-16 sm:px-8">
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="https://assets.isahecam.dev/images/landscape-background.avif"
-          alt=""
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          className="object-cover object-[top_right] opacity-40"
-        />
-        <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/10 to-background/60 dark:bg-linear-to-t dark:from-background dark:via-background/40 dark:to-transparent" />
-      </div>
-
+    <section className="relative flex w-full flex-col gap-16 overflow-hidden rounded-4xl py-16">
       <div className="flex flex-col gap-6">
         <div className="flex items-center gap-4">
           <AvailabilityStatus />
