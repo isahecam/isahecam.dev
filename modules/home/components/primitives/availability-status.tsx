@@ -1,9 +1,8 @@
 import { Status, StatusIndicator, StatusLabel } from "@/shared/components/ui/status";
-import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
 
 export async function AvailabilityStatus() {
   return (
-    <Status variant={PORTFOLIO.availability.status}>
+    <Status variant="success">
       <StatusIndicator />
       <StatusLabel>Open to work</StatusLabel>
     </Status>
