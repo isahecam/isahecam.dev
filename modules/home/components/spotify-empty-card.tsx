@@ -5,11 +5,9 @@ import { Spotify } from "@/shared/components/icons/spotify";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { cn } from "@/shared/lib/utils";
 
-interface Props {
-  className?: string;
-}
+interface Props extends React.ComponentProps<typeof Card> {}
 
-export async function SpotifyEmptyCard({ className }: Props) {
+export async function SpotifyEmptyCard({ className }: Readonly<Props>) {
   const t = await getTranslations("home.spotify");
 
   return (

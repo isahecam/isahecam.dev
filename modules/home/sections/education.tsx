@@ -13,7 +13,7 @@ import {
   TimelineTime,
   TimelineTitle,
 } from "@/shared/components/ui/timeline";
-import { formatDateRange } from "@/shared/utils";
+import { formatDateRange } from "@/shared/utils/format-date";
 
 export async function Education() {
   const locale = await getLocale();

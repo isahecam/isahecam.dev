@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { getExperiences } from "@/modules/home/data/get-experiences";
+import { formatDateRange } from "@/shared//utils/format-date";
 import { DecoratorBar } from "@/shared/components/blocks/decorator-bar";
 import { Heading } from "@/shared/components/ui/heading";
 import {
@@ -14,7 +15,6 @@ import {
   TimelineTime,
   TimelineTitle,
 } from "@/shared/components/ui/timeline";
-import { formatDateRange } from "@/shared/utils";
 
 export async function Experience() {
   const locale = await getLocale();

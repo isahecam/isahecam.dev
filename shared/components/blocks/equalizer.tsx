@@ -6,7 +6,7 @@ export function EqualizerIcon() {
       {BARS.map((delay) => (
         <span
           key={delay}
-          className="block h-3 w-[3px] origin-bottom bg-green-400"
+          className="block h-3 w-0.75 origin-bottom bg-green-400"
           style={{
             animation: `equalizer 0.8s ease-in-out infinite`,
             animationDelay: `${delay}s`,

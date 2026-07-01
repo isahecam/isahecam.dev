@@ -8,7 +8,7 @@ interface Props {
   project: Project;
 }
 
-export function ProjectCard({ project }: Props) {
+export function ProjectCard({ project }: Readonly<Props>) {
   const { name, description, technologies } = project;
 
   return (
