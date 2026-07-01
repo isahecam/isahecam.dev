@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
-import { MexicoFlag } from "@/shared/components/icons/mexico-flag";
+import { MXFlag } from "@/shared/components/icons/mx-flag";
 import { Badge } from "@/shared/components/ui/badge";
 
 export async function LocationBadge() {
@@ -8,7 +8,7 @@ export async function LocationBadge() {
 
   return (
     <Badge variant={"secondary"}>
-      <MexicoFlag className="mr-1" />
+      <MXFlag className="mr-1" />
       {t("header.location")}
     </Badge>
   );
