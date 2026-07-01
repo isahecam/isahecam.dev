@@ -27,7 +27,7 @@ export function ProjectCard({ project }: Readonly<Props>) {
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2">
           {technologies.map((tech) => (
-            <Badge key={tech._id} variant={"outline"} className="h-auto">
+            <Badge key={tech._id} variant="secondary" className="h-auto">
               <Image
                 width={180}
                 height={180}
