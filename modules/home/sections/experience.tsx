@@ -17,8 +17,7 @@ import {
 } from "@/shared/components/ui/timeline";
 
 export async function Experience() {
-  const locale = await getLocale();
-  const t = await getTranslations("home.experience");
+  const [locale, t] = await Promise.all([getLocale(), getTranslations("home.experience")]);
   const items = await getExperiences(locale);
 
   return (
