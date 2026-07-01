@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-export function MexicoFlag(props: Readonly<SVGProps<SVGSVGElement>>) {
+export function MXFlag(props: Readonly<SVGProps<SVGSVGElement>>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" {...props}>
       <path fill="#fff" d="M10 4h12v24H10z"></path>
