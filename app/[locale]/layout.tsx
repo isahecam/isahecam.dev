@@ -6,13 +6,11 @@ import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import { locale as rootLocale } from "next/root-params";
 
-import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
 import { routing } from "@/i18n/routing";
 import { Footer } from "@/shared/components/layout/footer";
 import { Header } from "@/shared/components/layout/header";
 import { ThemeProvider } from "@/shared/components/providers/theme-provider";
 import { TooltipProvider } from "@/shared/components/ui/tooltip";
-import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -33,51 +31,58 @@ export function generateStaticParams() {
 export async function generateMetadata(): Promise<Metadata> {
   const locale = (await rootLocale()) as Locale;
   const t = await getTranslations("metadata");
-  const titleDefault = t("title");
-  const description = t("description");
-  const ogImageAlt = t("og-image-alt");
+
+  const keywords = t.raw("keywords") as string[];
+
+  const canonicalPath = locale === "es" ? "/" : `/${locale}`;
 
   return {
-    metadataBase: new URL(SITE_INFO.url),
+    metadataBase: new URL("https://isahecam.dev"),
     title: {
-      template: `%s – ${SITE_INFO.name}`,
-      default: titleDefault,
+      template: `%s – ${t("title")}`,
+      default: t("title"),
     },
-    description,
-    keywords: SITE_INFO.keywords,
-    authors: [{ name: PORTFOLIO.displayName, url: SITE_INFO.url }],
-    creator: PORTFOLIO.displayName,
+    description: t("description"),
+    keywords: keywords,
+    authors: [{ name: "Brandon Hernández", url: "https://isahecam.dev" }],
+    creator: "Brandon Hernández",
+    publisher: "Brandon Hernández",
     robots: {
       index: true,
       follow: true,
       googleBot: { index: true, follow: true },
     },
     alternates: {
-      canonical: "/",
+      canonical: canonicalPath,
+      languages: {
+        es: "/",
+        en: "/en",
+        "x-default": "/",
+      },
     },
     twitter: {
       card: "summary_large_image",
-      title: titleDefault,
-      description,
-      images: [SITE_INFO.ogImage],
+      title: t("title"),
+      description: t("description"),
+      images: "https://assets.isahecam.dev/images/ascii-art-hero-background.png",
     },
     openGraph: {
-      siteName: SITE_INFO.name,
-      title: titleDefault,
-      description,
-      url: "/",
+      siteName: "Brandon Hernández",
+      title: t("title"),
+      description: t("description"),
+      url: locale === "es" ? "https://isahecam.dev" : `https://isahecam.dev/${locale}`,
       type: "profile",
       locale: locale === "es" ? "es_MX" : "en_US",
-      firstName: PORTFOLIO.firstName,
-      lastName: PORTFOLIO.lastName,
-      username: PORTFOLIO.nickname,
-      gender: PORTFOLIO.gender,
+      firstName: "Brandon",
+      lastName: "Hernández",
+      username: "isahecam",
+      gender: "male",
       images: [
         {
-          url: SITE_INFO.ogImage,
+          url: "https://assets.isahecam.dev/images/ascii-art-hero-background.png",
           width: 1200,
           height: 630,
-          alt: ogImageAlt,
+          alt: t("ogImageAlt"),
         },
       ],
     },
@@ -114,8 +119,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: META_THEME_COLORS.light },
-    { media: "(prefers-color-scheme: dark)", color: META_THEME_COLORS.dark },
+    { media: "(prefers-color-scheme: light)", color: "#e7e4e7" },
+    { media: "(prefers-color-scheme: dark)", color: "#1d161e" },
   ],
 };
 
