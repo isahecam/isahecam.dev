@@ -1,8 +1,21 @@
 {
   "metadata": {
     "title": "Brandon Hernández | Desarrollador Full Stack e Ingeniero en Sistemas y Tecnologías de la Información Industrial",
-    "description": "Desarrollador Full Stack e ingeniero en Sistemas y Tecnologías de la Información Industrial con más de un año de experiencia en el desarrollo de interfaces y sistemas web escalables. Basado en Puebla, México. Portfolio profesional de Brandon Hernández (isahecam).",
-    "og-image-alt": "Patrón decorativo de arte ASCII estilo terminal como fondo del perfil"
+    "description": "Desarrollador Full Stack & Ingeniero en Sistemas y Tecnologías de la Información Industrial con más de un año de experiencia desarrollando y desplegando aplicaciones web modernas en entornos de producción. Basado en Puebla, México. Portfolio profesional de Brandon Hernández (isahecam).",
+    "keywords": [
+      "Brandon Hernández",
+      "isahecam",
+      "Desarrollador Full Stack",
+      "Ingeniero de Software Puebla",
+      "Desarrollador Next.js",
+      "Desarrollador React TypeScript",
+      "Desarrollador Web Frontend",
+      "Backend PostgreSQL Supabase",
+      "Portafolio Desarrollador Web",
+      "Sistemas de Información Industrial",
+      "Desarrollo de Aplicaciones SaaS"
+    ],
+    "ogImageAlt": "Imagen de fondo hero en arte ASCII del sitio web del portafolio de Brandon Hernández"
   },
   "home": {
     "hero": {
