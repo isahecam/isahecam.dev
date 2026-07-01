@@ -1,7 +1,9 @@
 "use client";
 
+const yearFormatter = new Intl.DateTimeFormat("es-MX", { year: "numeric" });
+
 export function CurrentYear() {
-  const year = new Intl.DateTimeFormat("es-MX", { year: "numeric" }).format(new Date());
+  const year = yearFormatter.format(new Date());
 
   return <time dateTime={year}>{year}</time>;
 }
