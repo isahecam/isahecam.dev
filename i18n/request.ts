@@ -15,8 +15,13 @@ export default getRequestConfig(async ({ locale }) => {
     }
   }
 
+  const messageLoaders = {
+    es: () => import("../messages/es.json"),
+    en: () => import("../messages/en.json"),
+  };
+
   return {
     locale,
-    messages: (await import(`../messages/${locale}.json`)).default,
+    messages: (await messageLoaders[locale as keyof typeof messageLoaders]()).default,
   };
 });
