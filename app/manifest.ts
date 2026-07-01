@@ -1,16 +1,13 @@
 import type { MetadataRoute } from "next";
 
-import { META_THEME_COLORS } from "@/config/site";
-import { PORTFOLIO } from "@/shared/constants/portfolio.constants";
-
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${PORTFOLIO.displayName} – Portfolio`,
-    short_name: PORTFOLIO.nickname,
+    name: "Brandon Hernández - Portfolio",
+    short_name: "Brandon Hernández - Portfolio",
     start_url: "/",
-    display: "browser",
-    background_color: META_THEME_COLORS.light,
-    theme_color: META_THEME_COLORS.dark,
+    display: "standalone",
+    background_color: "#e7e4e7",
+    theme_color: "#e7e4e7",
     icons: [
       {
         src: "https://assets.isahecam.dev/images/favicon.ico",

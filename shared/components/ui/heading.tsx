@@ -5,17 +5,8 @@ interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
-export function Heading({ children, level = 1, className, ...props }: Props) {
+export function Heading({ children, level = 1, className, ...props }: Readonly<Props>) {
   const Tag: React.ElementType = `h${level}`;
-
-  // const sizeMap = {
-  //   1: "scroll-m-20 text-5xl tracking-tight text-balance",
-  //   2: "scroll-m-20 text-4xl font-semibold tracking-tight first:mt-0",
-  //   3: "scroll-m-20 text-3xl font-semibold tracking-tight",
-  //   4: "scroll-m-20 text-3xl font-semibold tracking-tight",
-  //   5: "scroll-m-20 text-xl font-semibold tracking-tight",
-  //   6: "scroll-m-20 text-lg font-semibold tracking-tight",
-  // } satisfies Record<number, string>;
 
   return (
     <Tag data-slot="heading" className={clsx("tracking-tight text-balance", className)} {...props}>
