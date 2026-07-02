@@ -8,7 +8,7 @@ import { NowPlayingStatus } from "@/modules/home/components/now-playing-status";
 import { AvailabilityStatus } from "@/modules/home/components/primitives/availability-status";
 import { LocationBadge } from "@/modules/home/components/primitives/location-badge";
 import { RoleTextFlip } from "@/modules/home/components/primitives/role-text-flip";
-import { BackgroundPattern } from "@/shared/components/layout/background-pattern";
+import { BackgroundBlurryBlob } from "@/shared/components/layout/background-blurry-blob";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Heading } from "@/shared/components/ui/heading";
 import { Paragraph } from "@/shared/components/ui/paragraph";
@@ -19,8 +19,9 @@ export async function Hero() {
   const tHome = await getTranslations("home");
 
   return (
-    <section className="relative flex w-full flex-col gap-16 overflow-hidden rounded-4xl py-16">
-      <BackgroundPattern />
+    <section className="flex w-full flex-col gap-16 rounded-4xl py-8">
+      <BackgroundBlurryBlob firstBlobColor="bg-purple-400" secondBlobColor="bg-blue-400" />
+
       <div className="flex flex-col gap-6">
         <div className="flex items-center gap-4">
           <AvailabilityStatus />
