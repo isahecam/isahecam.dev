@@ -118,16 +118,6 @@
   --grid-color: rgba(255, 255, 255, 0.1);
 }
 
-@keyframes equalizer {
-  0%,
-  100% {
-    transform: scaleY(0.3);
-  }
-  50% {
-    transform: scaleY(1);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
