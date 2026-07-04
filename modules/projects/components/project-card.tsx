@@ -12,15 +12,15 @@ export function ProjectCard({ project }: Readonly<Props>) {
   const { name, description, technologies } = project;
 
   return (
-    <Card className="items-center overflow-hidden py-0 sm:flex-row sm:gap-0">
+    <Card className="relative w-full gap-0 py-0 sm:flex-row">
       <Image
         width={1920}
         height={1440}
         src={project.cover}
         alt={project.name}
-        className="size-full h-56 w-full grow object-cover sm:rounded-[min(var(--radius-4xl),24px)]"
+        className="z-20 w-full grow object-cover sm:w-[50%]"
       />
-      <div className="flex w-full flex-col gap-4 pb-5 sm:min-w-[50%] sm:pb-0">
+      <div className="flex w-full flex-col justify-center gap-(--card-spacing) py-(--card-spacing)">
         <CardHeader>
           <CardTitle>{name}</CardTitle>
           <CardDescription>{description}</CardDescription>
