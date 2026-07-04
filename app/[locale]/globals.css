@@ -118,19 +118,8 @@
   --grid-color: rgba(255, 255, 255, 0.1);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  [class*="animate-equalizer"] {
-    animation-play-state: paused;
-  }
+@theme {
+  --animate-pop-blob: pop-blob 5s infinite;
 }
 
 @layer base {
@@ -153,8 +142,18 @@
   }
 }
 
-/* Scroll-Driven Animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
+/* Scroll-Driven Animations */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     [data-slot="decorator-bar"] {
@@ -199,6 +198,7 @@
   }
 }
 
+/* Animations */
 @keyframes decorator-bar-grow {
   from {
     transform: scaleX(0);
@@ -274,8 +274,4 @@
   100% {
     transform: scale(1);
   }
-}
-
-@theme {
-  --animate-pop-blob: pop-blob 5s infinite;
 }
