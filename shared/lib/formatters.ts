@@ -1,6 +1,6 @@
 const cache = new Map<string, Intl.DateTimeFormat>();
 
-export const createDateFormatter = (locale: string, options: Intl.DateTimeFormatOptions) => {
+const createDateFormatter = (locale: string, options: Intl.DateTimeFormatOptions) => {
   const key = `${locale}:${JSON.stringify(options)}`;
 
   if (!cache.has(key)) {
@@ -10,7 +10,8 @@ export const createDateFormatter = (locale: string, options: Intl.DateTimeFormat
   return cache.get(key)!;
 };
 
-export const getYearFormatter = (locale: string) => createDateFormatter(locale, { year: "numeric" });
+const getYearFormatter = (locale: string) => createDateFormatter(locale, { year: "numeric" });
 
-export const getMonthYearFormatter = (locale: string) =>
-  createDateFormatter(locale, { year: "numeric", month: "long" });
+const getMonthYearFormatter = (locale: string) => createDateFormatter(locale, { year: "numeric", month: "long" });
+
+export { getYearFormatter, getMonthYearFormatter };
