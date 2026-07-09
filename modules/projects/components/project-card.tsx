@@ -12,20 +12,22 @@ export function ProjectCard({ project }: Readonly<Props>) {
   const { name, description, technologies } = project;
 
   return (
-    <Card className="relative w-full gap-0 py-0 sm:flex-row">
-      <Image
-        width={1920}
-        height={1440}
-        src={project.cover}
-        alt={project.name}
-        className="z-20 w-full grow object-cover sm:w-[50%]"
-      />
-      <div className="flex w-full flex-col justify-center gap-(--card-spacing) py-(--card-spacing)">
-        <CardHeader>
+    <Card className="w-full px-(--card-spacing) sm:flex-row">
+      <div className="relative h-48 w-full overflow-hidden rounded-lg sm:h-auto sm:min-h-56 sm:w-1/2">
+        <Image
+          fill
+          src={project.cover}
+          alt={project.name}
+          sizes="(max-width: 640px) 100vw, 50vw"
+          className="object-cover"
+        />
+      </div>
+      <div className="flex w-full flex-col justify-center gap-(--card-spacing) sm:w-1/2">
+        <CardHeader className="px-0">
           <CardTitle>{name}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </CardHeader>
-        <CardContent className="flex flex-wrap gap-2">
+        <CardContent className="flex flex-wrap gap-2 px-0">
           {technologies.map((tech) => (
             <Badge key={tech._id} variant="secondary" className="h-auto">
               <Image
