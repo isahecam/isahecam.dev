@@ -1,7 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { getExperiences } from "@/modules/home/data/get-experiences";
-import { formatDateRange } from "@/shared//utils/format-date";
 import { DecoratorBar } from "@/shared/components/blocks/decorator-bar";
 import { Heading } from "@/shared/components/ui/heading";
 import {
@@ -15,10 +14,14 @@ import {
   TimelineTime,
   TimelineTitle,
 } from "@/shared/components/ui/timeline";
+import { getMonthYearFormatter } from "@/shared/lib/formatters";
+import { formatPeriod } from "@/shared/utils/format-date";
 
 export async function Experience() {
   const [locale, t] = await Promise.all([getLocale(), getTranslations("home.experience")]);
   const items = await getExperiences(locale);
+
+  const monthYearFomatter = getMonthYearFormatter(locale);
 
   return (
     <section className="flex flex-col gap-6">
@@ -42,11 +45,7 @@ export async function Experience() {
                   {exp.company.name}
                 </TimelineTitle>
                 <TimelineTime>
-                  {formatDateRange(exp.period.startDate, exp.period.endDate, {
-                    locale,
-                    month: "long",
-                    presentLabel: t("present"),
-                  })}
+                  {formatPeriod(monthYearFomatter, exp.period.startDate, exp.period.endDate, t("present"))}
                 </TimelineTime>
                 <TimelineDescription>{exp.description}</TimelineDescription>
               </TimelineHeader>
