@@ -113,10 +113,7 @@ function StarsBackground({
   return (
     <div
       data-slot="stars-background"
-      className={cn(
-        "relative size-full overflow-hidden bg-[radial-gradient(ellipse_at_bottom,#262626_0%,#000_100%)]",
-        className,
-      )}
+      className={cn("relative size-full overflow-hidden bg-background", className)}
       onMouseMove={handleMouseMove}
       {...props}>
       <motion.div style={{ x: springX, y: springY }} className={cn({ "pointer-events-none": !pointerEvents })}>
