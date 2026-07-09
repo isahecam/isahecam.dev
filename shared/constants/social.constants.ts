@@ -6,7 +6,7 @@ import type { SocialLink } from "@/shared/types/constants.types";
 export const SOCIAL_LINKS = [
   {
     platform: "LinkedIn",
-    url: "https://linkedin.com/in/isahir-hernandez",
+    url: "https://linkedin.com/in/isahecam",
     icon: LinkedIn,
   },
   {
