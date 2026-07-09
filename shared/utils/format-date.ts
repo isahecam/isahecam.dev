@@ -1,21 +1,13 @@
-interface FormatDateOptions {
-  locale?: string;
-  month?: Intl.DateTimeFormatOptions["month"];
-  year?: Intl.DateTimeFormatOptions["year"];
-}
+const formatPeriod = (
+  formatter: Intl.DateTimeFormat,
+  startDate: string | Date,
+  endDate: string | Date | null | undefined,
+  presentLabel: string,
+) => {
+  const start = formatter.format(new Date(startDate));
+  const end = endDate ? formatter.format(new Date(endDate)) : presentLabel;
 
-interface FormatDateRangeOptions extends FormatDateOptions {
-  presentLabel?: string;
-}
-
-export function formatDate(date: string, options?: FormatDateOptions): string {
-  const { locale, month = "short", year = "numeric" } = options ?? {};
-  return new Intl.DateTimeFormat(locale, { month, year }).format(new Date(date));
-}
-
-export function formatDateRange(startDate: string, endDate: string | null, options?: FormatDateRangeOptions): string {
-  const { presentLabel = "presente", ...dateOptions } = options ?? {};
-  const start = formatDate(startDate, dateOptions);
-  const end = endDate ? formatDate(endDate, dateOptions) : presentLabel;
   return `${start} – ${end}`;
-}
+};
+
+export { formatPeriod };
