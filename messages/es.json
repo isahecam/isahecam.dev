@@ -1,0 +1,9 @@
+{
+  "HomePage": {
+    "title": "Amo construir cosas y nunca parar de aprender."
+  },
+  "locale-switcher": {
+    "label": "Cambiar idioma",
+    "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
+  }
+}
