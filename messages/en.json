@@ -1,7 +1,4 @@
 {
-  "HomePage": {
-    "title": "I love building things and never stop learning."
-  },
   "locale-switcher": {
     "label": "Change language",
     "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
