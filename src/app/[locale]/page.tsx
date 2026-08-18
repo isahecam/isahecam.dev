@@ -1,14 +1,17 @@
 import { BriefcaseBusinessIcon, HammerIcon, MapPinIcon } from "lucide-react";
 import Image from "next/image";
 
+import { DownloadCVLink } from "@/components/layout/download-cv-link";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { buttonVariants } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
+import { SOCIAL_LINKS } from "@/constants/shared.constants";
 import { Bio } from "@/features/about/components/bio";
 import { Experience } from "@/features/experience/components/experience";
 import { Projects } from "@/features/projects/components/projects";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="mx-auto w-full max-w-5xl">
       <div className="grid sm:grid-cols-[280px_minmax(0,1fr)]">
@@ -52,6 +55,32 @@ export default function Home() {
                   <span className="whitespace-nowrap">Located on Puebla, Mexico</span>
                 </li>
               </ul>
+
+              <nav className="flex gap-3 items-center shrink-0">
+                <DownloadCVLink />
+
+                <ul className="flex gap-1.5">
+                  {SOCIAL_LINKS.map((socialLink) => {
+                    const Icon = socialLink.platform.icon;
+
+                    return (
+                      <li key={socialLink.platform.name} className="contents">
+                        <a
+                          href={socialLink.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={buttonVariants({
+                            variant: "outline",
+                            size: "icon-sm",
+                          })}
+                        >
+                          <Icon />
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
             </div>
 
             <ThemeToggle />
