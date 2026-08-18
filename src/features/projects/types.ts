@@ -6,15 +6,14 @@ export interface Project {
   description: string;
   coverImage: Media;
   imageGallery: Media[] | null;
-  technologies: Technology[];
+  stack: Technology[];
   liveUrl: string | null;
   publishedAt: string | null;
 }
 
 export interface Technology {
-  _id: string;
   name: string;
-  icon: string;
+  key: string;
 }
 
 export interface Media {
