@@ -58,7 +58,7 @@ export default async function Home() {
                 </li>
                 <li className="flex items-center gap-2 text-sm leading-snug">
                   <BriefcaseBusinessIcon className="size-4" />
-                  <span className="whitespace-nowrap">Frontend Developer at XDEVELOP</span>
+                  <span className="whitespace-nowrap">Full Stack Software Engineer</span>
                 </li>
                 <li className="flex items-center gap-2 text-sm leading-snug">
                   <MapPinIcon className="size-4" />
