@@ -2,5 +2,10 @@
   "locale-switcher": {
     "label": "Change language",
     "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
+  },
+  "projects": {
+    "project-card": {
+      "cta": "Explore {title}"
+    }
   }
 }
