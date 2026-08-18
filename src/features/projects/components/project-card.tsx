@@ -42,7 +42,6 @@ export function ProjectCard({ project }: Readonly<Props>) {
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2 px-0">
           {stack.map((tech) => {
-            console.log(tech);
             const Icon = getTechIcon(tech.key);
 
             return (
