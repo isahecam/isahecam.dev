@@ -64,14 +64,14 @@ export async function ProjectCard({ project }: Readonly<Props>) {
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            title={t("cta", { title })}
+            title={t("view-project-cta", { title })}
             className={buttonVariants({
               variant: "default",
               className: "w-full group",
               size: "lg",
             })}
           >
-            {t("cta", { title })}
+            {t("view-project-cta", { title })}
             <ArrowUpRightIcon className="transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-active:-translate-y-0.5 group-active:translate-x-0.5" />
           </a>
         )}
