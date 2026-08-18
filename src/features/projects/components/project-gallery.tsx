@@ -23,7 +23,7 @@ export function ProjectGallery({ images }: Readonly<Props>) {
     <Carousel
       opts={{ loop: true }}
       plugins={[plugin.current]}
-      className="overflow-hidden rounded-lg sm:w-1/2"
+      className="overflow-hidden rounded-lg lg:w-1/2"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
