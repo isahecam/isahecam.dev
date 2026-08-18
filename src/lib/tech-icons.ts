@@ -1,9 +1,8 @@
 import { Code2Icon } from "lucide-react";
-import type { ComponentType, SVGProps } from "react";
 
 import { BetterAuth, DrizzleORM, Nextjs, shadcnui } from "@/components/icons";
+import { SVGIcon } from "@/types/shared.types";
 
-export type SVGIcon = ComponentType<SVGProps<SVGSVGElement>>;
 export type TechIcon = keyof typeof TECH_ICONS;
 
 const FALLBACK_ICON = Code2Icon;
