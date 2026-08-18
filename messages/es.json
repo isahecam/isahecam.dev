@@ -4,7 +4,7 @@
     "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
   },
   "home": {
-    "download-cv-cta": "Currículum"
+    "download-cv-cta": "Mi CV"
   },
   "projects": {
     "project-card": {
