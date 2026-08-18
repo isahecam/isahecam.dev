@@ -8,7 +8,12 @@
     "download-cv-cta": " My Resume"
   },
 
+  "experience": {
+    "title": "Experience"
+  },
+
   "projects": {
+    "title": "Projects",
     "project-card": {
       "view-project-cta": "Explore {title}"
     }

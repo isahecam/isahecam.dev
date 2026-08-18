@@ -6,7 +6,11 @@
   "home": {
     "download-cv-cta": "Mi CV"
   },
+  "experience": {
+    "title": "Experiencia"
+  },
   "projects": {
+    "title": "Proyectos",
     "project-card": {
       "view-project-cta": "Explorar {title}"
     }
