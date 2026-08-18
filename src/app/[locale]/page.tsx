@@ -44,7 +44,17 @@ export default async function Home() {
               <ul className="flex flex-col items-start gap-1.5">
                 <li className="flex items-center gap-2 text-sm leading-snug">
                   <HammerIcon className="size-4" />
-                  <span className="whitespace-nowrap">Building @Membok</span>
+                  <span className="whitespace-nowrap">
+                    Building{" "}
+                    <a
+                      href="https://membok-app.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={buttonVariants({ variant: "link", className: "p-0! h-auto" })}
+                    >
+                      @Membok
+                    </a>
+                  </span>
                 </li>
                 <li className="flex items-center gap-2 text-sm leading-snug">
                   <BriefcaseBusinessIcon className="size-4" />
