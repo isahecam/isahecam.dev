@@ -1,4 +1,5 @@
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRightIcon } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +13,9 @@ interface Props {
   project: Project;
 }
 
-export function ProjectCard({ project }: Readonly<Props>) {
+export async function ProjectCard({ project }: Readonly<Props>) {
+  const t = await getTranslations("projects.project-card");
+
   const { title, tagline, description, stack, liveUrl, coverImage, imageGallery } = project;
 
   const hasGalleryImages = imageGallery && imageGallery.length > 1;
@@ -61,10 +64,15 @@ export function ProjectCard({ project }: Readonly<Props>) {
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={buttonVariants({ variant: "default", className: "w-full", size: "lg" })}
+            title={t("cta", { title })}
+            className={buttonVariants({
+              variant: "default",
+              className: "w-full group",
+              size: "lg",
+            })}
           >
-            Explorar {title}
-            <ExternalLink />
+            {t("cta", { title })}
+            <ArrowUpRightIcon className="transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-active:-translate-y-0.5 group-active:translate-x-0.5" />
           </a>
         )}
       </div>
