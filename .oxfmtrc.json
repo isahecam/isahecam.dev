@@ -32,7 +32,7 @@
     "ignoreCase": true
   },
   "sortTailwindcss": {
-    "stylesheet": "./src/app/globals.css",
+    "stylesheet": "./src/app/[locale]/globals.css",
     "functions": ["clsx", "cn", "cva", "tw", "twMerge", "twJoin"],
     "preserveDuplicates": false,
     "preserveWhitespace": false
