@@ -1,7 +1,7 @@
 import { Heading } from "@/components/ui/heading";
 import { ProjectGridView } from "@/features/projects/components/project-grid-view";
 
-export function ProjectsSection() {
+export function Projects() {
   return (
     <section className="space-y-3">
       <hgroup className="flex flex-col gap-1.5">
