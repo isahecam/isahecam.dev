@@ -4,15 +4,15 @@ import Image from "next/image";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Heading } from "@/components/ui/heading";
-import { AboutSection } from "@/features/about/components/about-section";
-import { ExperienceSection } from "@/features/experience/components/experience-section";
-import { ProjectsSection } from "@/features/projects/components/projects-section";
+import { Bio } from "@/features/about/components/bio";
+import { Experience } from "@/features/experience/components/experience";
+import { Projects } from "@/features/projects/components/projects";
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-4xl">
+    <main className="mx-auto w-full max-w-5xl">
       <div className="grid sm:grid-cols-[280px_minmax(0,1fr)]">
-        <aside className="ps-4 pe-4 pt-8 pb-8">
+        <aside className="ps-4 pe-4 py-16">
           <div className="flex h-full flex-col items-start justify-between">
             <div className="flex flex-col items-start gap-8">
               <header className="flex flex-col gap-3">
@@ -59,10 +59,10 @@ export default function Home() {
         </aside>
 
         <div className="h-screen p-4">
-          <div className="flex h-full w-full scroll-fade-b scrollbar-none flex-col gap-y-10 overflow-hidden overflow-y-auto rounded-4xl bg-background p-6">
-            <AboutSection />
-            <ExperienceSection />
-            <ProjectsSection />
+          <div className="flex h-full w-full scroll-fade scrollbar-none flex-col gap-y-10 overflow-hidden overflow-y-auto rounded-[38px] bg-background p-5">
+            <Bio />
+            <Experience />
+            <Projects />
           </div>
         </div>
       </div>
