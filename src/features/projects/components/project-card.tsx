@@ -18,7 +18,7 @@ export function ProjectCard({ project }: Readonly<Props>) {
   const hasGalleryImages = imageGallery && imageGallery.length > 1;
 
   return (
-    <Card className="w-full px-(--card-spacing) sm:flex-row-reverse sm:items-center-safe shadow-none ring-0 rounded-[18px]">
+    <Card className="w-full px-(--card-spacing) sm:flex-row-reverse sm:items-center-safe shadow-none ring-0 rounded-[18px] bg-linear-to-t from-primary/5 to-card dark:bg-card">
       {hasGalleryImages ? (
         <ProjectGallery images={imageGallery} />
       ) : (
