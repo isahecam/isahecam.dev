@@ -196,6 +196,6 @@
   }
 
   html {
-    @apply selection:bg-selection selection:dark:text-accent font-sans;
+    @apply font-sans selection:bg-selection selection:dark:text-accent;
   }
 }
