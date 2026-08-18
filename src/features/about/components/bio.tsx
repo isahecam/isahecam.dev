@@ -11,7 +11,10 @@ export async function Bio() {
   return (
     <section>
       <hgroup className="flex flex-col gap-3">
-        <Heading level={2} className="w-full text-2xl leading-[1.4] font-medium tracking-[-0.48px]">
+        <Heading
+          level={2}
+          className="w-full text-2xl leading-[1.15] font-medium tracking-[-0.03em]"
+        >
           <span className="inline-block">{bio.headline}</span>
         </Heading>
         <PortableText value={bio.summary} />
