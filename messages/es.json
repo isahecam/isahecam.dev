@@ -3,9 +3,12 @@
     "label": "Cambiar idioma",
     "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
   },
+  "home": {
+    "download-cv-cta": "Currículum"
+  },
   "projects": {
     "project-card": {
-      "cta": "Explorar {title}"
+      "view-project-cta": "Explorar {title}"
     }
   }
 }
