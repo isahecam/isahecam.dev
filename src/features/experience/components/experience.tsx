@@ -37,7 +37,7 @@ export async function Experience() {
             <TimelineConnector />
             <TimelineContent>
               <TimelineHeader>
-                <TimelineTitle className="flex items-center gap-2">
+                <TimelineTitle className="flex flex-col gap-y-0.5 gap-x-2 lg:flex-row lg:items-center">
                   {exp.role}
                   <Separator orientation="vertical" />
                   {exp.company.name}
