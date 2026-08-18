@@ -18,11 +18,11 @@ export function ProjectCard({ project }: Readonly<Props>) {
   const hasGalleryImages = imageGallery && imageGallery.length > 1;
 
   return (
-    <Card className="w-full px-(--card-spacing) sm:flex-row-reverse sm:items-center-safe shadow-none ring-0 rounded-[18px] bg-linear-to-t from-primary/5 to-card dark:bg-card">
+    <Card className="w-full px-(--card-spacing) flex-col lg:flex-row-reverse lg:items-center-safe shadow-none ring-0 rounded-[18px] bg-linear-to-t from-primary/5 to-card dark:bg-card">
       {hasGalleryImages ? (
         <ProjectGallery images={imageGallery} />
       ) : (
-        <div className="relative aspect-video w-full overflow-hidden rounded-lg sm:h-[302.8px] sm:w-1/2">
+        <div className="relative aspect-video w-full overflow-hidden rounded-lg lg:h-[302.8px]">
           <Image
             fill
             src={coverImage.url}
@@ -33,7 +33,7 @@ export function ProjectCard({ project }: Readonly<Props>) {
         </div>
       )}
 
-      <div className="flex w-full flex-col justify-center gap-(--card-spacing) sm:w-1/2">
+      <div className="flex w-full flex-col justify-center gap-(--card-spacing) lg:w-1/2">
         <CardHeader className="px-0">
           <CardTitle className="text-balance">
             {title} &mdash; {tagline}
