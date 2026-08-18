@@ -6,13 +6,14 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectGallery } from "@/features/projects/components/project-gallery";
 import { Project } from "@/features/projects/types";
+import { getTechIcon } from "@/lib/tech-icons";
 
 interface Props {
   project: Project;
 }
 
 export function ProjectCard({ project }: Readonly<Props>) {
-  const { title, tagline, description, technologies, liveUrl, coverImage, imageGallery } = project;
+  const { title, tagline, description, stack, liveUrl, coverImage, imageGallery } = project;
 
   const hasGalleryImages = imageGallery && imageGallery.length > 1;
 
@@ -40,21 +41,20 @@ export function ProjectCard({ project }: Readonly<Props>) {
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2 px-0">
-          {technologies.map((tech) => (
-            <Badge key={tech._id} variant="ghost" className="h-auto">
-              <Image
-                width={180}
-                height={180}
-                src={tech.icon}
-                alt={tech.name}
-                fetchPriority="high"
-                priority
-                decoding="async"
-                className="size-5"
-              />
-              {tech.name}
-            </Badge>
-          ))}
+          {stack.map((tech) => {
+            console.log(tech);
+            const Icon = getTechIcon(tech.key);
+
+            return (
+              <Badge
+                key={tech.key}
+                className="h-auto bg-background! text-card-foreground  [&>svg]:size-4!"
+              >
+                <Icon />
+                {tech.name}
+              </Badge>
+            );
+          })}
         </CardContent>
 
         {liveUrl && (
