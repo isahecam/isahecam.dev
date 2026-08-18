@@ -8,18 +8,17 @@ export const ALL_PROJECTS_QUERY = defineQuery(`
     "slug": slug.current,
     "description": coalesce(description[language == $locale][0].value, description[0].value),
     coverImage {
-      _key,
       "url": asset->url,
-      alt
+      "alt": coalesce(alt[language == $locale][0].value, alt[0].value)
     },
-    gallery[] {
+    imageGallery[] {
       _key,
       "url": asset->url,
-      alt
+      "alt": coalesce(alt[language == $locale][0].value, alt[0].value)
     },
     stack[]-> {
       "key": key.current,
-      "name": name,
+      name,
     },
     liveUrl,
     publishedAt,
