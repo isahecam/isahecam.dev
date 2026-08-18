@@ -9,7 +9,7 @@ export function Heading({ children, level = 1, className, ...props }: Readonly<P
   const Tag: React.ElementType = `h${level}`;
 
   return (
-    <Tag data-slot="heading" className={cn("tracking-tight text-balance", className)} {...props}>
+    <Tag data-slot="heading" className={cn("text-balance", className)} {...props}>
       {children}
     </Tag>
   );
