@@ -1,4 +1,4 @@
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
@@ -17,16 +17,14 @@ import { getExperience } from "@/features/experience/data/get-experience";
 
 export async function Experience() {
   const locale = await getLocale();
+  const t = await getTranslations("experience");
   const items = await getExperience(locale);
 
   return (
     <section className="space-y-3">
       <hgroup className="flex flex-col gap-1.5">
-        <Heading
-          level={2}
-          className="text-xs font-semibold tracking-wider text-foreground uppercase"
-        >
-          Experience
+        <Heading level={2} className="text-xs font-semibold text-foreground uppercase">
+          {t("title")}
         </Heading>
       </hgroup>
 
@@ -37,7 +35,7 @@ export async function Experience() {
             <TimelineConnector />
             <TimelineContent>
               <TimelineHeader>
-                <TimelineTitle className="flex flex-col gap-y-0.5 gap-x-2 lg:flex-row lg:items-center">
+                <TimelineTitle className="flex flex-col gap-x-2 gap-y-0.5 lg:flex-row lg:items-center">
                   {exp.role}
                   <Separator orientation="vertical" />
                   {exp.company.name}
