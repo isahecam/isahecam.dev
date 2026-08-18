@@ -21,7 +21,7 @@ export async function ProjectCard({ project }: Readonly<Props>) {
   const hasGalleryImages = imageGallery && imageGallery.length > 1;
 
   return (
-    <Card className="w-full px-(--card-spacing) flex-col lg:flex-row-reverse lg:items-center-safe shadow-none ring-0 rounded-[18px] bg-linear-to-t from-primary/5 to-card dark:bg-card">
+    <Card className="w-full flex-col rounded-[18px] bg-linear-to-t from-primary/5 to-card px-(--card-spacing) shadow-none ring-0 lg:flex-row-reverse lg:items-center-safe dark:bg-card">
       {hasGalleryImages ? (
         <ProjectGallery images={imageGallery} />
       ) : (
@@ -50,7 +50,7 @@ export async function ProjectCard({ project }: Readonly<Props>) {
             return (
               <Badge
                 key={tech.key}
-                className="h-auto bg-background! text-card-foreground  [&>svg]:size-4!"
+                className="h-auto bg-background! text-card-foreground [&>svg]:size-4!"
               >
                 <Icon />
                 {tech.name}
@@ -72,7 +72,7 @@ export async function ProjectCard({ project }: Readonly<Props>) {
             })}
           >
             {t("view-project-cta", { title })}
-            <ArrowUpRightIcon className="transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-active:-translate-y-0.5 group-active:translate-x-0.5" />
+            <ArrowUpRightIcon className="transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:translate-x-0.5 group-active:-translate-y-0.5" />
           </a>
         )}
       </div>
