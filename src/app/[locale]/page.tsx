@@ -15,7 +15,7 @@ export default async function Home() {
   return (
     <main className="mx-auto w-full max-w-5xl">
       <div className="grid sm:grid-cols-[280px_minmax(0,1fr)]">
-        <aside className="ps-4 pe-4 py-16">
+        <aside className="py-16 ps-4 pe-4">
           <div className="flex h-full flex-col items-start justify-between">
             <div className="flex flex-col items-start gap-8">
               <header className="flex flex-col gap-3">
@@ -32,7 +32,10 @@ export default async function Home() {
                 </div>
 
                 <hgroup className="space-y-1">
-                  <Heading level={1} className="text-xl font-medium">
+                  <Heading
+                    level={1}
+                    className="text-xl leading-[1.15] font-medium tracking-[-0.03em]"
+                  >
                     Brandon Hernández
                   </Heading>
                   <p className="text-sm leading-tight text-muted-foreground">
@@ -42,7 +45,7 @@ export default async function Home() {
               </header>
 
               <ul className="flex flex-col items-start gap-1.5">
-                <li className="flex items-center gap-2 text-sm leading-snug">
+                <li className="flex items-center gap-2 text-sm">
                   <HammerIcon className="size-4" />
                   <span className="whitespace-nowrap">
                     Building{" "}
@@ -66,7 +69,7 @@ export default async function Home() {
                 </li>
               </ul>
 
-              <nav className="flex gap-3 items-center shrink-0">
+              <nav className="flex shrink-0 items-center gap-3">
                 <DownloadCVLink />
 
                 <ul className="flex gap-1.5">
