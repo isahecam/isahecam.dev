@@ -1,5 +1,7 @@
 import { getTranslations } from "next-intl/server";
+import { Suspense } from "react";
 
+import { Crossfade } from "@/components/ui/crossfade";
 import { Heading } from "@/components/ui/heading";
 import { ProjectGridView } from "@/features/projects/components/project-grid-view";
 
@@ -14,7 +16,11 @@ export async function Projects() {
         </Heading>
       </hgroup>
 
-      <ProjectGridView />
+      <Suspense>
+        <Crossfade>
+          <ProjectGridView />
+        </Crossfade>
+      </Suspense>
     </section>
   );
 }
