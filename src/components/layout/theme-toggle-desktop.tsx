@@ -15,7 +15,7 @@ export function ThemeToggleDesktop() {
     <ToggleGroup
       value={[theme ?? "system"]}
       onValueChange={([value]) => setTheme(value as Theme)}
-      className="hidden rounded-[22px] bg-muted p-1 sm:block"
+      className="hidden rounded-[22px] bg-muted p-1 sm:flex"
       size="sm"
     >
       <ToggleGroupItem
