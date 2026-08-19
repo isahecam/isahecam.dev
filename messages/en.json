@@ -3,15 +3,12 @@
     "label": "Change language",
     "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
   },
-
   "home": {
-    "download-cv-cta": " My Resume"
+    "download-cv-cta": "My Resume"
   },
-
   "experience": {
     "title": "Experience"
   },
-
   "projects": {
     "title": "Projects",
     "project-card": {
