@@ -1,7 +1,7 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import * as z from "zod";
 
-export const env = createEnv({
+export const clientEnv = createEnv({
   client: {
     NEXT_PUBLIC_SANITY_PROJECT_ID: z.string().min(1, "Sanity project ID is required"),
     NEXT_PUBLIC_SANITY_DATASET: z.string().min(1, "Sanity dataset is required"),
