@@ -17,5 +17,10 @@
     "project-card": {
       "view-project-cta": "Explore {title}"
     }
+  },
+  "music-player": {
+    "now-playing": "Now Playing",
+    "last-played": "Last Played",
+    "open-song-cta": "Listen to Song"
   }
 }

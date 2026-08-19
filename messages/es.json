@@ -14,5 +14,10 @@
     "project-card": {
       "view-project-cta": "Explorar {title}"
     }
+  },
+  "music-player": {
+    "now-playing": "Ahora suena",
+    "last-played": "Última canción",
+    "open-song-cta": "Escuchar canción"
   }
 }
