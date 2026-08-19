@@ -7,7 +7,8 @@
     "download-cv-cta": "Mi CV"
   },
   "experience": {
-    "title": "Experiencia"
+    "title": "Experiencia",
+    "present": "Presente"
   },
   "projects": {
     "title": "Proyectos",
