@@ -10,7 +10,7 @@
 
 A minimalist dev portfolio and personal space showcasing my work as a Full-Stack Software Engineer.
 
-→ Live site: [isahecam.com](https://chanhdai.com)
+→ Live site: [isahecam.com](https://isahecam.com)
 
 ## Overview
 
