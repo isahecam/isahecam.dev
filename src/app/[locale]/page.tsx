@@ -4,7 +4,8 @@ import { Suspense } from "react";
 
 import { DownloadCVLink } from "@/components/layout/download-cv-link";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { ThemeToggleDesktop } from "@/components/layout/theme-toggle-desktop";
+import { ThemeToggleMobile } from "@/components/layout/theme-toggle-mobile";
 import { buttonVariants } from "@/components/ui/button";
 import { Crossfade } from "@/components/ui/crossfade";
 import { Heading } from "@/components/ui/heading";
@@ -32,7 +33,10 @@ export default async function Home() {
                     fetchPriority="high"
                   />
 
-                  <LocaleSwitcher />
+                  <div className="flex items-start gap-3">
+                    <ThemeToggleMobile />
+                    <LocaleSwitcher />
+                  </div>
                 </div>
 
                 <hgroup className="space-y-1">
@@ -42,14 +46,14 @@ export default async function Home() {
                   >
                     Brandon Hernández
                   </Heading>
-                  <p className="text-sm leading-tight text-muted-foreground">
+                  <p className="max-w-80 text-sm leading-tight text-pretty text-muted-foreground">
                     Full Stack Developer / Information Technology Systems Engineer
                   </p>
                 </hgroup>
               </header>
 
               <ul className="flex flex-col items-start gap-1.5">
-                <li className="flex items-center gap-2 text-sm">
+                <li className="flex items-center gap-1.5 text-sm">
                   <HammerIcon className="size-4" />
                   <span className="whitespace-nowrap">
                     Building{" "}
@@ -63,11 +67,11 @@ export default async function Home() {
                     </a>
                   </span>
                 </li>
-                <li className="flex items-center gap-2 text-sm leading-snug">
+                <li className="flex items-center gap-1.5 text-sm leading-snug">
                   <BriefcaseBusinessIcon className="size-4" />
                   <span className="whitespace-nowrap">Full Stack Software Engineer</span>
                 </li>
-                <li className="flex items-center gap-2 text-sm leading-snug">
+                <li className="flex items-center gap-1.5 text-sm leading-snug">
                   <MapPinIcon className="size-4" />
                   <span className="whitespace-nowrap">Located on Puebla, Mexico</span>
                 </li>
@@ -100,13 +104,12 @@ export default async function Home() {
               </nav>
             </div>
             <MusicPlayer />
-
-            <ThemeToggle />
+            <ThemeToggleDesktop />
           </div>
         </aside>
 
-        <div className="h-screen p-4">
-          <div className="flex h-full w-full scroll-fade scrollbar-none flex-col gap-y-10 overflow-hidden overflow-y-auto rounded-[38px] bg-background p-5">
+        <div className="h-full p-4 sm:h-screen">
+          <div className="flex h-full w-full flex-col gap-y-10 overflow-hidden rounded-[38px] bg-background p-5 sm:scroll-fade sm:scrollbar-none sm:overflow-y-auto">
             <Suspense fallback={<BioSkeleton />}>
               <Crossfade>
                 <Bio />
