@@ -14,11 +14,15 @@ import {
   TimelineTitle,
 } from "@/components/ui/timeline";
 import { getExperience } from "@/features/experience/data/get-experience";
+import { getMonthYearFormatter } from "@/lib/formatters";
+import { formatPeriod } from "@/utils/format-date";
 
 export async function Experience() {
   const locale = await getLocale();
   const t = await getTranslations("experience");
   const items = await getExperience(locale);
+
+  const monthYearFomatter = getMonthYearFormatter(locale);
 
   return (
     <section className="space-y-3">
@@ -41,7 +45,12 @@ export async function Experience() {
                   {exp.company.name}
                 </TimelineTitle>
                 <TimelineTime>
-                  {exp.period.startDate} &mdash; {exp.period.endDate ?? "Present"}
+                  {formatPeriod(
+                    monthYearFomatter,
+                    exp.period.startDate,
+                    exp.period.endDate,
+                    t("present"),
+                  )}
                 </TimelineTime>
                 <TimelineDescription>{exp.description}</TimelineDescription>
               </TimelineHeader>
