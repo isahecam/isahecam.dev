@@ -6,16 +6,16 @@ import { Monitor, Moon, Sun } from "lucide-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
 
-type Theme = "light" | "dark" | "system";
+export type Theme = "light" | "dark" | "system";
 
-export function ThemeToggle() {
+export function ThemeToggleDesktop() {
   const { theme, setTheme } = useTheme<Theme>();
 
   return (
     <ToggleGroup
       value={[theme ?? "system"]}
       onValueChange={([value]) => setTheme(value as Theme)}
-      className="rounded-[22px] bg-muted p-1"
+      className="hidden rounded-[22px] bg-muted p-1 sm:flex"
       size="sm"
     >
       <ToggleGroupItem
