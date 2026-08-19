@@ -10,6 +10,7 @@ import { SOCIAL_LINKS } from "@/constants/shared.constants";
 import { Bio } from "@/features/about/components/bio";
 import { Experience } from "@/features/experience/components/experience";
 import { Projects } from "@/features/projects/components/projects";
+import { MusicPlayer } from "@/features/spotify/components/music-player";
 
 export default async function Home() {
   return (
@@ -95,6 +96,7 @@ export default async function Home() {
                 </ul>
               </nav>
             </div>
+            <MusicPlayer />
 
             <ThemeToggle />
           </div>
