@@ -1,13 +1,16 @@
 import { BriefcaseBusinessIcon, HammerIcon, MapPinIcon } from "lucide-react";
 import Image from "next/image";
+import { Suspense } from "react";
 
 import { DownloadCVLink } from "@/components/layout/download-cv-link";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { buttonVariants } from "@/components/ui/button";
+import { Crossfade } from "@/components/ui/crossfade";
 import { Heading } from "@/components/ui/heading";
 import { SOCIAL_LINKS } from "@/constants/shared.constants";
 import { Bio } from "@/features/about/components/bio";
+import { BioSkeleton } from "@/features/about/components/skeletons/bio-skeleton";
 import { Experience } from "@/features/experience/components/experience";
 import { Projects } from "@/features/projects/components/projects";
 import { MusicPlayer } from "@/features/spotify/components/music-player";
@@ -104,8 +107,18 @@ export default async function Home() {
 
         <div className="h-screen p-4">
           <div className="flex h-full w-full scroll-fade scrollbar-none flex-col gap-y-10 overflow-hidden overflow-y-auto rounded-[38px] bg-background p-5">
-            <Bio />
-            <Experience />
+            <Suspense fallback={<BioSkeleton />}>
+              <Crossfade>
+                <Bio />
+              </Crossfade>
+            </Suspense>
+
+            <Suspense>
+              <Crossfade>
+                <Experience />
+              </Crossfade>
+            </Suspense>
+
             <Projects />
           </div>
         </div>
