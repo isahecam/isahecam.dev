@@ -166,7 +166,7 @@ export const MusicPlayer = () => {
       : t("last-played");
 
   return (
-    <div className="relative z-40 my-6 h-14 w-full select-none">
+    <div className="relative z-40 my-6 hidden h-14 w-full select-none sm:block">
       <div className="absolute right-0 bottom-0 left-0 mx-auto flex w-fit items-end justify-center">
         <Motion.div
           ref={cardRef}
