@@ -1,6 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
 
-import { Separator } from "@/components/ui/separator";
 import {
   Timeline,
   TimelineConnector,
@@ -28,13 +27,13 @@ export async function ExperienceTimeline() {
     <Timeline activeIndex={1}>
       {items.map((exp) => (
         <TimelineItem key={exp._id}>
-          <TimelineDot />
+          <TimelineDot className="mt-px" />
           <TimelineConnector />
           <TimelineContent>
             <TimelineHeader>
-              <TimelineTitle className="flex flex-col gap-x-2 gap-y-0.5 lg:flex-row lg:items-center">
+              <TimelineTitle className="text-pretty">
                 {exp.role}
-                <Separator orientation="vertical" />
+                &nbsp;&mdash;&nbsp;
                 {exp.company.name}
               </TimelineTitle>
               <TimelineTime>
