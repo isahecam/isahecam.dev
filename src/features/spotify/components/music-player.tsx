@@ -135,15 +135,15 @@ export const MusicPlayer = () => {
 
   if (loading) {
     return (
-      <div className="relative z-40 my-6 h-14 w-full select-none">
+      <div className="relative z-40 my-6 hidden h-14 w-full select-none sm:block">
         <div className="absolute right-0 bottom-0 left-0 mx-auto flex w-fit items-center justify-center">
           <div className="flex h-22 w-62 items-center gap-3 overflow-hidden rounded-[22px] bg-background p-3.5">
             <div className="flex min-w-0 flex-1 flex-col gap-2.5 pl-1">
-              <div className="h-2.5 w-20 animate-pulse rounded-full bg-muted dark:bg-muted-foreground" />
-              <div className="h-2.5 w-16 animate-pulse rounded-full bg-muted dark:bg-muted-foreground" />
-              <div className="h-3.5 w-28 animate-pulse rounded-full bg-muted dark:bg-muted-foreground" />
+              <div className="h-2.5 w-20 animate-pulse rounded-full bg-muted" />
+              <div className="h-2.5 w-16 animate-pulse rounded-full bg-muted" />
+              <div className="h-3.5 w-28 animate-pulse rounded-full bg-muted" />
             </div>
-            <div className="size-18 shrink-0 animate-pulse rounded-full bg-muted dark:bg-muted-foreground" />
+            <div className="size-18 shrink-0 animate-pulse rounded-full bg-muted" />
           </div>
         </div>
       </div>
