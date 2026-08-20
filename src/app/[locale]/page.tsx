@@ -116,11 +116,7 @@ export default async function Home() {
               </Crossfade>
             </Suspense>
 
-            <Suspense>
-              <Crossfade>
-                <Experience />
-              </Crossfade>
-            </Suspense>
+            <Experience />
 
             <Projects />
           </div>
