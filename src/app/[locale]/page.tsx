@@ -4,6 +4,7 @@ import { Suspense } from "react";
 
 import { DownloadCVLink } from "@/components/layout/download-cv-link";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { ThemeToggleDesktop } from "@/components/layout/theme-toggle-desktop";
 import { ThemeToggleMobile } from "@/components/layout/theme-toggle-mobile";
 import { buttonVariants } from "@/components/ui/button";
@@ -122,6 +123,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
+      <SiteFooter />
     </main>
   );
 }
