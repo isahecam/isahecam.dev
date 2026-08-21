@@ -24,8 +24,8 @@ export default async function Home() {
         <div className="grid sm:grid-cols-[280px_minmax(0,1fr)]">
           <aside className="p-8 sm:px-4 sm:py-16">
             <div className="flex h-full flex-col items-start justify-between">
-              <div className="flex flex-col items-start gap-8">
-                <header className="flex flex-col gap-3">
+              <div className="flex w-full flex-col items-start gap-8">
+                <header className="flex w-full flex-col gap-3">
                   <div className="flex justify-between">
                     <Image
                       src="https://assets.isahecam.dev/images/avatar.png"
@@ -33,6 +33,7 @@ export default async function Home() {
                       width={96}
                       height={96}
                       fetchPriority="high"
+                      loading="eager"
                     />
 
                     <div className="flex items-start gap-3">
