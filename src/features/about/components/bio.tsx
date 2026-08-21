@@ -9,7 +9,7 @@ export async function Bio() {
   const bio = await getBio(locale);
 
   return (
-    <section>
+    <section className="py-4">
       <hgroup className="flex flex-col gap-3">
         <Heading
           level={2}
