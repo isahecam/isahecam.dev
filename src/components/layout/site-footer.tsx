@@ -28,12 +28,13 @@ export function SiteFooter() {
                 href={socialLink.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={socialLink.platform.name}
                 className={buttonVariants({
                   variant: "ghost",
                   size: "icon-sm",
                 })}
               >
-                <Icon />
+                <Icon aria-hidden />
               </a>
             );
           })}
