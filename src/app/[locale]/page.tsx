@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <main className="mx-auto w-full max-w-5xl">
       <div className="grid sm:grid-cols-[280px_minmax(0,1fr)]">
-        <aside className="py-16 ps-4 pe-4">
+        <aside className="p-8 sm:px-4 sm:py-16">
           <div className="flex h-full flex-col items-start justify-between">
             <div className="flex flex-col items-start gap-8">
               <header className="flex flex-col gap-3">
@@ -109,18 +109,14 @@ export default async function Home() {
         </aside>
 
         <div className="h-full p-4 sm:h-screen">
-          <div className="flex h-full w-full flex-col gap-y-10 overflow-hidden rounded-[38px] bg-background p-5 sm:scroll-fade sm:scrollbar-none sm:overflow-y-auto">
+          <div className="flex h-full w-full flex-col gap-y-10 overflow-hidden rounded-[34px] bg-background p-4 sm:scroll-fade sm:scrollbar-none sm:overflow-y-auto">
             <Suspense fallback={<BioSkeleton />}>
               <Crossfade>
                 <Bio />
               </Crossfade>
             </Suspense>
 
-            <Suspense>
-              <Crossfade>
-                <Experience />
-              </Crossfade>
-            </Suspense>
+            <Experience />
 
             <Projects />
           </div>

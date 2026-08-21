@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="header" src="https://shieldcn.dev/header/grid.svg?title=isahecam.com&amp;subtitle=A+minimalist+Full-Stack+Software+Engineer+dev+portfolio.&amp;mode=dark" />
+  <img alt="header" src="https://shieldcn.dev/header/grid.svg?title=isahecam.com&amp;subtitle=A+minimalist+Full+Stack+Developer+portfolio.&amp;mode=dark" />
 </p>
 
 <p align="center">
@@ -8,7 +8,7 @@
   <a href="https://github.com/isahecam/isahecam.com"><img alt="license" src="https://shieldcn.dev/github/isahecam/isahecam.com/license.svg?variant=outline&amp;size=xs&amp;font=geist" /></a>
 </p>
 
-A minimalist dev portfolio and personal space showcasing my work as a Full-Stack Software Engineer.
+A minimalist dev portfolio and personal space showcasing my work as a Full Stack Developer.
 
 → Live site: [isahecam.com](https://isahecam.com)
 
