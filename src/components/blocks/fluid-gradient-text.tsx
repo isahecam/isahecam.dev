@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { useId } from "react";
 
 export type FluidGradientTextProps = {
   /** Text content rendered inside the SVG. */
@@ -22,6 +23,8 @@ export function FluidGradientText({
   svgViewBoxWidth = 1200,
   svgViewBoxHeight = 300,
 }: FluidGradientTextProps) {
+  const gradientId = useId();
+
   const gradientX1Raw = useMotionValue(0.5);
   const gradientX1 = useSpring(useTransform(gradientX1Raw, [0, 1], [0, svgViewBoxWidth]), {
     stiffness: 150,
@@ -57,9 +60,9 @@ export function FluidGradientText({
           stroke="currentColor"
           strokeOpacity="0.3"
           strokeWidth="2"
-          fill="url(#fluid_gradient_text_linear)"
+          fill={`url(#${gradientId})`}
           style={{
-            fontFamily: "Helvetica",
+            fontFamily: 'Helvetica, Arial, "Liberation Sans", sans-serif',
             fontSize: svgViewBoxHeight,
             fontWeight: "bold",
           }}
@@ -68,7 +71,7 @@ export function FluidGradientText({
         </text>
         <defs>
           <motion.linearGradient
-            id="fluid_gradient_text_linear"
+            id={gradientId}
             x1={gradientX1}
             y1="0"
             x2={svgViewBoxWidth / 2}
