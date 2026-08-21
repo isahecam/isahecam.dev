@@ -33,7 +33,7 @@ export async function ExperienceTimeline() {
             <TimelineHeader>
               <TimelineTitle className="leading-[1.15] text-pretty">
                 {exp.role}
-                &nbsp;&mdash;&nbsp;
+                {" — "}
                 {exp.company.name}
               </TimelineTitle>
               <TimelineTime>

@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-
 import { FluidGradientText } from "@/components/blocks/fluid-gradient-text";
 import { CurrentYearLabel } from "@/components/layout/current-year-label";
 import { buttonVariants } from "@/components/ui/button";
@@ -11,11 +9,7 @@ export function SiteFooter() {
       <FluidGradientText text="isahecam" svgViewBoxWidth={1400} />
       <div className="flex items-center-safe justify-between">
         <p className="text-xs text-muted-foreground md:text-sm">
-          ©{" "}
-          <Suspense fallback={<>...</>}>
-            <CurrentYearLabel />
-          </Suspense>{" "}
-          <strong className="font-normal">Brandon Hernández</strong>
+          © <CurrentYearLabel /> <strong className="font-normal">Brandon Hernández</strong>
         </p>
 
         <nav className="flex shrink-0 items-center gap-1.5">
@@ -28,12 +22,13 @@ export function SiteFooter() {
                 href={socialLink.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={socialLink.platform.name}
                 className={buttonVariants({
                   variant: "ghost",
                   size: "icon-sm",
                 })}
               >
-                <Icon />
+                <Icon aria-hidden />
               </a>
             );
           })}

@@ -19,111 +19,114 @@ import { MusicPlayer } from "@/features/spotify/components/music-player";
 
 export default async function Home() {
   return (
-    <main className="mx-auto w-full max-w-5xl">
-      <div className="grid sm:grid-cols-[280px_minmax(0,1fr)]">
-        <aside className="p-8 sm:px-4 sm:py-16">
-          <div className="flex h-full flex-col items-start justify-between">
-            <div className="flex flex-col items-start gap-8">
-              <header className="flex flex-col gap-3">
-                <div className="flex justify-between">
-                  <Image
-                    src="https://assets.isahecam.dev/images/avatar.png"
-                    alt="Avatar"
-                    width={96}
-                    height={96}
-                    fetchPriority="high"
-                  />
+    <>
+      <main className="mx-auto w-full max-w-5xl">
+        <div className="grid sm:grid-cols-[280px_minmax(0,1fr)]">
+          <aside className="p-8 sm:px-4 sm:py-16">
+            <div className="flex h-full flex-col items-start justify-between">
+              <div className="flex flex-col items-start gap-8">
+                <header className="flex flex-col gap-3">
+                  <div className="flex justify-between">
+                    <Image
+                      src="https://assets.isahecam.dev/images/avatar.png"
+                      alt="Avatar"
+                      width={96}
+                      height={96}
+                      fetchPriority="high"
+                    />
 
-                  <div className="flex items-start gap-3">
-                    <ThemeToggleMobile />
-                    <LocaleSwitcher />
+                    <div className="flex items-start gap-3">
+                      <ThemeToggleMobile />
+                      <LocaleSwitcher />
+                    </div>
                   </div>
-                </div>
 
-                <hgroup className="space-y-1">
-                  <Heading
-                    level={1}
-                    className="text-xl leading-[1.15] font-medium tracking-[-0.03em]"
-                  >
-                    Brandon Hernández
-                  </Heading>
-                  <p className="max-w-80 text-sm leading-tight text-pretty text-muted-foreground">
-                    Full Stack Developer / Information Technology Systems Engineer
-                  </p>
-                </hgroup>
-              </header>
-
-              <ul className="flex flex-col items-start gap-1.5">
-                <li className="flex items-center gap-1.5 text-sm">
-                  <HammerIcon className="size-4" />
-                  <span className="whitespace-nowrap">
-                    Building{" "}
-                    <a
-                      href="https://membok-app.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={buttonVariants({ variant: "link", className: "p-0! h-auto" })}
+                  <hgroup className="space-y-1">
+                    <Heading
+                      level={1}
+                      className="text-xl leading-[1.15] font-medium tracking-[-0.03em]"
                     >
-                      @Membok
-                    </a>
-                  </span>
-                </li>
-                <li className="flex items-center gap-1.5 text-sm leading-snug">
-                  <BriefcaseBusinessIcon className="size-4" />
-                  <span className="whitespace-nowrap">Full Stack Software Engineer</span>
-                </li>
-                <li className="flex items-center gap-1.5 text-sm leading-snug">
-                  <MapPinIcon className="size-4" />
-                  <span className="whitespace-nowrap">Located on Puebla, Mexico</span>
-                </li>
-              </ul>
+                      Brandon Hernández
+                    </Heading>
+                    <p className="max-w-80 text-sm leading-tight text-pretty text-muted-foreground">
+                      Full Stack Developer / Information Technology Systems Engineer
+                    </p>
+                  </hgroup>
+                </header>
 
-              <nav className="flex shrink-0 items-center gap-3">
-                <DownloadCVLink />
-
-                <ul className="flex gap-1.5">
-                  {SOCIAL_LINKS.map((socialLink) => {
-                    const Icon = socialLink.platform.icon;
-
-                    return (
-                      <li key={socialLink.platform.name} className="contents">
-                        <a
-                          href={socialLink.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={buttonVariants({
-                            variant: "outline",
-                            size: "icon-sm",
-                          })}
-                        >
-                          <Icon />
-                        </a>
-                      </li>
-                    );
-                  })}
+                <ul className="flex flex-col items-start gap-1.5">
+                  <li className="flex items-center gap-1.5 text-sm">
+                    <HammerIcon className="size-4" />
+                    <span className="whitespace-nowrap">
+                      Building{" "}
+                      <a
+                        href="https://membok-app.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={buttonVariants({ variant: "link", className: "p-0! h-auto" })}
+                      >
+                        @Membok
+                      </a>
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-1.5 text-sm leading-snug">
+                    <BriefcaseBusinessIcon className="size-4" />
+                    <span className="whitespace-nowrap">Full Stack Software Engineer</span>
+                  </li>
+                  <li className="flex items-center gap-1.5 text-sm leading-snug">
+                    <MapPinIcon className="size-4" />
+                    <span className="whitespace-nowrap">Located on Puebla, Mexico</span>
+                  </li>
                 </ul>
-              </nav>
+
+                <nav className="flex shrink-0 items-center gap-3">
+                  <DownloadCVLink />
+
+                  <ul className="flex gap-1.5">
+                    {SOCIAL_LINKS.map((socialLink) => {
+                      const Icon = socialLink.platform.icon;
+
+                      return (
+                        <li key={socialLink.platform.name} className="contents">
+                          <a
+                            href={socialLink.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={socialLink.platform.name}
+                            className={buttonVariants({
+                              variant: "outline",
+                              size: "icon-sm",
+                            })}
+                          >
+                            <Icon aria-hidden />
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </nav>
+              </div>
+              <MusicPlayer />
+              <ThemeToggleDesktop />
             </div>
-            <MusicPlayer />
-            <ThemeToggleDesktop />
-          </div>
-        </aside>
+          </aside>
 
-        <div className="h-full p-4 sm:h-screen">
-          <div className="flex h-full w-full flex-col gap-y-10 overflow-hidden rounded-[34px] bg-background p-4 sm:scroll-fade sm:scrollbar-none sm:overflow-y-auto">
-            <Suspense fallback={<BioSkeleton />}>
-              <Crossfade>
-                <Bio />
-              </Crossfade>
-            </Suspense>
+          <div className="h-full p-4 sm:h-screen">
+            <div className="flex h-full w-full flex-col gap-y-10 overflow-hidden rounded-[34px] bg-background p-4 sm:scroll-fade sm:scrollbar-none sm:overflow-y-auto">
+              <Suspense fallback={<BioSkeleton />}>
+                <Crossfade>
+                  <Bio />
+                </Crossfade>
+              </Suspense>
 
-            <Experience />
+              <Experience />
 
-            <Projects />
+              <Projects />
+            </div>
           </div>
         </div>
-      </div>
+      </main>
       <SiteFooter />
-    </main>
+    </>
   );
 }
