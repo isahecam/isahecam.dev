@@ -31,7 +31,7 @@ export async function ExperienceTimeline() {
           <TimelineConnector />
           <TimelineContent>
             <TimelineHeader>
-              <TimelineTitle className="text-pretty">
+              <TimelineTitle className="leading-[1.15] text-pretty">
                 {exp.role}
                 &nbsp;&mdash;&nbsp;
                 {exp.company.name}
