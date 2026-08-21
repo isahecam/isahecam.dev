@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 @AGENTS.md
 
-isahecam.com is a personal portfolio site (Brandon Hernández) built with Next.js 16 (App Router), React 19, next-intl, Tailwind CSS v4, and shadcn/ui (base-luma style on Base UI, not Radix).
+isahecam.dev is a personal portfolio site (Brandon Hernández) built with Next.js 16 (App Router), React 19, next-intl, Tailwind CSS v4, and shadcn/ui (base-luma style on Base UI, not Radix).
 
 ## Commands
 
