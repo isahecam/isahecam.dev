@@ -50,7 +50,7 @@ export default async function Home() {
                       Brandon Hernández
                     </Heading>
                     <p className="max-w-80 text-sm leading-tight text-pretty text-muted-foreground">
-                      Full Stack Developer / Information Technology Systems Engineer
+                      Engineer / Dev / Visionary
                     </p>
                   </hgroup>
                 </header>
