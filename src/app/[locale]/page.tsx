@@ -10,6 +10,7 @@ import { ThemeToggleMobile } from "@/components/layout/theme-toggle-mobile";
 import { buttonVariants } from "@/components/ui/button";
 import { Crossfade } from "@/components/ui/crossfade";
 import { Heading } from "@/components/ui/heading";
+import { SITE_INFO } from "@/config/site";
 import { SOCIAL_LINKS } from "@/constants/shared.constants";
 import { Bio } from "@/features/about/components/bio";
 import { BioSkeleton } from "@/features/about/components/skeletons/bio-skeleton";
@@ -23,12 +24,12 @@ export default async function Home() {
       <main className="mx-auto w-full max-w-5xl">
         <div className="grid sm:grid-cols-[280px_minmax(0,1fr)]">
           <aside className="p-8 sm:px-4 sm:py-16">
-            <div className="flex h-full flex-col items-start justify-between">
+            <div className="flex h-full flex-col items-start gap-20">
               <div className="flex w-full flex-col items-start gap-8">
                 <header className="flex w-full flex-col gap-3">
                   <div className="flex justify-between">
                     <Image
-                      src="https://assets.isahecam.dev/images/avatar.png"
+                      src={SITE_INFO.images.avatar}
                       alt="Avatar"
                       width={96}
                       height={96}
@@ -47,7 +48,7 @@ export default async function Home() {
                       level={1}
                       className="text-xl leading-[1.15] font-medium tracking-[-0.03em]"
                     >
-                      Brandon Hernández
+                      {SITE_INFO.displayName}
                     </Heading>
                     <p className="max-w-80 text-sm leading-tight text-pretty text-muted-foreground">
                       Engineer / Dev / Visionary
@@ -72,7 +73,7 @@ export default async function Home() {
                   </li>
                   <li className="flex items-center gap-1.5 text-sm leading-snug">
                     <BriefcaseBusinessIcon className="size-4" />
-                    <span className="whitespace-nowrap">Full Stack Software Engineer</span>
+                    <span className="whitespace-nowrap">{SITE_INFO.jobTitle}</span>
                   </li>
                   <li className="flex items-center gap-1.5 text-sm leading-snug">
                     <MapPinIcon className="size-4" />
