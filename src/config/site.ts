@@ -15,9 +15,9 @@ export const SITE_INFO = {
   images: {
     avatar: `${ASSETS_URL}/images/avatar.png`,
     og: {
-      url: `${ASSETS_URL}/images/ascii-art-hero-background.png`,
-      width: 2560,
-      height: 1344,
+      url: `${ASSETS_URL}/images/og-image.jpg`,
+      width: 1200,
+      height: 630,
     },
   },
   favicons: {

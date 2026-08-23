@@ -96,6 +96,8 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
+      site: `@${SITE_INFO.username}`,
+      creator: `@${SITE_INFO.username}`,
       images: SITE_INFO.images.og.url,
     },
     icons: {
