@@ -18,7 +18,6 @@ export function ThemeToggleMobile({ ...props }: Readonly<Props>) {
       pressed={isDark}
       onPressedChange={(pressed) => setTheme(pressed ? "dark" : "light")}
       {...props}
-      className="sm:hidden"
     >
       {isDark ? <Moon /> : <Sun />}
     </Toggle>
