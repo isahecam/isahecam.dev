@@ -5,7 +5,6 @@ import { Suspense } from "react";
 import { DownloadCVLink } from "@/components/layout/download-cv-link";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { ThemeToggleDesktop } from "@/components/layout/theme-toggle-desktop";
 import { ThemeToggleMobile } from "@/components/layout/theme-toggle-mobile";
 import { buttonVariants } from "@/components/ui/button";
 import { Crossfade } from "@/components/ui/crossfade";
@@ -22,7 +21,7 @@ export default async function Home() {
   return (
     <>
       <main className="mx-auto w-full max-w-5xl">
-        <div className="grid sm:grid-cols-[280px_minmax(0,1fr)]">
+        <div className="grid sm:grid-cols-[300px_minmax(0,1fr)]">
           <aside className="p-8 sm:px-4 sm:py-16">
             <div className="flex h-full flex-col items-start gap-20">
               <div className="flex w-full flex-col items-start gap-8">
@@ -109,7 +108,6 @@ export default async function Home() {
                 </nav>
               </div>
               <MusicPlayer />
-              <ThemeToggleDesktop />
             </div>
           </aside>
 
