@@ -12,8 +12,8 @@ const DISC_COLLAPSED = 100;
 const DISC_SCALE_COLLAPSED = DISC_COLLAPSED / DISC_SIZE;
 
 const CARD = {
-  collapsed: { w: 248, h: 88, r: 22 },
-  expanded: { w: 250, h: 284, r: 28 },
+  collapsed: { w: 268, h: 88, r: 22 },
+  expanded: { w: 268, h: 284, r: 28 },
 } as const;
 
 const SPRING = {
@@ -137,7 +137,7 @@ export const MusicPlayer = () => {
     return (
       <div className="relative z-40 my-6 hidden h-14 w-full select-none sm:block">
         <div className="absolute right-0 bottom-0 left-0 mx-auto flex w-fit items-center justify-center">
-          <div className="flex h-22 w-62 items-center gap-3 overflow-hidden rounded-[22px] bg-background p-3.5">
+          <div className="flex h-22 w-67 items-center gap-3 overflow-hidden rounded-[22px] bg-background p-3.5">
             <div className="flex min-w-0 flex-1 flex-col gap-2.5 pl-1">
               <div className="h-2.5 w-20 animate-pulse rounded-full bg-muted" />
               <div className="h-2.5 w-16 animate-pulse rounded-full bg-muted" />
