@@ -111,7 +111,7 @@ export default async function Home() {
             </div>
           </aside>
 
-          <div className="h-full p-4 sm:h-screen">
+          <div className="h-full min-h-0 p-4 sm:h-dvh">
             <div className="flex h-full w-full flex-col gap-y-10 overflow-hidden rounded-[34px] bg-background p-4 sm:scroll-fade sm:scrollbar-none sm:overflow-y-auto">
               <Suspense fallback={<BioSkeleton />}>
                 <Crossfade>
