@@ -45,7 +45,7 @@ export function LocaleSwitcher({ ...props }: Readonly<Props>) {
       value={locale}
       onValueChange={onSelectChange}
     >
-      <SelectTrigger aria-label={t("label")} className="w-24.5">
+      <SelectTrigger aria-label={t("label")}>
         <SelectValue>{(value: Locale) => t("locale", { locale: value })}</SelectValue>
       </SelectTrigger>
       <SelectContent align="end" alignItemWithTrigger={false} className="p-1">
