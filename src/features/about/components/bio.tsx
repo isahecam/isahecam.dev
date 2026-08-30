@@ -1,6 +1,6 @@
 import { getLocale } from "next-intl/server";
-import { PortableText } from "next-sanity";
 
+import { RichText } from "@/components/blocks/rich-text";
 import { Heading } from "@/components/ui/heading";
 import { getBio } from "@/features/about/data/get-bio";
 
@@ -17,7 +17,7 @@ export async function Bio() {
         >
           <span className="inline-block">{bio.headline}</span>
         </Heading>
-        <PortableText value={bio.summary} />
+        <RichText value={bio.summary} />
       </hgroup>
     </section>
   );
